@@ -7,7 +7,66 @@
 \label{cap:processi-metodologie}
 %**************************************************************
 
-\intro{Brevissima introduzione al capitolo}\\
+\intro{In questo capitolo verranno descritte le principali tecnologie che ho approfondito durante l'esperienza di stage.}\\
 
 %**************************************************************
-\section{Processo sviluppo prodotto}
+\section{Tecnologie utilizzate}
+Durante la mia esperienza di stage ho potuto prendere contatto con molte tecnologie differenti e che non avevo incontrato durante il corso di studi. Esse spaziano dall'ambiente server a quello client. L'approfondimento di tali tecnologie, specialmente nelle prime settimane di stage, è stato fondamentale per capire il funzionamento del software da modificare \\
+\subsection{Java}
+\begin{figure}[h]
+	\centering
+	\includegraphics[height = 4 cm]{java-logo}
+	\caption{Logo di Java}
+\end{figure}
+Java è uno dei linguaggi di programmazione general-purpose più popolari al mondo. \\
+Rilasciato nel 1995, riprende molta della sintassi dal linguaggio C e C++, ma spostando parte delle responsabilità prima lasciate ai programmatori, come la gestione della memoria, alla \emph{Java Virtual Machine (JVM)}: una macchina virtuale su chi viene eseguito tutto il codice Java.\\
+La presenza di una macchina virtuale crea un livello aggiuntivo tra il sistema operativo e l' \emph{IDE} di sviluppo: Questo permette al linguaggio Java di aderire al principio \emph{Write Once Run Anywhere (WORA)}: Il codice compilato (bytecode) può essere eseguito da qualsisasi computer provvisto di una JVM, senza necessitare di ricompilazioni e perfino adattamenti del codice sorgente in base al sistema operativo presente sul computer.
+Java è inoltre molto utilizzato per eseguire applicazioni client-server, cioè applicazioni (Client) che per ottentere i dati necessari si appoggiano ad un fornitore (Server), che recupera per loro i dati necessari, in maniera del tutto trasparente al client e quindi all'utente.\\
+Java dispone di una libreria proprietaria specializzata, ma in JGalileoCRM tale libreria è sostituita da \emph{Liferay}.\\ %TODO occhio che java.net è chiusa
+\subsection{Liferay}
+\begin{figure}[h]
+	\centering
+	\includegraphics[height = 4 cm]{Logo-Liferay}
+	\caption{Logo di Liferay}
+\end{figure}
+Liferay è una tecnologia \emph{enterprise portal} open source, realizzato in Java.\\
+Per enterprise portal si intende un sistema informatico evoluto, in grado di integrare informazioni, processi e persone allo scopo di fornire valore aggiunto in termini di:
+\begin{itemize}
+	\item Gestione del \emph{Single Sign On};
+	\item Semplice personalizzazioni ad hoc per ogni cliente;
+	\item Analisi delle pagine, in termini di accessi, click, download molto semplice;
+	\item Integrazione tra funzionalità e dati di diversi sistemi in nuove componenti definite portlets. 
+\end{itemize}
+Le portlets sono il cuore del sistema di Liferay. Esse infatti permettono di concentrare lo sviluppo solamente sulla gestione della funzionalità principale, lasciando a liferay la gestione degli accessi, dei menù di navigazione e degli altri componenti globali dell'applicazione.\\
+
+\subsection{GWT}
+\begin{figure}[h]
+	\centering
+	\includegraphics[height = 4 cm]{gwt-logo}
+	\caption{Logo di Google Web Toolkit}
+\end{figure} 
+GWT, acronimo di \emph{Google Web Toolkit} è un insieme di tool open source che permette la creazione ed il mantenimento di complesse applicazioni front-end JavaScript scritte in Java.\\
+GWT infatti si occupa di tradurre il codice scritto in Java in codice JavaScript, interpretabile da tutti i moderni browsers Tutto il codice Java può essere compilato ed eseguito grazie ai file Ant inclusi.
+Ant è un progetto open source della Apache foundation, volto ad automatizzare il processo di build. è simile al comando make di Unix, ma scritto in Java. \\ %TODO make come codice
+Il plug-in di Google per Eclipse (IDE in uso presso Sanmarco Informatica) è molto comleto, offrendo la possibilità di creare progetti, farne il debug, il testing, meccanismi di validazione e di controllo della sintassi.\\
+\subsection{Apache Tomcat}
+\begin{figure}[h]
+	\centering
+	\includegraphics[height = 4 cm]{apache_tomcat-card}
+	\caption{Logo di Apache Tomcat}
+\end{figure}
+Apache Tomcat è un web server, cioè un' applicazione web che, in esecuzione su di un server, gestisce le richieste di trasferimento tra le varie pagine web di un client.\\
+In particolare, Tomcat opera utilizzando servlet, cioè oggetti scritti in Java molto usati nella generazione di pagine web dinamiche.
+Queste servlet, in JGalileoCRM non vengono direttamente scritte in Java, ma sono scritte con \emph{JavaServer Pages (JSP)}:\\
+JSP è una tecnologia di programmazione web, scritta in Java, che si basa sull'uso di speciali tag all'interno di una pagina HTML, con cui possono essere chiamate funzioni scritte in linguaggio Java o JavaScript.
+A runtime, le pagine JSP vengono tradotte automaticamente in servlet utilizzabili da Tomcat. 
+%TODO vantaggi di jsp
+\subsection{Database SQL}
+\subsection{Database AS400}
+\subsection{Hibernate}
+\subsection{Javascript}
+\subsubsection{Analisi delle alternative}
+\subsubsection{React}
+\subsubsection{Angular}
+\subsubsection{Vue.JS}
+\subsubsection{Scelta finale}
