@@ -59,11 +59,20 @@ Apache Tomcat è un web server, cioè un' applicazione web che, in esecuzione su
 In particolare, Tomcat opera utilizzando servlet, cioè oggetti scritti in Java molto usati nella generazione di pagine web dinamiche.
 Queste servlet, in JGalileoCRM non vengono direttamente scritte in Java, ma sono scritte con \emph{JavaServer Pages (JSP)}:\\
 JSP è una tecnologia di programmazione web, scritta in Java, che si basa sull'uso di speciali tag all'interno di una pagina HTML, con cui possono essere chiamate funzioni scritte in linguaggio Java o JavaScript.
-A runtime, le pagine JSP vengono tradotte automaticamente in servlet utilizzabili da Tomcat. 
-%TODO vantaggi di jsp
-\subsection{Database SQL}
-\subsection{Database AS400}
+A runtime, le pagine JSP vengono tradotte automaticamente in servlet utilizzabili da Tomcat. \\
+Il vantaggio principale di questa tecnologia rispetto, ad esempio, a \gls{PHP}, consiste nel poter scrivere tutto il codice, frontend e backend in un solo linguaggio di programmazione: Java. \\
+Inoltre permette la creazioni di applicazioni web dinamiche, rispetto all'utilizzo di codice HTML statico.
+\subsection{Databases}
+Un database, o base di dati, è un insieme di dati omogeneo memorizzato in un elaboratore, che può essere interrogato attraverso uno dei linguaggi di interrogazione esistenti, con lo scopo di ottenere una parte dei dati memorizzati.
+JGalileoCRM utilizza due databases per gestire i propri dati:
+\subsubsection{Database SQL}
+Il primo database utilizzato dal software sopracitato è un comune database \gls{SQL}: esso è un database relazionale, cioè opera creando tabelle che vengono messe in relazione tra loro tramite gli attributi inseriti nellle tabelle stesse.\\
+Questo database è utilizzato per la gestione di tutti i dati diversi dai dati personali dei clienti e dei contatti. %TODO spiegare meglio
+\subsubsection{Database AS400}
+Questo database %TODO spiegare
 \subsection{Hibernate}
+Hibernate è una piattaforma \gls{middleware} open-source per gestire la persistenza dei dati in un database.\\
+è largamente utilizzato per la gestione dei dati di applicazioni web scritte in Java, in quanto i dati vengono rappresentati attraverso degli oggetti Java
 \subsection{Javascript}
 \subsubsection{Analisi delle alternative}
 \subsubsection{React}
