@@ -69,11 +69,14 @@ JGalileoCRM utilizza due databases per gestire i propri dati:
 Il primo database utilizzato dal software sopracitato è un comune database \gls{SQL}: esso è un database relazionale, cioè opera creando tabelle che vengono messe in relazione tra loro tramite gli attributi inseriti nellle tabelle stesse.\\
 Questo database è utilizzato per la gestione di tutti i dati diversi dai dati personali dei clienti e dei contatti. %TODO spiegare meglio
 \subsubsection{Database AS400}
-Questo database %TODO spiegare
+AS/400 (Application System 400)è un è un minicomputer sviluppato a partire dal 1988 dall’IBM per usi prevalentemente aziendali, come supporto del sistema informativo gestionale.\\
+Il punto di forza sta nel database integrato con il sistema operativo, che permette la gestione dei dati attraverso una suite di programmi e librerie altamente specializzati. Attualmente consente di eseguire tutte le operazioni disponibili su di un comune server web, grazie ai continui aggiornamenti che hanno portato, ad esempio, all'installazione di PHP direttamente a livello di sistema operativo.
+Questo database viene usato, in Sanmarco Informatica, per contenere tutti i dati degli utenti, sia interni che esterni, nonchè i dati relativi ai contatti %TODO meglio, chiedere a luca il tipo di DB
 \subsection{Hibernate}
 Hibernate è una piattaforma \gls{middleware} open-source per gestire la persistenza dei dati in un database.\\
-è largamente utilizzato per la gestione dei dati di applicazioni web scritte in Java, in quanto i dati vengono rappresentati attraverso degli oggetti Java
-\subsection{Javascript}
+è largamente utilizzato per la gestione dei dati di applicazioni web scritte in Java, in quanto i dati vengono rappresentati attraverso degli oggetti Java chiamati \emph{entità}.
+Un'entità hibernate si sostituisce logicamente alla tabella reale del database. %todo meglio
+\subsection{JavaScript}
 \subsubsection{Analisi delle alternative}
 \subsubsection{React}
 \subsubsection{Angular}
