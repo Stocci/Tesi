@@ -71,14 +71,51 @@ Questo database è utilizzato per la gestione di tutti i dati diversi dai dati p
 \subsubsection{Database AS400}
 AS/400 (Application System 400)è un è un minicomputer sviluppato a partire dal 1988 dall’IBM per usi prevalentemente aziendali, come supporto del sistema informativo gestionale.\\
 Il punto di forza sta nel database integrato con il sistema operativo, che permette la gestione dei dati attraverso una suite di programmi e librerie altamente specializzati. Attualmente consente di eseguire tutte le operazioni disponibili su di un comune server web, grazie ai continui aggiornamenti che hanno portato, ad esempio, all'installazione di PHP direttamente a livello di sistema operativo.
-Questo database viene usato, in Sanmarco Informatica, per contenere tutti i dati degli utenti, sia interni che esterni, nonchè i dati relativi ai contatti %TODO meglio, chiedere a luca il tipo di DB
+Questo database viene usato, in Sanmarco Informatica, per contenere tutti i dati degli utenti, sia interni che esterni, nonchè i dati relativi ai contatti. %TODO meglio, chiedere a luca il tipo di DB
 \subsection{Hibernate}
 Hibernate è una piattaforma \gls{middleware} open-source per gestire la persistenza dei dati in un database.\\
 è largamente utilizzato per la gestione dei dati di applicazioni web scritte in Java, in quanto i dati vengono rappresentati attraverso degli oggetti Java chiamati \emph{entità}.
-Un'entità hibernate si sostituisce logicamente alla tabella reale del database. %todo meglio
+Un'entità hibernate si sostituisce logicamente alla tabella reale del database. In questo modo il programmatore può operare sul database come fosse un oggetto Java, semplificando di molto le operazioni di lettura/scrittura e di modifica delle tabelle stesse.
 \subsection{JavaScript}
+JavaScript è un linguaggio di scripting orientato agli oggetti ed agli eventi.\\
+Viene utilizzato principalmente come linguaggio per la \emph{logica di presentazione} di applicazioni web. Ciò consiste nella creazione di \gls{script}, scatenati dall'utente per mezzo di strumenti quali mouse e tastiera, che producono effetti dinamici ed interattivi lato client, cioè nell'interfaccia utente.
+Questo linguaggio eredita la sintassi dal sopracitato Java (derivato comunque dal linguaggio C), ma differisce sostanzialmente da esso per alcuni motivi:
+\begin{itemize}
+	\item JavaScript è un linguaggio interpretato: cio significa che non è necessaria la compilazione perchè esso venga eseguito, bensì sarà il browser che, a runtime, interpreta il codice ed esegue i calcoli necessari;
+	\item a differenza di Java, javascript è debolmente tipizzato: ciò significa che una variabile può assumere diversi tipi, a seconda del suo utilizzo;
+	\item Javascript è un linguaggio debolmente orientato all'ereditarietà tra oggetti, altro aspetto dai cui differisce in maniera sostanziale da Java. 
+\end{itemize}
 \subsubsection{Analisi delle alternative}
+Durante la mia esperienza di stage era richiesto, come illustrerò dettagliatamente nel capitolo successivo, l'analisi e la successiva scelta di librerie JavaScript open-source da impiegare nella reimplementazione della componente form di JGalileo CRM, con campi che fossero creati dinamicamente a partire da file JSON. \\ 
+Ho impiegato circa 40 ore di lavoro per documentarmi sulle varie librerie oggi esistenti, e mi sono focalizzato sulle librerie che seguono:
 \subsubsection{React}
+React è una libreria JavaScript open-source sviluppata da Facebook a partire dal 2013.\\
+è utilizzata, oltre che per Facebook stesso, per una moltitudine di applicazioni web come WhatsAppWeb, Netflix, Aribnb, BBC,...\\
+Le principali caratteristiche di React sono:
+\begin{itemize}
+	\item \textbf{One way data binding}: Singifica che l'HTML, quindi la pagina visibile all'utente, non è in grado di modificare il componente stesso. L'unico modo per modificare un componente è scatenare un evento che modifichi il componente, che a sua volta renderizzerà la modifica sullo schermo.
+	\item \textbf{VirtualDOM}: React opera su di una rappresentazione del \gls{DOM}, ciò vuol dire che il programmatore può sviluppare pensando che ad ogni cambiamento la pagina venga interamente renderizzata nuovamente: in realtà React valuta le differenze tra il DOM reale e quello virtuale, renderizzando in maniera efficiente solamente le parti interessate al cambiamento.
+\end{itemize}
+Alcuni aspetti negativi comprendono invece:
+\begin{itemize}
+	\item \textbf{Consumo di risorse}: a causa del virtualDOM, sono necessarie molte risorse per l'esecuzione, specialente in termini di RAM da parte del browser;
+	\item \textbf{Difficoltà con le form}: I valori dei campi dati delle form sono passati utilizzando dei riferimenti ( a causa del one way data flow descritto in precedenza), ciò va contro le \emph{best practices} ed, in form molto grandi, causa sensibili peggioramenti in termini di prestazioni.
+\end{itemize}
 \subsubsection{Angular}
+Angular è un framework, cioè un'infrastruttura per la creazione di applicazioni composta da un'insieme di funzionalità, sviluppato da Google e disponibile in due versioni: AngularJS ed Angular.\\
+\textbf{AngularJS} viene rilasciato nel 2012 e si dichiara, citando la documentazione ufficiale 
+\begin{quote}
+quello che HTML avrebbe dovuto essere se fosse stato progettato per sviluppare applicazioni.
+\end{quote} \\
+AngularJS ha quindi l'obiettivo di esaltare l'aspetto dichiarativo dell'HTML da un lato, e fornire degli strumenti per la creazioni di componenti per la gestione della logica applicativa di un'applicazione.
+Le principali caratteristiche comprendono:
+\begin{itemize}
+	\item \textbf{Supporto al pattern MVC};
+	\item \textbf{Two ways data binding}: La pagina HTML modifica direttamente lo stato del componente, che viene realizzato mediante l'uso di controller;
+	\item \textbf{Dependency injection}. %TODO ci sta o meglio togliere e mettere altro?
+\end{itemize}
+Nonostante fosse ormai uno dei framework più adottati a livello mondiale per costruire \gls{single page applications}, Google ha deciso di far uscire, nel 2016, una versione (chaimata genericamente Angular oppure Angular 2+) che modifica radicalmente il framework, tanto da non essere compatibile con AngularJS.\\
+Questo cambiamento, dapprima molto criticato dalla comunità di sviluppatori, non ha inficiato sulla popolarità di Angular, che rimane anche nella nuova versione uno dei framework più utilizzati.\\
+\textbf{Angular 2+}: La seconda versione di Angular si differenzia con la precedente per queste caratteristiche
 \subsubsection{Vue.JS}
 \subsubsection{Scelta finale}
