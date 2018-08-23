@@ -123,5 +123,16 @@ Questo cambiamento, dapprima molto criticato dalla comunità di sviluppatori, no
 	\item \textbf{Componenti}: spariscono l'idea di scope e controllers, tutta la logica di un componente un è racchiusa all'interno di un componente, esportato poi da un modulo. %TODO CAMBIARE ASsolutamente componente-componente
 \end{itemize}
 \subsubsection{Vue.js}
-Vue.js è un framework rilasciato nel 2014 da Evan You, ex dipendente Google, con l'intento di prendere solo le parti migliori di AngularJS per creare qualcosa di molto più leggero.
+Vue.js è un framework rilasciato nel 2014 da Evan You, ex dipendente Google, con l'intento di prendere solo le parti migliori di AngularJS per creare qualcosa di molto più leggero.\\
+è stato sviluppato soprattutto per la costruzione di interfacce utente, ma comunque è possibile creare intere \gls{single page applications}.\\
+Vue.js prende spunto sia da AngularJS (two way binding ottimizzato) che da React(VirtualDOM, componenti). \\
+La diffusione relativamente ridotta rende difficoltosa la ricerca della soluzione a problemi che si presenteranno durante lo sviluppo.
+
 \subsubsection{Scelta finale}
+Nella scelta finale del framework sono stati presi in considerazione i pregi e difetti illustrati sopra, naturalmente riportati all'obiettivo finale dello stage, ma anche i vincoli personali che mi sono imposto ed i vincoli aziendali che mi sono stati imposti.
+\begin{itemize}
+	\item \textbf{Angular}: La prima scelta ricadeva su Angular2+, per la grande diffusione e per le API specifiche per le form, ma il vincolo aziendale che mi è stato imposto è stato quello di non appesantire troppo il software, riutilizzando se possibile i framework già presenti.\\
+	Essendo AngularJS già utilizzato in alcune portlet, la mia scelta è alla fine ricaduta su quello;
+	\item \textbf{React}: Ho scartato l'utilizzo di questa libreria a causa della già citata mancanza di soluzioni ad-hoc per le form e perché ho già utilizzato questa tecnologia durante lo sviluppo del progetto di ingegneria del software;
+	\item \textbf{Vue}: Ho scartato Vue.js soprattutto a causa del vincolo che mi è stato imposto, consideravo affascinante l'idea di cimentarmi con un linguaggio nuovo e di crescente popolarità.
+\end{itemize}
