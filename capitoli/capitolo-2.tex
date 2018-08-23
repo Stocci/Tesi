@@ -26,7 +26,7 @@ Java dispone di una libreria proprietaria specializzata, ma in JGalileoCRM tale 
 \subsection{Liferay}
 \begin{figure}[h]
 	\centering
-	\includegraphics[height = 4 cm]{Logo-Liferay}
+	\includegraphics[height = 3 cm]{Logo-Liferay}
 	\caption{Logo di Liferay}
 \end{figure}
 Liferay è una tecnologia \emph{enterprise portal} open source, realizzato in Java.\\
@@ -106,7 +106,7 @@ Angular è un framework, cioè un'infrastruttura per la creazione di applicazion
 \textbf{AngularJS} viene rilasciato nel 2012 e si dichiara, citando la documentazione ufficiale 
 \begin{quote}
 quello che HTML avrebbe dovuto essere se fosse stato progettato per sviluppare applicazioni.
-\end{quote} \\
+\end{quote} \\ %TODO spiegare il concetto dei controller e scope
 AngularJS ha quindi l'obiettivo di esaltare l'aspetto dichiarativo dell'HTML da un lato, e fornire degli strumenti per la creazioni di componenti per la gestione della logica applicativa di un'applicazione.
 Le principali caratteristiche comprendono:
 \begin{itemize}
@@ -114,8 +114,14 @@ Le principali caratteristiche comprendono:
 	\item \textbf{Two ways data binding}: La pagina HTML modifica direttamente lo stato del componente, che viene realizzato mediante l'uso di controller;
 	\item \textbf{Dependency injection}. %TODO ci sta o meglio togliere e mettere altro?
 \end{itemize}
-Nonostante fosse ormai uno dei framework più adottati a livello mondiale per costruire \gls{single page applications}, Google ha deciso di far uscire, nel 2016, una versione (chaimata genericamente Angular oppure Angular 2+) che modifica radicalmente il framework, tanto da non essere compatibile con AngularJS.\\
+Nonostante fosse ormai uno dei framework più adottati a livello mondiale per costruire \gls{single page applications}, Google ha deciso di far uscire, nel 2016, una versione (chiamata genericamente Angular oppure Angular 2+) che modifica radicalmente il framework, tanto da non essere compatibile con AngularJS.\\
 Questo cambiamento, dapprima molto criticato dalla comunità di sviluppatori, non ha inficiato sulla popolarità di Angular, che rimane anche nella nuova versione uno dei framework più utilizzati.\\
-\textbf{Angular 2+}: La seconda versione di Angular si differenzia con la precedente per queste caratteristiche
-\subsubsection{Vue.JS}
+\textbf{Angular 2+}: La seconda versione di Angular si differenzia con la precedente per queste caratteristiche:
+\begin{itemize}
+	\item \textbf{typeScript}: Angular2+ è stato scritto in typeScript, una sorta di super-set di JavaScript a cui vengono aggiunti costrutti come classi, interfacce e moduli.
+	\item \textbf{Sparisce il two ways data binding}: Quello che era stato il punto di forza di AngularJS si è rivelato una debolezza in termini di prestazioni e soprattutto di memory leak. Resta comunque attivabile quando necessario.
+	\item \textbf{Componenti}: spariscono l'idea di scope e controllers, tutta la logica di un componente un è racchiusa all'interno di un componente, esportato poi da un modulo. %TODO CAMBIARE ASsolutamente componente-componente
+\end{itemize}
+\subsubsection{Vue.js}
+Vue.js è un framework rilasciato nel 2014 da Evan You, ex dipendente Google, con l'intento di prendere solo le parti migliori di AngularJS per creare qualcosa di molto più leggero.
 \subsubsection{Scelta finale}
