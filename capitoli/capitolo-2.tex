@@ -76,6 +76,10 @@ Questo database viene usato, in Sanmarco Informatica, per contenere tutti i dati
 Hibernate è una piattaforma \gls{middleware} open-source per gestire la persistenza dei dati in un database.\\
 è largamente utilizzato per la gestione dei dati di applicazioni web scritte in Java, in quanto i dati vengono rappresentati attraverso degli oggetti Java chiamati \emph{entità}.
 Un'entità hibernate si sostituisce logicamente alla tabella reale del database. In questo modo il programmatore può operare sul database come fosse un oggetto Java, semplificando di molto le operazioni di lettura/scrittura e di modifica delle tabelle stesse.
+\subsection{DBeaver}
+DBeaver è un client SQL, con anche la funzione di tool di amministrazione.\\
+La sua applicazione desktop è scritta in Java e si basa sulla piattaforma Eclipse.\\
+Dbeaver consente la visualizzazione grafica delle tabelle del database SQL sopra citato ed inoltre su di esse è possibile eseguire queries scritte in appositi file di script.
 \subsection{JavaScript}
 JavaScript è un linguaggio di scripting orientato agli oggetti ed agli eventi.\\
 Viene utilizzato principalmente come linguaggio per la \emph{logica di presentazione} di applicazioni web. Ciò consiste nella creazione di \gls{script}, scatenati dall'utente per mezzo di strumenti quali mouse e tastiera, che producono effetti dinamici ed interattivi lato client, cioè nell'interfaccia utente.
@@ -132,7 +136,16 @@ La diffusione relativamente ridotta rende difficoltosa la ricerca della soluzion
 Nella scelta finale del framework sono stati presi in considerazione i pregi e difetti illustrati sopra, naturalmente riportati all'obiettivo finale dello stage, ma anche i vincoli personali che mi sono imposto ed i vincoli aziendali che mi sono stati imposti.
 \begin{itemize}
 	\item \textbf{Angular}: La prima scelta ricadeva su Angular2+, per la grande diffusione e per le API specifiche per le form, ma il vincolo aziendale che mi è stato imposto è stato quello di non appesantire troppo il software, riutilizzando se possibile i framework già presenti.\\
-	Essendo AngularJS già utilizzato in alcune portlet, la mia scelta è alla fine ricaduta su quello;
+	Essendo AngularJS già utilizzato in alcune portlet, la mia scelta è alla fine ricaduta su quello, anche a causa dell'impossibilità che hanno i due framework a coesistere;
 	\item \textbf{React}: Ho scartato l'utilizzo di questa libreria a causa della già citata mancanza di soluzioni ad-hoc per le form e perché ho già utilizzato questa tecnologia durante lo sviluppo del progetto di ingegneria del software;
 	\item \textbf{Vue}: Ho scartato Vue.js soprattutto a causa del vincolo che mi è stato imposto, consideravo affascinante l'idea di cimentarmi con un linguaggio nuovo e di crescente popolarità.
+\end{itemize}
+\subsection{IDE e Sistema Operativo}
+Sanmarco informatica utilizza l'IDE Eclipse nella versione 4.4 (Luna), mentre per quanto riguarda il sistema operativo ho sviluppato con Windows 7 Professional, ma alcuni colleghi utilizzano indifferentemente macOS.
+
+\section{Vincoli implementativi} 
+Come già anticipato, mi sono stati imposti alcuni vincoli da rispettare durante l'esperienza di stage:
+\begin{itemize}
+	\item \textbf{Tutte le tecnologie eventualmente utilizzate avrebbero necessariamente essere \emph{open-source};}
+	\item \textbf{Evitare il più possibile di appesantire ultieriormente il software con nuove librerie o framework, ma possibilmente riutilizzarli.}
 \end{itemize}

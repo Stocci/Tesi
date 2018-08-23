@@ -7,26 +7,36 @@
 \label{cap:descrizione-stage}
 %**************************************************************
 
-\intro{Breve introduzione al capitolo}\\
+\intro{In questo capitolo descriverò in maniera approfondita lo scopo dello stage, focalizzandomi sugli obiettivi da raggiungere e le metodologie per farlo.\\Seguirà poi una descrizione dettagliata dei casi d'uso di interesse.}\\
 
 %**************************************************************
 \section{Introduzione al progetto}
+%TODO serve riprenderlo ancora?
+%**************************************************************
+
+\section{Dominio applicativo}
+\subsection{Tipi di utenti}
+JGalileo CRM è stato pensato per essere utilizzato da svariate tipologie di utenti:
+i casi d'uso seguiranno solamente i due utenti più importanti:
+\begin{itemize}
+	\item \textbf{amministratore}: che ha il potere di creare nuovi utenti e configurare l'interfaccia finale aggiungendo e togliendo \gls{portlets}. Inoltre può accedere al pannello di controllo e monitorare la lista di utenti, modificarne i permessi e visualizzare svariate statistiche di utilizzo del prodotto;
+	\item{utente semplice}, cui è permesso solamente utilizzare il software, senza aggiungere o togliere \gls{portlets} e naturalmente senza avere la possibilità di creare altri utenti.\\
+\end{itemize}
+	Quest'ultima è la tipologia di utenti più comune, infatti la clientela di JGalileo CRM è composta solamente da utenti semplici, mentre solamente i membri del team di sviluppo possiedono i permessi di amministratore.
+\subsection{Funzionalità}
+Le funzionalità prese in esame si sviluppano soprattutto sull'interazione tra l'utente semplice e la form la cui creazione era l'obiettivo del mio stage.
+Quindi i casi d'uso riguarderanno principalmente:
+\begin{itemize}
+	\item \textbf{Inserimento di un nuovo cliente};
+	\item \textbf{visualizzazione dettagliata dei clienti già inseriti};
+	\item \textbf{modifica e salvataggio dei dati};
+	\item \textbf{invio di email, fax e newsletter}.
+\end{itemize}
+Per quanto riguarda la parte di amministrazione, verrà illustrata solamente la procedura di inserimento di un nuovo utente.
 
 %**************************************************************
-\section{Analisi preventiva dei rischi}
-
-Durante la fase di analisi iniziale sono stati individuati alcuni possibili rischi a cui si potrà andare incontro.
-Si è quindi proceduto a elaborare delle possibili soluzioni per far fronte a tali rischi.\\
-
-\begin{risk}{Performance del simulatore hardware}
-    \riskdescription{le performance del simulatore hardware e la comunicazione con questo potrebbero risultare lenti o non abbastanza buoni da causare il fallimento dei test}
-    \risksolution{coinvolgimento del responsabile a capo del progetto relativo il simulatore hardware}
-    \label{risk:hardware-simulator} 
-\end{risk}
-
-%**************************************************************
-\section{Requisiti e obiettivi}
-
-
-%**************************************************************
-\section{Pianificazione}
+\section{Casi d'uso}
+I casi d'uso (use case) sono una tecnica dell'ingegneria del software per ottenere un'analisi precisa e senza ambiguità dei requisiti di un sistema, con l'obiettivo di perseguire la creazione di software di qualità.\\
+I casi d'uso sono solitamente rappresentati in forma testuale, attraverso la descrizione dettagliata del caso d'uso stesso in termini di attori coinvolti, pre e post condizioni, e da una rappresentazione grafica, definita Use Case Diagram, con l'ausislio di un altro linguaggio, \gls{UML}.\\
+Tutti i casi d'uso saranno qui presentati attraverso descrizione testuale, mentre la rappresentazione grafica verrà utilizzata solamente per gli scenari più geenrali.
+\subsection{Classificazione dei casi d'uso}
