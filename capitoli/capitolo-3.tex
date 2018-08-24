@@ -19,24 +19,46 @@
 JGalileo CRM è stato pensato per essere utilizzato da svariate tipologie di utenti:
 i casi d'uso seguiranno solamente i due utenti più importanti:
 \begin{itemize}
-	\item \textbf{amministratore}: che ha il potere di creare nuovi utenti e configurare l'interfaccia finale aggiungendo e togliendo \gls{portlets}. Inoltre può accedere al pannello di controllo e monitorare la lista di utenti, modificarne i permessi e visualizzare svariate statistiche di utilizzo del prodotto;
-	\item{utente semplice}, cui è permesso solamente utilizzare il software, senza aggiungere o togliere \gls{portlets} e naturalmente senza avere la possibilità di creare altri utenti.\\
+	\item \textbf{amministratore}: che ha il potere di creare nuovi utenti e configurare l'interfaccia finale aggiungendo e togliendo \gls{portletg}. Inoltre può accedere al pannello di controllo e monitorare la lista di utenti, modificarne i permessi e visualizzare svariate statistiche di utilizzo del prodotto;
+	\item{utente semplice}, cui è permesso solamente utilizzare il software, senza aggiungere o togliere \gls{portletg} e naturalmente senza avere la possibilità di creare altri utenti.\\
 \end{itemize}
 	Quest'ultima è la tipologia di utenti più comune, infatti la clientela di JGalileo CRM è composta solamente da utenti semplici, mentre solamente i membri del team di sviluppo possiedono i permessi di amministratore.
 \subsection{Funzionalità}
 Le funzionalità prese in esame si sviluppano soprattutto sull'interazione tra l'utente semplice e la form la cui creazione era l'obiettivo del mio stage.
 Quindi i casi d'uso riguarderanno principalmente:
 \begin{itemize}
-	\item \textbf{Inserimento di un nuovo cliente};
+	\item \textbf{Inserimento di un nuova categoria di clienti};
+	\item \textbf{Inserimento di attività ed opportunità};
 	\item \textbf{visualizzazione dettagliata dei clienti già inseriti};
+	\item \textbf{visualizzazione dettagliata delle attività ed opportunità già inserite};
 	\item \textbf{modifica e salvataggio dei dati};
 	\item \textbf{invio di email, fax e newsletter}.
+\end{itemize}
+In particolare, le categorie di clienti inseribili tramite form sono:
+\begin{itemize}
+	\item \textbf{Leads}: Sono persone ed aziende che possono avere interesse ai prodotti e servizi dell'utente. Anche un primo contatto, come ad esempio un biglietto da visita, è considerato un lead;
+	\item \textbf{Accounts}: Contengono i dati di un'azienda con cui è già presente un qualche tipo di relazione commerciale, anche solo una roposta d'acquisto;
+	\item \textbf{Contatti}: I contatti consistono in persone fisiche con cui è già presente un qualche tipo di relazione commerciale. Spesso account e contatto sono in relazione tra di loro, ma è anche possibile che un contatto non abbia nessun account associato (ad esempio un privato).
 \end{itemize}
 Per quanto riguarda la parte di amministrazione, verrà illustrata solamente la procedura di inserimento di un nuovo utente.
 
 %**************************************************************
 \section{Casi d'uso}
 I casi d'uso (use case) sono una tecnica dell'ingegneria del software per ottenere un'analisi precisa e senza ambiguità dei requisiti di un sistema, con l'obiettivo di perseguire la creazione di software di qualità.\\
-I casi d'uso sono solitamente rappresentati in forma testuale, attraverso la descrizione dettagliata del caso d'uso stesso in termini di attori coinvolti, pre e post condizioni, e da una rappresentazione grafica, definita Use Case Diagram, con l'ausislio di un altro linguaggio, \gls{UML}.\\
+I casi d'uso sono solitamente rappresentati in forma testuale, attraverso la descrizione dettagliata del caso d'uso stesso in termini di attori coinvolti, pre e post condizioni, e da una rappresentazione grafica, definita Use Case Diagram, con l'ausislio di un altro linguaggio, \gls{umlg}.\\
 Tutti i casi d'uso saranno qui presentati attraverso descrizione testuale, mentre la rappresentazione grafica verrà utilizzata solamente per gli scenari più geenrali.
 \subsection{Classificazione dei casi d'uso}
+Ogni caso d’uso è classificato secondo la seguente convenzione:
+\begin{center}
+	UC[codice]
+\end{center}
+UC[codice]
+Dove [codice] è un codice numerico che identifica univocamente il caso d’uso.\\
+Esso è sequenziale e gerarchico, dunque se ad esempio il caso d’uso "X" necessita di un ulteriore livello di dettaglio si procede individuando i sotto-casi d’uso "X.Y", "X.Y.Z" etc.. dove:\\
+\begin{itemize}
+	\item \textbf{X}: il codice identificativo del caso d'uso padre, solitamente generico e 
+	\item \textbf{Y}: codice figlio, identifica un caso d'uso più particolare rispetto al padre (che lo contiene).
+	\item \textbf{Z}: codice figli
+	
+\end{itemize}
+Indicherò con il suffisso “G” tutti quei casi d’uso di alto livello, a segnalare che si tratta di una visione generale del contesto.

@@ -60,13 +60,13 @@ In particolare, Tomcat opera utilizzando servlet, cioè oggetti scritti in Java 
 Queste servlet, in JGalileoCRM non vengono direttamente scritte in Java, ma sono scritte con \emph{JavaServer Pages (JSP)}:\\
 JSP è una tecnologia di programmazione web, scritta in Java, che si basa sull'uso di speciali tag all'interno di una pagina HTML, con cui possono essere chiamate funzioni scritte in linguaggio Java o JavaScript.
 A runtime, le pagine JSP vengono tradotte automaticamente in servlet utilizzabili da Tomcat. \\
-Il vantaggio principale di questa tecnologia rispetto, ad esempio, a \gls{PHP}, consiste nel poter scrivere tutto il codice, frontend e backend in un solo linguaggio di programmazione: Java. \\
+Il vantaggio principale di questa tecnologia rispetto, ad esempio, a \gls{phpg}, consiste nel poter scrivere tutto il codice, frontend e backend in un solo linguaggio di programmazione: Java. \\
 Inoltre permette la creazioni di applicazioni web dinamiche, rispetto all'utilizzo di codice HTML statico.
 \subsection{Databases}
 Un database, o base di dati, è un insieme di dati omogeneo memorizzato in un elaboratore, che può essere interrogato attraverso uno dei linguaggi di interrogazione esistenti, con lo scopo di ottenere una parte dei dati memorizzati.
 JGalileoCRM utilizza due databases per gestire i propri dati:
 \subsubsection{Database SQL}
-Il primo database utilizzato dal software sopracitato è un comune database \gls{SQL}: esso è un database relazionale, cioè opera creando tabelle che vengono messe in relazione tra loro tramite gli attributi inseriti nellle tabelle stesse.\\
+Il primo database utilizzato dal software sopracitato è un comune database \gls{sqlg}: esso è un database relazionale, cioè opera creando tabelle che vengono messe in relazione tra loro tramite gli attributi inseriti nellle tabelle stesse.\\
 Questo database è utilizzato per la gestione di tutti i dati diversi dai dati personali dei clienti e dei contatti. %TODO spiegare meglio
 \subsubsection{Database AS400}
 AS/400 (Application System 400)è un è un minicomputer sviluppato a partire dal 1988 dall’IBM per usi prevalentemente aziendali, come supporto del sistema informativo gestionale.\\
@@ -98,7 +98,7 @@ React è una libreria JavaScript open-source sviluppata da Facebook a partire da
 Le principali caratteristiche di React sono:
 \begin{itemize}
 	\item \textbf{One way data binding}: Singifica che l'HTML, quindi la pagina visibile all'utente, non è in grado di modificare il componente stesso. L'unico modo per modificare un componente è scatenare un evento che modifichi il componente, che a sua volta renderizzerà la modifica sullo schermo.
-	\item \textbf{VirtualDOM}: React opera su di una rappresentazione del \gls{DOM}, ciò vuol dire che il programmatore può sviluppare pensando che ad ogni cambiamento la pagina venga interamente renderizzata nuovamente: in realtà React valuta le differenze tra il DOM reale e quello virtuale, renderizzando in maniera efficiente solamente le parti interessate al cambiamento.
+	\item \textbf{VirtualDOM}: React opera su di una rappresentazione del \gls{domg}, ciò vuol dire che il programmatore può sviluppare pensando che ad ogni cambiamento la pagina venga interamente renderizzata nuovamente: in realtà React valuta le differenze tra il DOM reale e quello virtuale, renderizzando in maniera efficiente solamente le parti interessate al cambiamento.
 \end{itemize}
 Alcuni aspetti negativi comprendono invece:
 \begin{itemize}
@@ -110,15 +110,15 @@ Angular è un framework, cioè un'infrastruttura per la creazione di applicazion
 \textbf{AngularJS} viene rilasciato nel 2012 e si dichiara, citando la documentazione ufficiale 
 \begin{quote}
 quello che HTML avrebbe dovuto essere se fosse stato progettato per sviluppare applicazioni.
-\end{quote} \\ %TODO spiegare il concetto dei controller e scope
-AngularJS ha quindi l'obiettivo di esaltare l'aspetto dichiarativo dell'HTML da un lato, e fornire degli strumenti per la creazioni di componenti per la gestione della logica applicativa di un'applicazione.
+\end{quote}  %TODO spiegare il concetto dei controller e scope
+AngularJS ha quindi l'obiettivo di esaltare l'aspetto dichiarativo dell'HTML da un lato, e fornire degli strumenti per la creazioni di componenti per la gestione della logica applicativa di un'applicazione.\\
 Le principali caratteristiche comprendono:
 \begin{itemize}
 	\item \textbf{Supporto al pattern MVC};
 	\item \textbf{Two ways data binding}: La pagina HTML modifica direttamente lo stato del componente, che viene realizzato mediante l'uso di controller;
 	\item \textbf{Dependency injection}. %TODO ci sta o meglio togliere e mettere altro?
 \end{itemize}
-Nonostante fosse ormai uno dei framework più adottati a livello mondiale per costruire \gls{single page applications}, Google ha deciso di far uscire, nel 2016, una versione (chiamata genericamente Angular oppure Angular 2+) che modifica radicalmente il framework, tanto da non essere compatibile con AngularJS.\\
+Nonostante fosse ormai uno dei framework più adottati a livello mondiale per costruire \gls{spag}, Google ha deciso di far uscire, nel 2016, una versione (chiamata genericamente Angular oppure Angular 2+) che modifica radicalmente il framework, tanto da non essere compatibile con AngularJS.\\
 Questo cambiamento, dapprima molto criticato dalla comunità di sviluppatori, non ha inficiato sulla popolarità di Angular, che rimane anche nella nuova versione uno dei framework più utilizzati.\\
 \textbf{Angular 2+}: La seconda versione di Angular si differenzia con la precedente per queste caratteristiche:
 \begin{itemize}
@@ -128,7 +128,7 @@ Questo cambiamento, dapprima molto criticato dalla comunità di sviluppatori, no
 \end{itemize}
 \subsubsection{Vue.js}
 Vue.js è un framework rilasciato nel 2014 da Evan You, ex dipendente Google, con l'intento di prendere solo le parti migliori di AngularJS per creare qualcosa di molto più leggero.\\
-è stato sviluppato soprattutto per la costruzione di interfacce utente, ma comunque è possibile creare intere \gls{single page applications}.\\
+è stato sviluppato soprattutto per la costruzione di interfacce utente, ma comunque è possibile creare intere \gls{spag}.\\
 Vue.js prende spunto sia da AngularJS (two way binding ottimizzato) che da React(VirtualDOM, componenti). \\
 La diffusione relativamente ridotta rende difficoltosa la ricerca della soluzione a problemi che si presenteranno durante lo sviluppo.
 
