@@ -56,9 +56,10 @@ UC[codice]
 Dove [codice] è un codice numerico che identifica univocamente il caso d’uso.\\
 Esso è sequenziale e gerarchico, dunque se ad esempio il caso d’uso "X" necessita di un ulteriore livello di dettaglio si procede individuando i sotto-casi d’uso "X.Y", "X.Y.Z" etc.. dove:\\
 \begin{itemize}
-	\item \textbf{X}: il codice identificativo del caso d'uso padre, solitamente generico e 
+	\item \textbf{X}: il codice identificativo del caso d'uso padre, solitamente generico e difficilemte descrivibile nel dettaglio; 
 	\item \textbf{Y}: codice figlio, identifica un caso d'uso più particolare rispetto al padre (che lo contiene).
 	\item \textbf{Z}: codice figli
 	
 \end{itemize}
-Indicherò con il suffisso “G” tutti quei casi d’uso di alto livello, a segnalare che si tratta di una visione generale del contesto.
+X parte con indice 1 e valore crescente, mentre Y e Z parto dall'indice 0 con valore crescente.\\
+Indicherò con il suffisso “_G” tutti quei casi d’uso di alto livello, a segnalare che si tratta di una visione generale del contesto.
