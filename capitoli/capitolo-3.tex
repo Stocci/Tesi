@@ -46,7 +46,8 @@ Per quanto riguarda la parte di amministrazione, verrà illustrata solamente la 
 \section{Casi d'uso}
 I casi d'uso (use case) sono una tecnica dell'ingegneria del software per ottenere un'analisi precisa e senza ambiguità dei requisiti di un sistema, con l'obiettivo di perseguire la creazione di software di qualità.\\
 I casi d'uso sono solitamente rappresentati in forma testuale, attraverso la descrizione dettagliata del caso d'uso stesso in termini di attori coinvolti, pre e post condizioni, e da una rappresentazione grafica, definita Use Case Diagram, con l'ausislio di un altro linguaggio, \gls{umlg}.\\
-Tutti i casi d'uso saranno qui presentati attraverso descrizione testuale, mentre la rappresentazione grafica verrà utilizzata solamente per gli scenari più geenrali.
+Tutti i casi d'uso saranno qui presentati attraverso descrizione testuale, mentre la rappresentazione grafica verrà utilizzata solamente per gli scenari più generali.\\
+I casi d'uso qui riportati non si riferiscono all'intero software a causa della sua grande complessità ed ampiezza d'utilizzo, ma solamente agli scenari principali che, direttamente od indirettamente, sono influenzati dal codice da me scritto durante l'esperienza di stage.\\
 \subsection{Classificazione dei casi d'uso}
 Ogni caso d’uso è classificato secondo la seguente convenzione:
 \begin{center}
@@ -58,8 +59,29 @@ Esso è sequenziale e gerarchico, dunque se ad esempio il caso d’uso "X" neces
 \begin{itemize}
 	\item \textbf{X}: il codice identificativo del caso d'uso padre, solitamente generico e difficilemte descrivibile nel dettaglio; 
 	\item \textbf{Y}: codice figlio, identifica un caso d'uso più particolare rispetto al padre (che lo contiene).
-	\item \textbf{Z}: codice figli
+	\item \textbf{Z}: codice nipote, individua lo scenario più particolare possibile.
 	
 \end{itemize}
 X parte con indice 1 e valore crescente, mentre Y e Z parto dall'indice 0 con valore crescente.\\
 Indicherò con il suffisso “\_G” tutti quei casi d’uso di alto livello, a segnalare che si tratta di una visione generale del contesto.
+\subsection{Struttura dei casi d'uso}
+Ogni caso d'uso verrà descritto in maniera testuale, utilizzando la seguente struttura:
+\begin{itemize}
+	\item \textbf{Attori}: Gli attori comprendono le entità umane che interagiscono con il sistema. \\ 
+	Nella fattispecie, vengono distinti tre tipologie di attori:
+	\begin{itemize}
+		\item \textbf{Amministratore}: Questa tipologia di attore è quella riservata solamente agli sviluppatori del prodotto;
+		\item \textbf{Utente non autenticato}: indica un attore non ancora autenticato nel sistema;
+		\item \textbf{Utente autenticato}, indicato anche semplicemente come \textbf{Utente}, indica un utente non amministratore che viene riconosciuto dal sistema e può quindi usufruirne.
+	\end{itemize}
+	\item \textbf{Pre-condizione}: Indica le condizioni che devono necessariamente essere soddisfatte affinchè sia possibile l'interazione dell'attore con lo specifico caso d'uso;
+	\item \textbf{Post-condizione}: Indica le condizioni in cui l'attore si verrà a trovare dopo la fine dell'interazione con lo specifico caso d'uso;
+	\item \textbf{Descrizione}: Riporta una breve descrizione testuale del caso d'uso.
+\end{itemize}
+\section{Funzionalità amministratore}
+\begin{figure}[h]
+	\centering
+	\includegraphics[height = 8 cm]{/usecase/funzionalità-amm}
+	\caption{Caso d'uso generale-funzionalità amministratore}
+\end{figure}
+\subssection{Caso d'uso 1}
