@@ -78,10 +78,131 @@ Ogni caso d'uso verrà descritto in maniera testuale, utilizzando la seguente st
 	\item \textbf{Post-condizione}: Indica le condizioni in cui l'attore si verrà a trovare dopo la fine dell'interazione con lo specifico caso d'uso;
 	\item \textbf{Descrizione}: Riporta una breve descrizione testuale del caso d'uso.
 \end{itemize}
-\section{Funzionalità amministratore}
+\subsection{Funzionalità amministratore}
 \begin{figure}[h]
 	\centering
 	\includegraphics[height = 8 cm]{/usecase/funzionalità-amm}
 	\caption{Caso d'uso generale-funzionalità amministratore}
 \end{figure}
-\subssection{Caso d'uso 1}
+
+\subsubsection{UC 1}
+
+\begin{itemize}
+	\item \textbf{Descrizione}: l'amministratore può aggiungere un nuovo utente inserendo questi campi in una form:
+	\begin{itemize}
+		\item %TODO campi da inserire per aggiungere utente
+	\end{itemize}
+	\item \textbf{Attore}: Utente amministratore;
+	\item \textbf{Pre-condizione}: L'amministratore ha già effettuato l'accesso tramite inserimento di username e password, ed ha raggiunto il pannello di amministrazione;
+	\item \textbf{Post-condizione}: è stato inserito un nuovo utente.
+\end{itemize}
+
+\subsection{Funzionalità utente}
+\begin{figure}[h]
+	\centering
+	\includegraphics[height = 12 cm]{/usecase/funzionalità-utente}
+	\caption{Caso d'uso generale-funzionalità utente}
+\end{figure}
+\subsubsection{UC 2 - Autenticazione}
+
+\begin{itemize}
+	\item \textbf{Descrizione}: per l'autenticazione è necessario inserire nel sistema:
+	\begin{itemize}
+		\item \textbf{nome utente};
+		\item \textbf{password}.
+	\end{itemize}
+	\item \textbf{Attore}: Utente non autenticato;
+	\item \textbf{Pre-condizione}: Un utente amministratore deve aver aggiunto l'utente che sta per effettuare l'accesso affinchè l'autenticazione vada a buon fine;
+	\item \textbf{Post-condizione}:l'utente viene autenticato e può utilizzarne le funzionalità del prodotto in base ai suoi permessi.
+\end{itemize}
+
+\subsubsection{UC 3 - Aggiunta Lead}
+
+\begin{itemize}
+	\item \textbf{Descrizione}: un utente può aggiungere un lead al suo insieme di potenziali clienti. Per farlo deve inserire alcune informazioni obbligatorie, come:
+	\begin{itemize}
+		\item \textbf{nome utente};
+		\item \textbf{password}.
+	\end{itemize}
+	e molte altre facoltative, ma che sono molto importanti al fine di avere una rapida e completa panoramica del potenziale cliente. Tra queste ci sono:
+	s\begin{itemize}
+		\item \textbf{nome utente};
+		\item \textbf{password}.
+	\end{itemize}
+	\item \textbf{Attore}: Utente autenticato;
+	\item \textbf{Pre-condizione}: Un utente deve aver eseguito l'accesso ed essersi portato alla pagina di inserimento lead;
+	\item \textbf{Post-condizione}:il nuovo lead contenente le informazioni inserite viene salvato nel sistema ed è disponibile all'utente.
+\end{itemize}
+
+\subsubsection{UC 4 - Aggiunta contatto}
+
+\begin{itemize}
+	\item \textbf{Descrizione}: un utente può aggiungere un contatto al sistema. Per farlo deve inserire alcune informazioni obbligatorie, come:
+	\begin{itemize}
+		\item \textbf{nome utente};
+		\item \textbf{password}.
+	\end{itemize}
+	e molte altre facoltative, tra le quali:
+	s\begin{itemize}
+		\item \textbf{nome utente};
+		\item \textbf{password}.
+	\end{itemize}
+	\item \textbf{Attore}: Utente autenticato;
+	\item \textbf{Pre-condizione}: Un utente deve aver eseguito l'accesso ed essersi portato alla pagina di inserimento contatto;
+	\item \textbf{Post-condizione}:il nuovo contatto contenente le informazioni inserite viene salvato nel sistema ed è disponibile all'utente.
+\end{itemize}
+
+\subsubsection{UC 5 - Aggiunta Account}
+
+\begin{itemize}
+	\item \textbf{Descrizione}: un utente può aggiungere un account alla lista di clienti. Per farlo deve inserire alcune informazioni obbligatorie, come:
+	\begin{itemize}
+		\item \textbf{nome utente};
+		\item \textbf{password}.
+	\end{itemize}
+	e molte altre facoltative, tra le quali:
+	s\begin{itemize}
+		\item \textbf{nome utente};
+		\item \textbf{password}.
+	\end{itemize}
+	\item \textbf{Attore}: Utente autenticato;
+	\item \textbf{Pre-condizione}: Un utente deve aver eseguito l'accesso ed essersi portato alla pagina di inserimento account;
+	\item \textbf{Post-condizione}:il nuovo account contenente le informazioni inserite viene salvato nel sistema ed è disponibile all'utente.
+\end{itemize}
+
+\subsubsection{UC 6 - Aggiunta attività}
+
+\begin{itemize}
+	\item \textbf{Descrizione}: un utente può aggiungere un'attività alla lista di clienti. Per farlo deve inserire alcune informazioni obbligatorie, come:
+	\begin{itemize}
+		\item \textbf{nome utente};
+		\item \textbf{password}.
+	\end{itemize}
+	e molte altre facoltative, tra le quali:
+	s\begin{itemize}
+		\item \textbf{nome utente};
+		\item \textbf{password}.
+	\end{itemize}
+	\item \textbf{Attore}: Utente autenticato;
+	\item \textbf{Pre-condizione}: Un utente deve aver eseguito l'accesso ed essersi portato alla pagina di inserimento account;
+	\item \textbf{Post-condizione}:il nuovo account contenente le informazioni inserite viene salvato nel sistema ed è disponibile all'utente.
+\end{itemize}
+
+\subsubsection{UC 7 - Aggiunta opportunità}
+
+
+\begin{itemize}
+	\item \textbf{Descrizione}: un utente può aggiungere un'opportunità alla lista di clienti. Per farlo deve inserire alcune informazioni obbligatorie, come:
+	\begin{itemize}
+		\item \textbf{nome utente};
+		\item \textbf{password}.
+	\end{itemize}
+	e molte altre facoltative, tra le quali:
+	s\begin{itemize}
+		\item \textbf{nome utente};
+		\item \textbf{password}.
+	\end{itemize}
+	\item \textbf{Attore}: Utente autenticato;
+	\item \textbf{Pre-condizione}: Un utente deve aver eseguito l'accesso ed essersi portato alla pagina di inserimento account;
+	\item \textbf{Post-condizione}:il nuovo account contenente le informazioni inserite viene salvato nel sistema ed è disponibile all'utente.
+\end{itemize}
