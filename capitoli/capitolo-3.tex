@@ -116,58 +116,66 @@ Ogni caso d'uso verrà descritto in maniera testuale, utilizzando la seguente st
 	\item \textbf{Post-condizione}:l'utente viene autenticato e può utilizzarne le funzionalità del prodotto in base ai suoi permessi.
 \end{itemize}
 
-\subsubsection{UC 3 - Aggiunta Lead}
+\subsubsection{UC 3 - Aggiunta lead}
 
 \begin{itemize}
 	\item \textbf{Descrizione}: un utente può aggiungere un lead al suo insieme di potenziali clienti. Per farlo deve inserire alcune informazioni obbligatorie, come:
 	\begin{itemize}
-		\item \textbf{nome utente};
-		\item \textbf{password}.
+		\item \textbf{cognome};
+		\item \textbf{nome della società}.
 	\end{itemize}
 	e molte altre facoltative, ma che sono molto importanti al fine di avere una rapida e completa panoramica del potenziale cliente. Tra queste ci sono:
-	s\begin{itemize}
-		\item \textbf{nome utente};
-		\item \textbf{password}.
+	\begin{itemize}
+		\item \textbf{email};
+		\item \textbf{indirizzo dell'ufficio};
+		\item \textbf{descrizione del lead};
+		\item \textbf{numero di cellulare};
+		\item \textbf{provenienza del lead}.
 	\end{itemize}
 	\item \textbf{Attore}: Utente autenticato;
 	\item \textbf{Pre-condizione}: Un utente deve aver eseguito l'accesso ed essersi portato alla pagina di inserimento lead;
 	\item \textbf{Post-condizione}:il nuovo lead contenente le informazioni inserite viene salvato nel sistema ed è disponibile all'utente.
 \end{itemize}
 
-\subsubsection{UC 4 - Aggiunta contatto}
+\subsubsection{UC 4 - Aggiunta account}
 
 \begin{itemize}
-	\item \textbf{Descrizione}: un utente può aggiungere un contatto al sistema. Per farlo deve inserire alcune informazioni obbligatorie, come:
+	\item \textbf{Descrizione}: un utente può aggiungere un account alla lista di clienti. Un account può essere di vari tipi, come:
 	\begin{itemize}
-		\item \textbf{nome utente};
-		\item \textbf{password}.
+		\item \textbf{Prospect} (UC 4.1): un prospect rappresenta una potenziale azienda cliente, con la quale non si è ancora aperto alcun tipo di rapporto commerciale;
+		\item \textbf{Partner} (UC 4.2):un partner consiste in un'azienda con cui si è stabilito un duraturo rapporto di scambi, eventualmente anche non solo commerciali;
+		\item \textbf{Organizzazione} (UC 4.3):%TODO;
+		\item \textbf{Concorrente} (UC 4.4): questo tipo di account si riferisce ad un'azienda che opera nello stesso settore del cliente.
 	\end{itemize}
+   Questi tipi di account hanno form che utilizzano campi dati anche molto diversi tra loro, %TODO completare
 	e molte altre facoltative, tra le quali:
-	s\begin{itemize}
-		\item \textbf{nome utente};
-		\item \textbf{password}.
-	\end{itemize}
-	\item \textbf{Attore}: Utente autenticato;
-	\item \textbf{Pre-condizione}: Un utente deve aver eseguito l'accesso ed essersi portato alla pagina di inserimento contatto;
-	\item \textbf{Post-condizione}:il nuovo contatto contenente le informazioni inserite viene salvato nel sistema ed è disponibile all'utente.
-\end{itemize}
-
-\subsubsection{UC 5 - Aggiunta Account}
-
-\begin{itemize}
-	\item \textbf{Descrizione}: un utente può aggiungere un account alla lista di clienti. Per farlo deve inserire alcune informazioni obbligatorie, come:
 	\begin{itemize}
-		\item \textbf{nome utente};
-		\item \textbf{password}.
-	\end{itemize}
-	e molte altre facoltative, tra le quali:
-	s\begin{itemize}
 		\item \textbf{nome utente};
 		\item \textbf{password}.
 	\end{itemize}
 	\item \textbf{Attore}: Utente autenticato;
 	\item \textbf{Pre-condizione}: Un utente deve aver eseguito l'accesso ed essersi portato alla pagina di inserimento account;
 	\item \textbf{Post-condizione}:il nuovo account contenente le informazioni inserite viene salvato nel sistema ed è disponibile all'utente.
+\end{itemize}
+
+\subsubsection{UC 5 - Aggiunta contatto}
+
+\begin{itemize}
+	\item \textbf{Descrizione}: un utente può aggiungere un contatto al sistema. Per farlo deve inserire alcune informazioni obbligatorie, come:
+	\begin{itemize}
+		\item \textbf{cognome};
+		\item \textbf{account da associare al contatto}.
+	\end{itemize}
+	e molte altre facoltative, tra le quali:
+	\begin{itemize}
+		\item \textbf{email};
+		\item \textbf{indirizzo dell'ufficio};
+		\item \textbf{qualifica del contatto};
+		\item \textbf{stabilimento di lavoro del contatto}.
+	\end{itemize}
+	\item \textbf{Attore}: Utente autenticato;
+	\item \textbf{Pre-condizione}: Un utente deve aver eseguito l'accesso ed essersi portato alla pagina di inserimento contatto;
+	\item \textbf{Post-condizione}:il nuovo contatto contenente le informazioni inserite viene salvato nel sistema ed è disponibile all'utente.
 \end{itemize}
 
 \subsubsection{UC 6 - Aggiunta attività}
@@ -179,7 +187,7 @@ Ogni caso d'uso verrà descritto in maniera testuale, utilizzando la seguente st
 		\item \textbf{password}.
 	\end{itemize}
 	e molte altre facoltative, tra le quali:
-	s\begin{itemize}
+	\begin{itemize}
 		\item \textbf{nome utente};
 		\item \textbf{password}.
 	\end{itemize}
