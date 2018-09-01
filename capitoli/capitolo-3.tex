@@ -108,13 +108,17 @@ Ogni caso d'uso verrà descritto in maniera testuale, utilizzando la seguente st
 \end{itemize}
 
 \section{UC 2\_G: Funzionalità utente - inserimento}
+
+I casi d'uso qui riportati si riferiscono all'inserimento di nuovi dati nel sistema
+
 \begin{figure}[h]
 	\centering
 	\includegraphics[height = 12 cm]{/usecase/funzionalità-utente}
 	\caption{Caso d'uso generale-funzionalità utente}
 \end{figure}
-Negli UC 3, 4, 5, 6, 7 non vengono riportati tutti i campi inseribili, in quanto, per ogni singola form, si hanno almeno 40 campi differenti inseribili.\
-Inoltre, anche se non riportato come caso d'uso, ogni categoria di cliente inseribile possiede l'azione di salvataggio, che va ad inserire i dati nel database AS400.\\
+
+Negli UC 3, 4, 5, 6, 7 non vengono riportati tutti i campi inseribili, in quanto, per ogni singola form, si hanno almeno 40 campi differenti inseribili.\\
+
 \subsection{UC 2 - Autenticazione}
 
 \begin{itemize}
@@ -146,7 +150,7 @@ Inoltre, anche se non riportato come caso d'uso, ogni categoria di cliente inser
 	\end{itemize}
 	\item \textbf{Attore}: Utente autenticato;
 	\item \textbf{Pre-condizione}: Un utente deve aver eseguito l'accesso ed essersi portato alla pagina di inserimento lead;
-	\item \textbf{Post-condizione}:il nuovo lead contenente le informazioni inserite viene salvato nel sistema ed è disponibile all'utente.
+	\item \textbf{Post-condizione}:il nuovo lead contenente le informazioni inserite viene salvato [UC 12] nel sistema ed è disponibile all'utente.
 \end{itemize}
 
 \subsection{UC 4 - Aggiunta account}
@@ -169,7 +173,7 @@ Inoltre, anche se non riportato come caso d'uso, ogni categoria di cliente inser
 	\end{itemize}
 	\item \textbf{Attore}: Utente autenticato;
 	\item \textbf{Pre-condizione}: Un utente deve aver eseguito l'accesso ed essersi portato alla pagina di inserimento account;
-	\item \textbf{Post-condizione}:il nuovo account contenente le informazioni inserite viene salvato nel sistema ed è disponibile all'utente.
+	\item \textbf{Post-condizione}:il nuovo account contenente le informazioni inserite viene salvato nel sistema [UC 12] ed è disponibile all'utente.
 \end{itemize}
 
 \subsection{UC 5 - Aggiunta contatto}
@@ -189,7 +193,7 @@ Inoltre, anche se non riportato come caso d'uso, ogni categoria di cliente inser
 	\end{itemize}
 	\item \textbf{Attore}: Utente autenticato;
 	\item \textbf{Pre-condizione}: Un utente deve aver eseguito l'accesso ed essersi portato alla pagina di inserimento contatto;
-	\item \textbf{Post-condizione}:il nuovo contatto contenente le informazioni inserite viene salvato nel sistema ed è disponibile all'utente.
+	\item \textbf{Post-condizione}:il nuovo contatto contenente le informazioni inserite viene salvato nel sistema [UC 12] ed è disponibile all'utente.
 \end{itemize}
 
 \subsection{UC 6 - Aggiunta attività}
@@ -208,7 +212,7 @@ Inoltre, anche se non riportato come caso d'uso, ogni categoria di cliente inser
 	\end{itemize}
 	\item \textbf{Attore}: Utente autenticato;
 	\item \textbf{Pre-condizione}: Un utente deve aver eseguito l'accesso ed essersi portato alla pagina di inserimento attività;
-	\item \textbf{Post-condizione}:la nuova attività contenente le informazioni inserite viene salvata nel sistema ed è disponibile all'utente.
+	\item \textbf{Post-condizione}:la nuova attività contenente le informazioni inserite viene salvata nel sistema [UC 12] ed è disponibile all'utente.
 \end{itemize}
 
 \subsection{UC 7 - Aggiunta opportunità} %TODO
@@ -227,24 +231,156 @@ Inoltre, anche se non riportato come caso d'uso, ogni categoria di cliente inser
 	\end{itemize}
 	\item \textbf{Attore}: Utente autenticato;
 	\item \textbf{Pre-condizione}: Un utente deve aver eseguito l'accesso ed essersi portato alla pagina di inserimento opportunità;
-	\item \textbf{Post-condizione}:la nuova opportunità contenente le informazioni inserite viene salvata nel sistema ed è disponibile all'utente.
+	\item \textbf{Post-condizione}:la nuova opportunità contenente le informazioni inserite viene salvata nel sistema [UC 12] ed è disponibile all'utente.
 \end{itemize}
 
 \section{UC 3\_G - Visualizzazione dettagli}
+
+Questi casi d'uso si riferiscono alla visualizzazione ed eventuale modifica di schede di leads, account, contatti ed opportunità già inserite. 
+
 \begin{figure}[h]
 	\centering
-	\includegraphics[height = 8 cm]{/usecase/funzionalità-estese}
+	\includegraphics[height = 10 cm]{/usecase/funzionalità-estese}
 	\caption{Caso d'uso generale 3 - visualizzazione dettagli dei dati già inseriti}
 \end{figure}
 
-Questi casi d'uso si riferiscono alla visualizzazione ed eventuale modifica di schede di leads, account, contatti ed opportunità già inserite. \\
-Per ogni categoria di utenti sono disponibili le seguenti funzionalità, non descritte nel dettaglio se non accompagnate dall'indicazione del caso d'uso corrispondente:
+\subsection{UC 8 - Visualizzazione dettaglio lead}
+
 \begin{itemize}
-	\item \textbf{Salva};
-	\item \textbf{Modifica};
-	\item \textbf{Annulla modifiche};
-	\item \textbf{Elimina};
-	\item \textbf{Invia mail}: [UC]; %TODO
-	\item \textbf {Invia fax}: [UC];
-	\item \textbf{Avvisa}.
-\end{itemize}	 
+	\item \textbf{Descrizione}: un utente può vedere nel dettaglio le informazioni inserite a proposito di un cliente lead. Può eventualmente aggiornarne le informazioni, eliminarlo oppure mandare una mail od un fax, come evidenziato negli [UC 12], [UC 13], [UC 14], [UC 15], [UC 16] ed [UC 17].\\
+	\item \textbf{Attore}: Utente autenticato;
+	\item \textbf{Pre-condizione}: Un utente deve aver eseguito l'accesso, essersi portato alla pagina riguardante i lead ed averne selezionato uno;
+	\item \textbf{Post-condizione}:il lead eventualmente modificato viene salvato nel sistema per una prossima interazione.
+\end{itemize}
+
+\subsubsection{UC 8.1 - Conversione lead} %TODO
+
+\begin{itemize}
+	\item \textbf{Descrizione}: un utente può convertire il lead: In fase di inserimento, infatti, un lead viene di default salvato come "non convertito".
+	\item \textbf{Attore}: Utente autenticato;
+	\item \textbf{Pre-condizione}: Un utente deve aver eseguito l'accesso, essersi portato alla pagina riguardante i lead, averne selezionato uno ed essere quindi entrato nella pagina del dettaglio;
+	\item \textbf{Post-condizione}:il lead viene convertito e le informazioni riguardo ad esso non sono più modificabili.
+\end{itemize}
+
+\subsection{UC 9 - Visualizzazione dettaglio account}
+
+\begin{itemize}
+	\item \textbf{Descrizione}: un utente può vedere nel dettaglio le informazioni relative ad un account in particolare. Può eventualmente aggiornarne le informazioni, eliminarlo oppure mandare una mail od un fax, come evidenziato negli [UC 12], [UC 13], [UC 14], [UC 15], [UC 16] ed [UC 17].\\
+	\item \textbf{Attore}: Utente autenticato;
+	\item \textbf{Pre-condizione}: Un utente deve aver eseguito l'accesso, essersi portato alla pagina relativa agli account ed averne selezionato uno;
+	\item \textbf{Post-condizione}:l'account eventualmente modificato viene salvato nel sistema per una prossima interazione.
+\end{itemize}
+
+\subsection{UC 10 - Visualizzazione dettaglio contatto}
+
+\begin{itemize}
+	\item \textbf{Descrizione}: un utente può vedere le informazioni relative ad un contatto precedentemente inserito nel sistema e può eventualmente modificarlo, inviare mail o fax, come evidenziato in [UC 12], [UC 13], [UC 14], [UC 15], [UC 16] ed [UC 17].\\
+	\item \textbf{Attore}: Utente autenticato;
+	\item \textbf{Pre-condizione}: Un utente deve aver eseguito l'accesso, essersi portato alla pagina di inserimento contatto ed averne selezionato uno;
+	\item \textbf{Post-condizione}:il contatto eventualmente modificato viene salvato nel sistema per una prossima interazione.
+\end{itemize}
+
+\subsection{UC 11 - Visualizzazione dettaglio opportunità}
+
+\begin{itemize}
+	\item \textbf{Descrizione}: un utente può vedere ed eventualemnte modificare le informazioni riguardanti una specifica opportunità. Le azioni disponibili per le opportunità sono descritte nei casi  d'uso [UC 12], [UC 13], [UC 14], [UC 15], [UC 16] ed [UC 17].\\
+	\item \textbf{Attore}: Utente autenticato;
+	\item \textbf{Pre-condizione}: Un utente deve aver eseguito l'accesso, essersi portato nella pagina relativa alle opportunità ed averne selezionata una;
+	\item \textbf{Post-condizione}:l'opportunità eventualmente aggiornata viene salvata nel sistema per una successiva interazione.
+\end{itemize}
+
+\subsubsection{UC 11.1 - Aggiunta nota} %TODO
+
+\begin{itemize}
+	\item \textbf{Descrizione}: %TODO
+	\item \textbf{Attore}: 
+	\item \textbf{Pre-condizione}:
+	\item \textbf{Post-condizione}:
+\end{itemize}
+
+\section{UC 4\_G - Azioni comuni}
+
+Questo paragrafo si riferisce alle azioni che è possibile compiere sulle categorie di clienti come lead, account e contatti e sulle schede di attività ed opportunità.//
+La scelta di riportarle come caso d'uso indipendenti deriva dalla volontà di evitare ripetizioni verbose e migliorare la leggibilità dei diagrammi \gls{umlg}.
+\begin{figure}[h]
+	\centering
+	\includegraphics[height = 10 cm]{/usecase/azioni-comuni}
+	\caption{Caso d'uso generale 4 - azioni comuni alle categorie sopradescritte}
+\end{figure}
+Per facilitare il riferimento ad un qualsiasi lead, account, contatto, attività ed opportunità precedentemente inserito nel sistema oppure in fase di inserimento verrà utilizzato il termine \textbf{scheda}.
+\subsection{UC 12 - Salva}
+
+\begin{itemize}
+	\item \textbf{Descrizione}: un utente può confermare di voler inserire i dati appena immessi nel sistema o salvare le modifiche fatte ad una scheda. \\
+	 in particolare i dati vengono salvati nel database AS400.
+	\item \textbf{Attore}: Utente autenticato;
+	\item \textbf{Pre-condizione}: Un utente deve aver eseguito l'accesso, essersi portato ad una pagina di inserimento o di visualizzazione dettaglio ed avere inserito le informazioni obbligatorie oppure modificato almeno un campo rispetto ad una scheda preesistente;
+	\item \textbf{Post-condizione}:viene notificato il corretto inserimento nel sistema oppure le corretta modifica di dati precedentemente inseriti.
+\end{itemize}
+
+\subsection{UC 13 - Modifica}
+
+\begin{itemize}
+	\item \textbf{Descrizione}: un utente può modificare le informazioni riguardanti una specifica scheda.
+	\item \textbf{Attore}: Utente autenticato;
+	\item \textbf{Pre-condizione}: Un utente deve aver eseguito l'accesso ed avere aperto una specifica scheda di suo interesse;
+	\item \textbf{Post-condizione}:l'utente è ora abilitato alla modifica dei campi su cui è premessa la modifica.
+\end{itemize}
+
+\subsection{UC 14 - Annulla modifiche}
+
+\begin{itemize}
+	\item \textbf{Descrizione}: un utente può annullare le modifiche eventualmente apportate ad una scheda, riportandola allo stato in cui è salvata sul database;
+	\item \textbf{Attore}: Utente autenticato;
+	\item \textbf{Pre-condizione}: Un utente deve aver eseguito l'accesso, avere aperto una specifica scheda di suo interesse ed averne modificato almento un campo;
+	\item \textbf{Post-condizione}:la scheda viene ripulita da tutte le modifiche e ritorna quindi allo stato in cui è stata recuperata dal database.
+\end{itemize}
+
+\subsection{UC 15 - Elimina}
+
+\begin{itemize}
+	\item \textbf{Descrizione}: un utente può eliminare una scheda precedentemente inserita;
+	\item \textbf{Attore}: Utente autenticato;
+	\item \textbf{Pre-condizione}: Un utente deve aver eseguito l'accesso ed avere aperto una specifica scheda di suo interesse;
+	\item \textbf{Post-condizione}:I dati relativi alla scheda in esame vengono eliminati dal database e non sono quindi più disponibili.
+\end{itemize}
+
+\subsection{UC 16 - Invia mail}
+
+\begin{itemize}
+	\item \textbf{Descrizione}: un utente può inviare una email all'indirizzo email presente nella scheda, se questo è stato inserito;
+	\item \textbf{Attore}: Utente autenticato;
+	\item \textbf{Pre-condizione}: Un utente deve aver eseguito l'accesso ed avere aperto una specifica scheda di suo interesse;
+	\item \textbf{Post-condizione}:L'utente viene reindirizzato ad una pagina in cui può scrivere la mail e può, tramite una form, inserire ulteriori informazioni.
+\end{itemize}
+
+\subsection{UC 17 - Invia fax}
+
+\begin{itemize}
+	\item \textbf{Descrizione}: un utente può inviare un fax al numero di fax presente nella scheda, se questo è stato inserito;
+	\item \textbf{Attore}: Utente autenticato;
+	\item \textbf{Pre-condizione}: Un utente deve aver eseguito l'accesso ed avere aperto una specifica scheda di suo interesse;
+	\item \textbf{Post-condizione}:L'utente viene reindirizzato ad una pagina in cui può scrivere il fax e può, tramite una form, inserire ulteriori informazioni.
+\end{itemize}
+
+\section{Tracciamento dei requisiti}
+\subsection{Struttura di un requisito}
+Ogni requisito identificato è stato classificato come segue:
+\begin{center}
+	R[Importanza][Classificazione][Identificativo]
+\end{center}
+\begin{itemize}
+	\item \textbf{Importanza:} Specifica il grado di necessità che il requisito possiede, si articola in:
+	\begin{itemize}
+		\item \textbf{O}: requisito obbligatorio. Il suo soddisfacimento è essenziale alla riuscita del progetto;
+		\item \textbf{D}: requisito desiderabile. Il suo soddisfacimento non è necessario ma offre funzionalità tali da renderlo uno dei primi requisiti da soffisfare in sviluppi successivi;
+		\item \textbf{F}: requisito facoltativo. Il valore aggiunto dato dal soddisfacimento di questo requisito non è così importante, quindi prima di soddisfare il requisito è consigliata un’analisi di tempi e costi per evitare ritardi nella consegna e/o costi superiori a quelli preventivati.
+	\end{itemize}
+	\item \textbf{Classificazione}: Indica il tipo del requisito, in termini di finalità dello stesso:
+	\begin{itemize}
+		\item \textbf{F (Funzionali)}: 
+		\item \textbf{Q (Qualità)}: 
+		\item \textbf{V (Vincolo)}:
+	\end{itemize} 
+	\item \textbf{Identificativo}: Un codice numerico crescente a partire da 1 e che identifica un requisito in modo univoco. 
+\end{itemize}
