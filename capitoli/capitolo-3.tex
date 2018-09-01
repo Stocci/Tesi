@@ -40,6 +40,12 @@ In particolare, le categorie di clienti inseribili tramite form sono:
 	\item \textbf{Accounts}: Contengono i dati di un'azienda con cui è già presente un qualche tipo di relazione commerciale, anche solo una roposta d'acquisto;
 	\item \textbf{Contatti}: I contatti consistono in persone fisiche con cui è già presente un qualche tipo di relazione commerciale. Spesso account e contatto sono in relazione tra di loro, ma è anche possibile che un contatto non abbia nessun account associato (ad esempio un privato).
 \end{itemize}
+mentre per attività ed opportunità si intende:
+\begin{itemize}
+	\item \textbf{attività}: un attività riguarda qualsiasi tipo di operazione ed evento con lo scopo di ottenere un ritorno in termini di visibilità ai clienti ed alle aziende partner.\\
+	Tra le attività si inseriscono fiere, esposizioni, eventi, cene,...;
+	\item \textbf{opportunità}: %TODO cosa sono?
+\end{itemize}
 Per quanto riguarda la parte di amministrazione, verrà illustrata solamente la procedura di inserimento di un nuovo utente.
 
 %**************************************************************
@@ -53,7 +59,6 @@ Ogni caso d’uso è classificato secondo la seguente convenzione:
 \begin{center}
 	UC[codice]
 \end{center}
-UC[codice]
 Dove [codice] è un codice numerico che identifica univocamente il caso d’uso.\\
 Esso è sequenziale e gerarchico, dunque se ad esempio il caso d’uso "X" necessita di un ulteriore livello di dettaglio si procede individuando i sotto-casi d’uso "X.Y", "X.Y.Z" etc.. dove:\\
 \begin{itemize}
@@ -78,32 +83,39 @@ Ogni caso d'uso verrà descritto in maniera testuale, utilizzando la seguente st
 	\item \textbf{Post-condizione}: Indica le condizioni in cui l'attore si verrà a trovare dopo la fine dell'interazione con lo specifico caso d'uso;
 	\item \textbf{Descrizione}: Riporta una breve descrizione testuale del caso d'uso.
 \end{itemize}
-\subsection{Funzionalità amministratore}
+\section{UC 1\_G: Funzionalità amministratore}
 \begin{figure}[h]
 	\centering
 	\includegraphics[height = 8 cm]{/usecase/funzionalità-amm}
 	\caption{Caso d'uso generale-funzionalità amministratore}
 \end{figure}
 
-\subsubsection{UC 1}
+\subsection{UC 1 - inserimento nuovo utente}
 
 \begin{itemize}
-	\item \textbf{Descrizione}: l'amministratore può aggiungere un nuovo utente inserendo questi campi in una form:
+	\item \textbf{Descrizione}: l'amministratore può aggiungere un nuovo utente inserendo i seguenti campi nell'apposita form:
 	\begin{itemize}
-		\item %TODO campi da inserire per aggiungere utente
+		\item nome;
+		\item cognome;
+		\item titolo;
+		\item data di nascita;
+		\item sesso;
+		\item occupazione.
 	\end{itemize}
 	\item \textbf{Attore}: Utente amministratore;
 	\item \textbf{Pre-condizione}: L'amministratore ha già effettuato l'accesso tramite inserimento di username e password, ed ha raggiunto il pannello di amministrazione;
 	\item \textbf{Post-condizione}: è stato inserito un nuovo utente.
 \end{itemize}
 
-\subsection{Funzionalità utente}
+\section{UC 2\_G: Funzionalità utente - inserimento}
 \begin{figure}[h]
 	\centering
 	\includegraphics[height = 12 cm]{/usecase/funzionalità-utente}
 	\caption{Caso d'uso generale-funzionalità utente}
 \end{figure}
-\subsubsection{UC 2 - Autenticazione}
+Negli UC 3, 4, 5, 6, 7 non vengono riportati tutti i campi inseribili, in quanto, per ogni singola form, si hanno almeno 40 campi differenti inseribili.\
+Inoltre, anche se non riportato come caso d'uso, ogni categoria di cliente inseribile possiede l'azione di salvataggio, che va ad inserire i dati nel database AS400.\\
+\subsection{UC 2 - Autenticazione}
 
 \begin{itemize}
 	\item \textbf{Descrizione}: per l'autenticazione è necessario inserire nel sistema:
@@ -116,7 +128,7 @@ Ogni caso d'uso verrà descritto in maniera testuale, utilizzando la seguente st
 	\item \textbf{Post-condizione}:l'utente viene autenticato e può utilizzarne le funzionalità del prodotto in base ai suoi permessi.
 \end{itemize}
 
-\subsubsection{UC 3 - Aggiunta lead}
+\subsection{UC 3 - Aggiunta lead}
 
 \begin{itemize}
 	\item \textbf{Descrizione}: un utente può aggiungere un lead al suo insieme di potenziali clienti. Per farlo deve inserire alcune informazioni obbligatorie, come:
@@ -137,28 +149,30 @@ Ogni caso d'uso verrà descritto in maniera testuale, utilizzando la seguente st
 	\item \textbf{Post-condizione}:il nuovo lead contenente le informazioni inserite viene salvato nel sistema ed è disponibile all'utente.
 \end{itemize}
 
-\subsubsection{UC 4 - Aggiunta account}
+\subsection{UC 4 - Aggiunta account}
 
 \begin{itemize}
 	\item \textbf{Descrizione}: un utente può aggiungere un account alla lista di clienti. Un account può essere di vari tipi, come:
 	\begin{itemize}
 		\item \textbf{Prospect} (UC 4.1): un prospect rappresenta una potenziale azienda cliente, con la quale non si è ancora aperto alcun tipo di rapporto commerciale;
 		\item \textbf{Partner} (UC 4.2):un partner consiste in un'azienda con cui si è stabilito un duraturo rapporto di scambi, eventualmente anche non solo commerciali;
-		\item \textbf{Organizzazione} (UC 4.3):%TODO;
-		\item \textbf{Concorrente} (UC 4.4): questo tipo di account si riferisce ad un'azienda che opera nello stesso settore del cliente.
+		\item \textbf{Organizzazione} (UC 4.3):un organizzazione consiste in un'insieme di persone e mezz, volti ad uno stesso obiettivo comune;
+		\item \textbf{Concorrente} (UC 4.4): questo tipo di account si riferisce ad un'azienda che opera nello stesso settore del cliente, in concorrenza con esso.
 	\end{itemize}
-   Questi tipi di account hanno form che utilizzano campi dati anche molto diversi tra loro, %TODO completare
-	e molte altre facoltative, tra le quali:
-	\begin{itemize}
-		\item \textbf{nome utente};
-		\item \textbf{password}.
+   Questi tipi di account hanno form che utilizzano campi dati anche molto diversi tra loro, a causa della differente e talvolta profonda natura che li connota, ma anche taluni campi in comune, come:
+   \begin{itemize}
+   		\item \textbf{Ragione sociale};
+		\item \textbf{indirizzo};
+		\item \textbf{numero di telefono};
+		\item \textbf{città};
+		\item \textbf{partita IVA}.
 	\end{itemize}
 	\item \textbf{Attore}: Utente autenticato;
 	\item \textbf{Pre-condizione}: Un utente deve aver eseguito l'accesso ed essersi portato alla pagina di inserimento account;
 	\item \textbf{Post-condizione}:il nuovo account contenente le informazioni inserite viene salvato nel sistema ed è disponibile all'utente.
 \end{itemize}
 
-\subsubsection{UC 5 - Aggiunta contatto}
+\subsection{UC 5 - Aggiunta contatto}
 
 \begin{itemize}
 	\item \textbf{Descrizione}: un utente può aggiungere un contatto al sistema. Per farlo deve inserire alcune informazioni obbligatorie, come:
@@ -178,29 +192,30 @@ Ogni caso d'uso verrà descritto in maniera testuale, utilizzando la seguente st
 	\item \textbf{Post-condizione}:il nuovo contatto contenente le informazioni inserite viene salvato nel sistema ed è disponibile all'utente.
 \end{itemize}
 
-\subsubsection{UC 6 - Aggiunta attività}
+\subsection{UC 6 - Aggiunta attività}
 
 \begin{itemize}
-	\item \textbf{Descrizione}: un utente può aggiungere un'attività alla lista di clienti. Per farlo deve inserire alcune informazioni obbligatorie, come:
+	\item \textbf{Descrizione}: un utente può aggiungere un'attività alla lista di attività già inserite in precedenza. Per farlo deve inserire alcune informazioni obbligatorie, come:
 	\begin{itemize}
-		\item \textbf{nome utente};
-		\item \textbf{password}.
+		\item \textbf{descrizione}: una piccola descrizione testuale dell'attività;
 	\end{itemize}
 	e molte altre facoltative, tra le quali:
 	\begin{itemize}
-		\item \textbf{nome utente};
-		\item \textbf{password}.
+		\item \textbf{sede della visita};
+		\item \textbf{account e contatti associati};
+		\item \textbf{data d'inizio};
+		\item \textbf{data di fine}.
 	\end{itemize}
 	\item \textbf{Attore}: Utente autenticato;
-	\item \textbf{Pre-condizione}: Un utente deve aver eseguito l'accesso ed essersi portato alla pagina di inserimento account;
-	\item \textbf{Post-condizione}:il nuovo account contenente le informazioni inserite viene salvato nel sistema ed è disponibile all'utente.
+	\item \textbf{Pre-condizione}: Un utente deve aver eseguito l'accesso ed essersi portato alla pagina di inserimento attività;
+	\item \textbf{Post-condizione}:la nuova attività contenente le informazioni inserite viene salvata nel sistema ed è disponibile all'utente.
 \end{itemize}
 
-\subsubsection{UC 7 - Aggiunta opportunità}
+\subsection{UC 7 - Aggiunta opportunità} %TODO
 
 
 \begin{itemize}
-	\item \textbf{Descrizione}: un utente può aggiungere un'opportunità alla lista di clienti. Per farlo deve inserire alcune informazioni obbligatorie, come:
+	\item \textbf{Descrizione}: un utente può aggiungere un'opportunità alla lista di opportunità create in precedenza. Per farlo deve inserire alcune informazioni obbligatorie, come:
 	\begin{itemize}
 		\item \textbf{nome utente};
 		\item \textbf{password}.
@@ -211,6 +226,25 @@ Ogni caso d'uso verrà descritto in maniera testuale, utilizzando la seguente st
 		\item \textbf{password}.
 	\end{itemize}
 	\item \textbf{Attore}: Utente autenticato;
-	\item \textbf{Pre-condizione}: Un utente deve aver eseguito l'accesso ed essersi portato alla pagina di inserimento account;
-	\item \textbf{Post-condizione}:il nuovo account contenente le informazioni inserite viene salvato nel sistema ed è disponibile all'utente.
+	\item \textbf{Pre-condizione}: Un utente deve aver eseguito l'accesso ed essersi portato alla pagina di inserimento opportunità;
+	\item \textbf{Post-condizione}:la nuova opportunità contenente le informazioni inserite viene salvata nel sistema ed è disponibile all'utente.
 \end{itemize}
+
+\section{UC 3\_G - Visualizzazione dettagli}
+\begin{figure}[h]
+	\centering
+	\includegraphics[height = 8 cm]{/usecase/funzionalità-estese}
+	\caption{Caso d'uso generale 3 - visualizzazione dettagli dei dati già inseriti}
+\end{figure}
+
+Questi casi d'uso si riferiscono alla visualizzazione ed eventuale modifica di schede di leads, account, contatti ed opportunità già inserite. \\
+Per ogni categoria di utenti sono disponibili le seguenti funzionalità, non descritte nel dettaglio se non accompagnate dall'indicazione del caso d'uso corrispondente:
+\begin{itemize}
+	\item \textbf{Salva};
+	\item \textbf{Modifica};
+	\item \textbf{Annulla modifiche};
+	\item \textbf{Elimina};
+	\item \textbf{Invia mail}: [UC]; %TODO
+	\item \textbf {Invia fax}: [UC];
+	\item \textbf{Avvisa}.
+\end{itemize}	 
