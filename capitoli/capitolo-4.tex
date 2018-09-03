@@ -21,14 +21,6 @@ Trattandosi di una reimplementazione di una funzionalità preesistente, il primo
 \end{figure}
 la figura \ref{schema-generale} illustra, ad alto livello, le relazioni che intercorrono tra le varie tecnologie utilizzate dal software JGalileo CRM.\\
 Partendo dalle basi di dati fino ad arrivare all'interfaccia utente, l'architettura del sistema si snoda in questo modo:\\
-Entrambe le basi di dati, sia quella contenuta nel database del sistema operativo AS400 che quella contenuta sul server, si interfacciano con il Framework Hibernate per creare delle classi, equivalenti alle tabelle del database, con cui permettere l'interazione.
-\subsubsection{Funzionamento di Hibernate} %TODO ORM
-Come avviene la conversione delle tabelle in classi Java?\\
-\begin{figure}[h]
-	\centering
-	\includegraphics[height = 5 cm]{hibernate_works}
-	\caption{Schema del funzionamento di Hibernate}
-	\label{schema-generale}
-\end{figure}
- Hibernate deve conoscere la configurazione del database e per farlo necessita di un file, estesi generalmente in \textbf{.cfg.xml}. Al framework è inoltre indispensabile fornire dei files di mapping, uno per ogni tabella e generalmente estesi con i suffissi \textbf{.hmb.xml}, che contengono le informazioni riguardanti le colonne della singola tabella da trasformare in un oggetto Java.\\
-Questi files vengono poi utilizzati per creare una \emph{SessionFactory} globale e thread-safe che funge da \emph{gateway} per l'interrogazione del database.
+Entrambe le basi di dati, sia quella contenuta nel database del sistema operativo AS400 che quella contenuta sul server, si interfacciano con il Framework Hibernate per creare delle classi, equivalenti alle tabelle del database, con cui permettere l'interazione.\\
+L'interazione con le entità di Hibernate avviene per mezzo di Liferay, che si occupa anche della gestione degli accessi degli utenti alla pagina, introducendo il concetto di Single Sing On, e della corretta visualizzazione delle portlet all'interno delle pagine del portale. Queste posso essere scritte in AngularJS, come ad esempio le portlet scritte da me, oppure in Java e successivamente tradotte in JavaScript tramite i servizi offerti da GWT.
+	
