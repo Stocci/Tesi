@@ -6,13 +6,14 @@
 \chapter{Appendice A}
 %**************************************************************
 
-\section{Funzionamento di Hibernate} %TODO ORM
+\section{Funzionamento di Hibernate} 
+\label{sec:appendice-1}
 Come avviene la conversione delle tabelle in classi Java?\\
 \begin{figure}[h]
 	\centering
 	\includegraphics[height = 5 cm]{hibernate_works}
 	\caption{Schema del funzionamento di Hibernate}
-	\label{schema-generale}
+	\label{schema-generale-hibernate}
 \end{figure}
 Hibernate deve conoscere la configurazione del database e per farlo necessita di un file, estesi generalmente in \textbf{.cfg.xml}. Al framework è inoltre indispensabile fornire dei files di mapping, uno per ogni tabella e generalmente estesi con i suffissi \textbf{.hmb.xml}, che contengono le informazioni riguardanti le colonne della singola tabella da trasformare in un oggetto Java.\\
 
@@ -30,6 +31,9 @@ Questi files vengono poi utilizzati per creare una \emph{SessionFactory} globale
 	\item \textbf{Drastica riduzione del codice sorgente}, a causa dei semplici comandi che mascherano complesse istruzioni;
 	\item \textbf{Elevata modularità}.
 \end{itemize}
+
+\section{Model View Controller}
+\label{sec:MVC}
 
 
 
