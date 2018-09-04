@@ -16,7 +16,7 @@ Trattandosi di effettuare la reimplementazione di una funzionalità preesistente
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[height = 15 cm]{schema-generale}
+	\includegraphics[height = 12 cm]{schema-generale}
 	\caption{Schema generale di interconnessione tra le componenti}
 	\label{schema-generale}
 \end{figure}
@@ -33,7 +33,7 @@ L'ambiente in cui una essa viene creata ed utilizzata è denominato \emph{portle
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[height = 15 cm]{portet_action_request}
+	\includegraphics[height = 8 cm]{portet_action_request}
 	\caption{Diagramma di sequenza di ProcessAction}
 	\label{process-action}
 \end{figure}
@@ -50,6 +50,13 @@ Il ciclo di vita di una \gls{portlet} è caratterizzato da 6 metodi principali c
 
 \section{Form portlet}
 La form che avrei dovuto reimplementare consiste in un unica portlet,scritta in Java. \\
-La portlet è costituita da una grande classe, di oltre 6.000 linee di codice che si appoggia poi ad altre classi per la gestione di aspetti più particolari: ad esempio i campi di tipo picker, cioè dei campi di ricerca che recuperano le voci su cui effettuarla dal database, è separata e lunga circa 4.000 linee di codice.\\
+La portlet è costituita da una grande classe, di oltre 6.000 linee di codice, che si appoggia poi ad altre classi per la gestione di aspetti più particolari: ad esempio i campi di tipo picker, cioè dei campi di ricerca che recuperano le voci su cui effettuarla dal database, è separata e lunga circa 4.000 linee di codice.\\
 Data l'estrema lunghezza, in rapporto alla mia esperienza di studente, ed alla mancanza di documentazione dovuta all'adozione della metodologia agile, lo studio del funzionamento della portlet che gestisce la form ha richiesto più tempo del previsto. \\ 
-L'analisi ha portato allo sviluppo del diagramma di flusso illustrato nella figura X, diagramma molto generale a causa della grande complessità di metodi e casistiche dettate dal fatto che la form viene creata dinamicamente e quindi deve coprire tutte le possibili casistiche in cui è possibile incorrere.\\	
+L'analisi ha portato allo sviluppo del diagramma di flusso illustrato nella figura \ref{form-portlet-flow-diagram}, diagramma molto generale a causa della grande complessità di metodi e casistiche dettate dal fatto che la form viene creata dinamicamente e quindi deve coprire tutte le possibili casistiche in cui è possibile incorrere.\\
+
+\begin{figure}[p]
+	\centering
+	\includegraphics[width=\textwidth, height=\textheight]{diagramma-flusso}
+	\caption{Diagramma di flusso della form preesistente}
+	\label{form-portlet-flow-diagram}
+\end{figure}	
