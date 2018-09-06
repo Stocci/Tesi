@@ -42,6 +42,14 @@ Il pattern \emph{MVC, Model-View-Controller}, è un design pattern, cioè uno sc
 	\caption{Design pattern MVC}
 	\label{mvc-schema}
 \end{figure}
+Come evidenziato dalla figura \ref{mvc-schema}, vi sono 3 attori principali:
+\begin{itemize}
+	\item \textbf{Model}: rappresenta la cosiddetta \emph{logica di business}, cioè l'insieme di dati e metodi per eseguire operazioni;
+	\item \textbf{View}rappresenta come i dati vengono visualizzati nell'interfaccia utente, cioè la \emph{logica di presentazione};
+	\item \textbf{Controller}:si pone come intermediario tra view e model;
+\end{itemize}
+Il controller, che osserva la view, riceve da quest'ultima le richieste di elaborazione e, una volta che il model restituisce i dati, si occupa di inviarli alla view.\\
+Questo design pattern ha molti lati positivi, tra i quali la divisione dei compiti ed il riuso di codice.\\
 
 
 \newpage
