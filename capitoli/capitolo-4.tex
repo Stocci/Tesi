@@ -49,7 +49,7 @@ Il ciclo di vita di una \gls{portlet} è caratterizzato da 6 metodi principali c
 \end{itemize}	
 
 \section{Form portlet}
-La form che avrei dovuto reimplementare consiste in un unica portlet,scritta in Java. \\
+La form la cui reimplementazione costituisce il mio progetto di stage consiste in un unica portlet,scritta in Java. \\
 La portlet è costituita da una grande classe, di oltre 6.000 linee di codice, che si appoggia poi ad altre classi per la gestione di aspetti più particolari: ad esempio i campi di tipo picker, cioè dei campi di ricerca che recuperano le voci su cui effettuarla dal database, è separata e lunga circa 4.000 linee di codice.\\
 Data l'estrema lunghezza, in rapporto alla mia esperienza di studente, ed alla mancanza di documentazione dovuta all'adozione della metodologia agile, lo studio del funzionamento della portlet che gestisce la form ha richiesto più tempo del previsto. \\ 
 L'analisi ha portato allo sviluppo del diagramma di flusso riguardandte la creazione della \gls{portlet}, illustrato nelle figure \ref{form-portlet-flow-diagram-1} e \ref{form-portlet-flow-diagram-2}. Il diagramma è molto generale a causa della grande complessità di metodi e alternative dettate dal fatto che la form viene creata dinamicamente e deve quindi coprire tutte le possibili casistiche in cui è possibile incorrere.\\
@@ -110,7 +110,7 @@ Infine viene eseguito un ciclo su tutti i campi dati rappresentati nel datasourc
 	\begin{figure}[h]
 		\centering
 		\includegraphics[height=8 cm]{json-details}
-		\caption{Parte di un campo dati come rappresentato nel datasource}
+		\caption{Esempio di un campo dati come rappresentato nel datasource}
 		\label{fig:json-detail}
 	\end{figure}
 Vengono letti i campi relativi all'effettiva rappresentazione sullo schermo del campo, i premessi di scrittura, l'eventuale valore di default, che viene inserito in un particolare tipo di \gls{record} e vengono letti i valori, rappresentati in un punto differente del file, relativi al posizionamento del campo all'interno della form.\\
@@ -123,6 +123,6 @@ Viene poi letta la tipologia di campo, che può essere
 	\item \textbf{picker};
 \end{itemize}
 Per ognuna di queste tipologie vengono chiamati dei metodi appropriati che costruiscono il campo: il più complesso è il campo picker, che tra i suoi parametri contiene le indicazioni per il recupero dei dati che saranno poi oggetto della ricerca da parte dell'utente.\\
-Infine viene effettuata un'ulteriore chiamata rest per recuperare il record completo, tenendo anche conto dei valori di default recuperati dal ciclo appena effettuato.
+Infine viene effettuata un'ulteriore chiamata REST per recuperare il record completo, tenendo anche conto dei valori di default recuperati dal ciclo appena effettuato.
 
 \newpage
