@@ -549,4 +549,66 @@ Le tabelle XXX e seguenti illustrano il codice del requistito, una breve descriz
 	\end{tabular}
 \end{table}
 
+\section{Gli obiettivi}
+Gli obiettivi del progetto di stage sono elencati nella tabella 1.\\ %todo.
+Essi sono classificati da:
+
+\begin{itemize}
+	\item un ID, che rappresenta univocamente l'obiettivo;
+	\item un aggettivo di importanza dell'obiettivo;
+	\item una breve descrizione testuale.
+\end{itemize}
+
+L'ID è formato da una lettera iniziale (P o F), ad indicare se il requisito da soddisfare sia di tipo \emph{Produttivo} o \emph{Formativo}, e da un numero sequenziale.\\
+L'agettivo di importanza può essere: \emph{Obbligatorio}, \emph{Desiderabile} oppure \emph{Facoltativo}, in base alla necessità che ha lo lo stesso di essere soddisfatto.\\
+La breve descrizione testuale descrive nel modo più concreto e riassuntivo possibile l'obiettivo.\\
+
+\begin{table}[h]
+	\centering
+	\caption{Obiettivi dello stage}
+	\label{tab:obiettivi}
+	\begin{tabular}{|l|c|p{7cm}|}
+		\hline
+		ID & Importanza & Descrizione \\
+		\hline
+		F1 & Obbligatorio & Acquisizione delle competenze di base sulla famiglia di software denominata CRM.\\
+		\hline
+		F2 & Obbligatorio & Acquisizione delle competenze di base sul software di sviluppo GWT.\\
+		\hline
+		F3 & Desiderabile & Acquisizione di competenze avanzate sul linguaggio di programmazione utilizzato per lo sviluppo del prototipo.\\
+		\hline
+		P1 & Obbligatorio & Analisi dei requisiti tecnici ed applicativi.\\
+		\hline
+		P2 & Obbligatorio & Analisi dell'User Interface.\\
+		\hline
+		P3 & Obbligatorio & Analisi degli Use Case.\\
+		\hline
+		P4 & Obbligatorio & Sviluppo di un prototipo che implementi le stesse funzionalità del componente esistente.\\
+		\hline
+		P5 & Facoltativo & Implementazione di nuove funzionalità di interazione con l'utente sul prototipo sviluppato.\\
+		\hline
+	\end{tabular}
+\end{table}
+
+\section {Analisi dei rischi}
+Ho voluto analizzare una serie di rischi che sarebbero potuti incorrere durante il periodo di stage. Sono riassunti nella tabella\\ %todo
+
+\begin{table} %todo
+	\centering
+	\caption{Analisi preventiva dei rischi}
+	\label{tab:analisi-dei-rischi}
+	\begin{tabular}{|p{5cm}|p{5cm}|p{3cm}|}
+		\hline
+		Descrizione & Trattamento & Rischio\\
+		\hline
+		La scelta di una libreria JavaScript che non soddisfacesse gli scopi dello stage avrebbe significato una grande perdita di tempo e il dover ripartire da capo con lo sviluppo & Analisi approfondita delle alternative disponibili e dialogo con il Tutor aziendale per trovare la soluzione più adeguata & Alto\\
+		\hline
+		La mancanza di documentazione dovuta all'adozione della metosologia agile potrebbe portare ad allungare i tempi di comprensione delle componenti & Collaborazione da parte del tutor e del team di sviluppo nel caso ci siano chiarimenti da fornire & Alto\\
+		\hline
+		Dovendo interagire con un software già funzionante e molto grande, le parti da me sviluppate potrebbero creare conflitti & Evitare di modificare metodi che possano essere utilizzati da alre componenti & Basso\\
+		\hline
+		
+	\end{tabular}
+\end{table}
+
 \newpage
