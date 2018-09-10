@@ -62,14 +62,40 @@ e specifici in cui, per ogni button del tipo interessato, viene instanziato un n
 	\end{itemize} 
 \end{itemize} 
 
-	\begin{figure}[h]
+\begin{figure}[h]
 	\centering
 	\includegraphics[height=10 cm]{gerarchia-controller}
 	\caption{gerarchia di controller in una form}
 	\label{fig:ger-contr}
 \end{figure}
 
-\section{Validazione dei campi inseriti}
+\subsection{Ciclo di creazione}
+\subsubsection{Recupero dei dati}
+La creazione di una form avviene seguendo parzialmente il flusso di creazione utilizzato dalla precedente implementazione e visto nel precedente capitolo, ma ho comunque cercato di utilizzare meno risorse possibili per aumentare la velocità di creazione e migliorare l'esperienza utente. La velocità di creazione è inoltre aumentata dalla scelta di caricare dinamicamente alcune componenti della form, come i tab, solamente se l'utente vi interagisce realmente.\\
+La direttiva \lstinline[language=HTML]!ng-app!, che inizializza l'applicazione AngularJS, può essere utilizzato solamente una volta all'interno di un documento HTML: in JGalileo CRM era già utilizzata per inizializzare un modulo comune, chiamato SMICommonModule, che conteneva anche alcuni servizi REST per il reperimento di risorse quali datasource e record. Tali servizi sono stati successivemente integrati con nuove funzionalità. \'E stato quindi sufficiente importare il modulo come dipendenza del controller principale della form per poter correttamente inizializzare il tutto.\\
+Al controller principale vengono passati alcuni parametri di configurazione, con cui viene recuperato il datasource corretto tramite un servizio REST. \\
+Tramite il meccanismo di \lstinline[language=HTML]!$watch! descritto in precedenza, al ritorno del datasource
+viene chiamato il metodo \lstinline[language=HTML]!setValues()! contenuto in FieldsController, che si occupa di creare degli array contenti le azioni, i tab della form e, per ogni tab, i groupbox che lo conpongono. Successivamente vengono letti tutti i campi dati descritti nel datasource e posti negli array, per facilitarne la rappresentazione.\\ AngularJS mette infatti a disposizione la direttiva \lstinline[language=HTML]!ng-repeat!, che consente di iterare lungo una lista od un array di elementi. \\
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=8 cm]{setFields}
+	\caption{setFields(), che inserisce i valori negli array}
+	\label{fig:set-fields}
+\end{figure}
+Al termine di queste operazioni, vengono inizializzati nel record i campi contententi i valori di default. Questo record viene poi utilizzato per recuperare dal server il record completo, composto dai campi di default precedentemente settati e da alcuni altri campi che vengono inseriti dal server.\\
+Una volta ottenuto il record completo, i valori che sono stati recuperati vengono visualizzati direttamente nella view grazie al meccanismo di \emph{two ways data binding}.
+
+\subsubsection{Creazione della view}
+Il file che costituisce la view è unico e rispecchia, utilizzando tag innestati, la gerarchia dei controller vista nell'immagine \ref{fig:ger-contr}\\
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=7 cm, width= 15 cm]{view}
+	\caption{parte della view}
+	\label{fig:view}
+\end{figure}
+Vengono creati i buttons per le azioni e dei buttons che poi andranno a costituire i tab di cui è composta la form.\\
+In seguito il file è essenzialmente diviso in due parti: la prima che, tramite l'esecuzione di un ciclo sull'array corretto, si occupa della creazione dei campi dati che non appartengono ad alcun groupbox e la seconda, che utilizzando due cicli, gestisce la creazione delle groupbox e dei campi contenuti in ciascuna di esse.
+\subsection{Validazione dei campi inseriti}
 
 AngularJS mette a disposizione molte funzionalità dedicate alla realizzazione di form.\\
 Una di queste è la validazione della form a livello client. AngularJS, in maniera del tutto autmatica, valuta se i dati inseriti siano del tipo dichiarato per ogni campo e se vengono rispettate le obbligatorietà. Un campo viene dichiarato obbligatorio tramite la direttiva \lstinline[language=HTML]!ng-required! \\
