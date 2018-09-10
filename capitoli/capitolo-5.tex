@@ -41,8 +41,8 @@ Nel contesto di una gerarchia di controller è anche possibile sollevare degli e
 Gli eventi vengono poi raccolti da \lstinline[language=HTML]!$on('event name', function([data]){...})!, che definisce il comportamento da adottare una volta raccolto l'evento.\\
 
 \section{Codifica}
-La creazione della componente form utilizzando angularJS è iniziata cercando di aderire ai principî dell'incapsulamento e di \emph{information hiding} tipici della programmazione ad oggetti.\\ Questi principî, che sanciscono la necessità di nascondere le proprietà intrinseche di un oggetto rispetto alla sua rappresentazione, sono qui utilizzati per separare i compiti tra i diversi elementi della form tramite l' utilizzo di vari controller, ognuno destinato alla gestione di una porzione specifica della form stessa.\\
-Vengono quindi utilizzati dei controller generici, che vengono quindi instanziati una sola volta:
+La creazione della componente form utilizzando angularJS è iniziata cercando di aderire ai principî dell'incapsulamento e di \emph{information hiding} tipici della programmazione ad oggetti.\\ Questi principî, che sanciscono la necessità di nascondere le proprietà intrinseche di un oggetto rispetto alla sua rappresentazione, sono qui utilizzati per separare i compiti tra i diversi elementi della form tramite l'utilizzo di vari controller, ognuno destinato alla gestione di una porzione specifica della form stessa.\\
+Vengono quindi utilizzati dei controller generici, che vengono instanziati una sola volta:
 \begin{itemize}
 	\item \textbf{FormController}: un controller generale, che recupera le informazioni utili alla form nel suo complesso, come record e datasource;
 	\item \textbf{ActionsController}: un controller che gestisce la creazione delle azioni e il loro comportamento; indipendente dall'altro;
@@ -69,6 +69,10 @@ e specifici in cui, per ogni button del tipo interessato, viene instanziato un n
 	\label{fig:ger-contr}
 \end{figure}
 
+\section{Validazione dei campi inseriti}
 
+AngularJS mette a disposizione molte funzionalità dedicate alla realizzazione di form.\\
+Una di queste è la validazione della form a livello client. AngularJS, in maniera del tutto autmatica, valuta se i dati inseriti siano del tipo dichiarato per ogni campo e se vengono rispettate le obbligatorietà. Un campo viene dichiarato obbligatorio tramite la direttiva \lstinline[language=HTML]!ng-required! \\
+La validazione dell'intera form è possibile tramite l'oggetto di sistema \lstinline[language=HTML]!$valid!, una variabile booleana che assume il valore \lstinline[language=HTML]!true! solamente nel caso tutti i campi dati rispettino i vincoli descritti sopra.
 
 \newpage
