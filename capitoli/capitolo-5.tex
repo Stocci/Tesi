@@ -57,10 +57,17 @@ e specifici in cui, per ogni button del tipo interessato, viene instanziato un n
 	\item controller figli di FieldsController:
 	\begin{itemize}
 		\item \textbf{PickersController}: un controller per il controllo dei campi di tipo picker;
-		\item \textbf{GeneralFieldController}: un controller per il controllo dei campi diversi dal tipo picker. \\Quest'ultimo, in particolare, è stato pensato in ottica manutentiva: se è necessario aggiungere delle proprietà ad un campo generico, è possibile farlo andando a modificare questo controller.
+		\item \textbf{DetextController}: un controller per il controllo dei campi di tipo text;
+		\item \textbf{GeneralFieldController}: un controller per il controllo dei campi diversi dal tipo picker e text. \\Quest'ultimo, in particolare, è stato pensato in ottica manutentiva: se è necessario aggiungere delle proprietà ad un campo generico, è possibile farlo andando a modificare questo controller.
 	\end{itemize} 
 \end{itemize} 
 
+	\begin{figure}[h]
+	\centering
+	\includegraphics[height=10 cm]{gerarchia-controller}
+	\caption{gerarchia di controller in una form}
+	\label{fig:ger-contr}
+\end{figure}
 
 
 
