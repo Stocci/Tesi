@@ -10,9 +10,6 @@
 \intro{In questo capitolo descriverò in maniera approfondita lo scopo dello stage, focalizzandomi sugli obiettivi da raggiungere e le metodologie per farlo.\\Seguirà poi una descrizione dettagliata dei casi d'uso di interesse.}\\
 
 %**************************************************************
-\section{Introduzione al progetto}
-%TODO serve riprenderlo ancora?
-%**************************************************************
 
 \section{Dominio applicativo}
 \subsection{Tipi di utenti}
@@ -54,17 +51,19 @@ I casi d'uso (use case) sono una tecnica dell'ingegneria del software per ottene
 I casi d'uso sono solitamente rappresentati in forma testuale, attraverso la descrizione dettagliata del caso d'uso stesso in termini di attori coinvolti, pre e post condizioni, e da una rappresentazione grafica, definita Use Case Diagram, con l'ausislio di un altro linguaggio, \gls{umlg}.\\
 Tutti i casi d'uso saranno qui presentati attraverso descrizione testuale, mentre la rappresentazione grafica verrà utilizzata solamente per gli scenari più generali.\\
 I casi d'uso qui riportati non si riferiscono all'intero software a causa della sua grande complessità ed ampiezza d'utilizzo, ma solamente agli scenari principali che, direttamente od indirettamente, sono influenzati dal codice da me scritto durante l'esperienza di stage.\\
+
+\newpage
+
 \subsection{Classificazione dei casi d'uso}
 Ogni caso d’uso è classificato secondo la seguente convenzione:
 \begin{center}
 	UC[codice]
 \end{center}
 Dove [codice] è un codice numerico che identifica univocamente il caso d’uso.\\
-Esso è sequenziale e gerarchico, dunque se ad esempio il caso d’uso "X" necessita di un ulteriore livello di dettaglio si procede individuando i sotto-casi d’uso "X.Y", "X.Y.Z" etc.. dove:\\
+Esso è sequenziale e gerarchico, dunque se ad esempio il caso d’uso "X" necessita di un ulteriore livello di dettaglio si procede individuando i sotto-casi d’uso "X.Y", dove:\\
 \begin{itemize}
 	\item \textbf{X}: il codice identificativo del caso d'uso padre, solitamente generico e difficilemte descrivibile nel dettaglio; 
 	\item \textbf{Y}: codice figlio, identifica un caso d'uso più particolare rispetto al padre (che lo contiene).
-	\item \textbf{Z}: codice nipote, individua lo scenario più particolare possibile.
 	
 \end{itemize}
 X parte con indice 1 e valore crescente, mentre Y e Z parto dall'indice 0 con valore crescente.\\
@@ -83,6 +82,9 @@ Ogni caso d'uso verrà descritto in maniera testuale, utilizzando la seguente st
 	\item \textbf{Post-condizione}: Indica le condizioni in cui l'attore si verrà a trovare dopo la fine dell'interazione con lo specifico caso d'uso;
 	\item \textbf{Descrizione}: Riporta una breve descrizione testuale del caso d'uso.
 \end{itemize}
+
+\newpage
+
 \section{UC 1\_G: Funzionalità amministratore}
 \begin{figure}[h]
 	\centering
@@ -106,6 +108,8 @@ Ogni caso d'uso verrà descritto in maniera testuale, utilizzando la seguente st
 	\item \textbf{Pre-condizione}: L'amministratore ha già effettuato l'accesso tramite inserimento di username e password, ed ha raggiunto il pannello di amministrazione;
 	\item \textbf{Post-condizione}: è stato inserito un nuovo utente.
 \end{itemize}
+
+\newpage
 
 \section{UC 2\_G: Funzionalità utente - inserimento}
 
@@ -240,7 +244,7 @@ Questi casi d'uso si riferiscono alla visualizzazione ed eventuale modifica di s
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[height = 10 cm]{/usecase/funzionalità-estese}
+	\includegraphics[height = 9 cm]{/usecase/funzionalità-estese}
 	\caption{Caso d'uso generale 3 - visualizzazione dettagli dei dati già inseriti}
 \end{figure}
 
@@ -298,13 +302,15 @@ Questi casi d'uso si riferiscono alla visualizzazione ed eventuale modifica di s
 	\item \textbf{Post-condizione}:
 \end{itemize}
 
+\newpage
+
 \section{UC 4\_G - Azioni comuni}
 
-Questo paragrafo si riferisce alle azioni che è possibile compiere sulle categorie di clienti come lead, account e contatti e sulle schede di attività ed opportunità.//
-La scelta di riportarle come caso d'uso indipendenti deriva dalla volontà di evitare ripetizioni verbose e migliorare la leggibilità dei diagrammi \gls{umlg}.
+Questo paragrafo si riferisce alle azioni che è possibile compiere sulle categorie di clienti come lead, account e contatti e sulle schede di attività ed opportunità.\\
+La scelta di riportarle come caso d'uso indipendenti deriva dalla volontà di evitare ripetizioni verbose e migliorare la leggibilità dei diagrammi \gls{umlg}.\\
 \begin{figure}[h]
 	\centering
-	\includegraphics[height = 10 cm]{/usecase/azioni-comuni}
+	\includegraphics[height = 9 cm]{/usecase/azioni-comuni}
 	\caption{Caso d'uso generale 4 - azioni comuni alle categorie sopradescritte}
 \end{figure}
 Per facilitare il riferimento ad un qualsiasi lead, account, contatto, attività ed opportunità precedentemente inserito nel sistema oppure in fase di inserimento verrà utilizzato il termine \textbf{scheda}.
@@ -385,11 +391,13 @@ Ogni requisito identificato è stato classificato come segue:
 	\item \textbf{Identificativo}: Un codice numerico crescente a partire da 1 e che identifica un requisito in modo univoco. 
 \end{itemize}
 
+\newpage
+
 \subsection{Tracciamento dei requisiti}
 Le tabelle \ref{tab:requisiti-funzionali} ,\ref{tab:requisiti-di-qualità} e \ref{tab:requisiti-di-vincolo} illustrano il codice del requistito, una breve descrizione testuale e lo stato di completamento alla fine dell'esperienza di stage. \\
 
-
-\begin{longtable}[H]{|p{3cm}|p{8cm}|p{3cm}|}
+\subsection*{Requisiti funzionali}
+\begin{longtable}[h]{|p{2.5cm}|p{8cm}|p{2.5cm}|}
 	\caption{requisiti funzionali}\\
 	\label{tab:requisiti-funzionali}\\
 	\hline
@@ -577,15 +585,15 @@ Le tabelle \ref{tab:requisiti-funzionali} ,\ref{tab:requisiti-di-qualità} e \re
 	\rule[-3mm]{0mm}{0.8cm}
 	RDF2&Un utente può eliminare un campo non obbligatorio da una form& Non completato \\
 	\hline
-	
 \end{longtable}
 
-
-\begin{table} %todo
+\subsection*{Requisiti di qualità}
+La seguente tabella riporta i requisiti di qualità che il software deve soddisfare:\\
+\begin{table} [h]%todo
 	\centering
 	\caption{Requisiti di qualità}
 	\label{tab:requisiti-di-qualità}
-	\begin{tabular}{|p{3cm}|p{8cm}|p{3cm}|}
+	\begin{tabular}[h]{|p{2.5cm}|p{8cm}|p{2.5cm}|}
 		\hline
 		\rule[-4mm]{0mm}{1cm}
 		Requisito & Descrizione & Stato\\
@@ -599,11 +607,13 @@ Le tabelle \ref{tab:requisiti-funzionali} ,\ref{tab:requisiti-di-qualità} e \re
 	\end{tabular}
 \end{table}
 
-\begin{table}
+\subsection*{Requisiti di vincolo}
+La seguente tabella riporta i requisiti di vincolo che devono essere rispettati durante lo sviluppo:
+\begin{table}[h]
 	\centering
 	\caption{Requisiti di vincolo}
 	\label{tab:requisiti-di-vincolo}
-	\begin{tabular}{|p{3cm}|p{8cm}|p{3cm}|}
+	\begin{tabular}[h]{|p{2.5cm}|p{8cm}|p{2.5cm}|}
 		\hline
 		\rule[-4mm]{0mm}{1cm}
 		Requisito & Descrizione & Stato\\
@@ -616,6 +626,8 @@ Le tabelle \ref{tab:requisiti-funzionali} ,\ref{tab:requisiti-di-qualità} e \re
 		\hline	
 	\end{tabular}
 \end{table}
+
+\newpage
 
 \section{Gli obiettivi}
 Gli obiettivi del progetto di stage sono elencati nella tabella \ref{tab:obiettivi}
@@ -667,16 +679,18 @@ La breve descrizione testuale descrive nel modo più concreto e riassuntivo poss
 	\end{tabular}
 \end{table}
 
+\newpage
 \section {Analisi dei rischi}
 Ho voluto analizzare una serie di rischi che sarebbero potuti incorrere durante il periodo di stage. Sono riassunti nella tabella\\ %todo
 
-\begin{table} %todo
+\begin{table}[h] %todo
 	\centering
 	\caption{Analisi preventiva dei rischi}
 	\label{tab:analisi-dei-rischi}
-	\begin{tabular}{|p{5cm}|p{5cm}|p{3cm}|}
+	\begin{tabular}{|p{6cm}|p{5,5cm}|p{1,5cm}|}
 		\hline
-		Descrizione & Trattamento & Rischio\\
+		\rule[-4mm]{0mm}{1cm}
+		\textbf{Descrizione} & \textbf{Trattamento} & \textbf{Rischio}\\
 		\hline
 		La scelta di una libreria JavaScript che non soddisfacesse gli scopi dello stage avrebbe significato una grande perdita di tempo e il dover ripartire da capo con lo sviluppo & Analisi approfondita delle alternative disponibili e dialogo con il Tutor aziendale per trovare la soluzione più adeguata & Alto\\
 		\hline
@@ -687,5 +701,5 @@ Ho voluto analizzare una serie di rischi che sarebbero potuti incorrere durante 
 		
 	\end{tabular}
 \end{table}
-
 \newpage
+\cleardoublepage

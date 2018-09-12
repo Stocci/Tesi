@@ -14,23 +14,27 @@ Trattandosi di effettuare la reimplementazione di una funzionalità preesistente
 
 \subsection{Visione generale}
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[height = 12 cm]{schema-generale}
-	\caption{Schema generale di interconnessione tra le componenti}
-	\label{schema-generale}
-\end{figure}
+
 la figura \ref{schema-generale} illustra, ad alto livello, le relazioni che intercorrono tra le varie tecnologie utilizzate dal software JGalileo CRM.\\
 Partendo dalle basi di dati fino ad arrivare all'interfaccia utente, l'architettura del sistema si snoda nel seguente modo:\\
 Entrambe le basi di dati, sia quella contenuta nel database del sistema operativo AS400 che quella contenuta sul server, si interfacciano con il Framework Hibernate per creare delle classi, equivalenti alle tabelle del database, con cui permettere l'interazione.\\ 
 La sezione dell'appendice ~\ref{sec:appendice-1} riporta più nel dettaglio come vengono create le entità Hibernate.\\
+
+\newpage
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[height = 10 cm]{schema-generale}
+	\caption{Schema generale di interconnessione tra le componenti}
+	\label{schema-generale}
+\end{figure}
 L'interazione con le entità di Hibernate avviene per mezzo di Liferay, che si occupa anche della gestione degli accessi degli utenti alla pagina, introducendo il concetto di Single Sing On, e della corretta visualizzazione delle \gls{portlet} all'interno delle pagine del portale. Queste sono caricate di volta in volta, tramite dei servizi REST, dal server Tomcat e possono essere scritte in AngularJS, come ad esempio la \gls{portlet} per la geolocalizzazione o quella che gestisce la timeline, oppure in Java per essere successivamente tradotte in JavaScript tramite i servizi offerti da GWT.\\
 Le azioni dell'utente vengono gestite poi da Liferay, che si occupa anche del routing tra le varie pagine del portale. Nel caso ci fossero dei dati da salvare, come nel caso dell'inserimento di un nuovo lead, vengono lanciati dei servizi REST che andranno ad interfacciarsi con le entità gestite da Hibernate, il quale gestisce la persistenza dei dati.\\
 
 \subsection{Portlet life cycle}
 Al fine di capire al meglio come progettare la nuova form, mi sono concentrato sullo studio del ciclo di vita di una \gls{portlet}:\\
 L'ambiente in cui una essa viene creata ed utilizzata è denominato \emph{portlet container} che, come suggerisce la parola, è un contenitore che gestisce l'aggregazione tra le \gls{portlet}, mantiene memoria delle preferenze dettate dall'utente su di esse ed inoltre funge da \emph{Controller} tra l'interfaccia utente(\emph{View}) ed i dati (\emph{Model}) nel paradigma di programmazione MVC (Model View Controller), illustrato nella sezione ~\ref{sec:MVC}.\\
-
+\newpage
 \begin{figure}[h]
 	\centering
 	\includegraphics[height = 8 cm]{portet_action_request}
@@ -47,7 +51,7 @@ Il ciclo di vita di una \gls{portlet} è caratterizzato da 6 metodi principali c
 	\item \textbf{serveRescource()}: metodo utilizzato per reperire risorse utilizzando un \gls{urlg};
 	\item \textbf{destroy()}: distrugge la \gls{portlet};
 \end{itemize}	
-
+\newpage
 \section{Form portlet}
 La form la cui reimplementazione costituisce il mio progetto di stage consiste in un unica portlet,scritta in Java. \\
 La portlet è costituita da una grande classe, di oltre 6.000 linee di codice, che si appoggia poi ad altre classi per la gestione di aspetti più particolari: ad esempio i campi di tipo picker, cioè dei campi di ricerca che recuperano le voci su cui effettuarla dal database, è separata e lunga circa 4.000 linee di codice.\\
@@ -69,7 +73,7 @@ L'analisi ha portato allo sviluppo del diagramma di flusso riguardandte la creaz
 \end{figure}
 
 \subsection{Descrizione del flusso}
-Il flusso di esecuzione per la creazione di una form può essere essenzialmente diviso in X parti: 
+Il flusso di esecuzione per la creazione di una form può essere essenzialmente diviso in 4 parti: 
 \begin{itemize}
 	\item \textbf{settaggio dei parametri e costruzione dei bottoni};
 	\item \textbf{recupero del datasource};
@@ -105,6 +109,7 @@ I tipi di azione sono i seguenti:
 	\item \textbf{custom};
 \end{itemize}
 I metodi invocati sono diversi per ogni azione, e si occupano della gestione della funzionalità allorché l'utente prema il relativo pulsante.
+\newpage
 \subsubsection{Creazione dei fields}
 Infine viene eseguito un ciclo su tutti i campi dati rappresentati nel datasource. Questa è la parte più complessa del flusso in quanto ogni campo contiene avariate caratteristiche che è necessario andare a verificare per la corretta costruzione dello stesso. Esso è descritto nel datasource, con alcune variazioni (a volte piuttosto importanti) a seconda della tipolgia di campo, come riportato nella figura \ref{fig:json-detail}, che rappresenta i parametri relativi al campo "mail".\\  
 	\begin{figure}[h]
