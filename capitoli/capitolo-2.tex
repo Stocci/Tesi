@@ -10,7 +10,7 @@
 
 %**************************************************************
 \section{Tecnologie utilizzate}
-Durante la mia esperienza di stage ho potuto prendere contatto con molte tecnologie differenti e che non avevo incontrato durante il corso di studi. Esse spaziano dall'ambiente server a quello client. L'approfondimento di tali tecnologie, specialmente nelle prime settimane di stage, è stato fondamentale per capire il funzionamento del software da modificare \\
+Durante la mia esperienza di stage ho potuto prendere contatto con molte tecnologie differenti e che non avevo incontrato durante il corso di studi. Esse spaziano dall'ambiente server a quello client e coprono la gran parte delle tecnologie utilizzate da JGalileo CRM. L'approfondimento di tali tecnologie, specialmente nelle prime settimane di stage, è stato fondamentale per capire il funzionamento del software con cui stavo lavorando: \\
 \subsection{Java}
 \begin{figure}[h]
 	\centering
@@ -18,10 +18,10 @@ Durante la mia esperienza di stage ho potuto prendere contatto con molte tecnolo
 	\caption{Logo di Java}
 \end{figure}
 Java è uno dei linguaggi di programmazione general-purpose più popolari al mondo. \\
-Rilasciato nel 1995, riprende molta della sintassi dal linguaggio C e C++, ma spostando parte delle responsabilità prima lasciate ai programmatori, come la gestione della memoria, alla \emph{Java Virtual Machine (JVM)}: una macchina virtuale su chi viene eseguito tutto il codice Java.\\
+Rilasciato nel 1995, riprende molta della sintassi dal linguaggio C e C++ ma si differenzia da essi soprattutto  nella parte delle responsabilità lasciate ai programmatori, come la gestione della memoria, che in Java è tutta affidata alla \emph{Java Virtual Machine (JVM)}: una macchina virtuale su chi viene eseguito tutto il codice Java.\\
 La presenza di una macchina virtuale crea un livello aggiuntivo tra il sistema operativo e l' \emph{IDE} di sviluppo: Questo permette al linguaggio Java di aderire al principio \emph{Write Once Run Anywhere (WORA)}: Il codice compilato (bytecode) può essere eseguito da qualsisasi computer provvisto di una JVM, senza necessitare di ricompilazioni e perfino adattamenti del codice sorgente in base al sistema operativo presente sul computer.
 Java è inoltre molto utilizzato per eseguire applicazioni client-server, cioè applicazioni (Client) che per ottentere i dati necessari si appoggiano ad un fornitore (Server), che recupera per loro i dati necessari, in maniera del tutto trasparente al client e quindi all'utente.\\
-Java dispone di una libreria proprietaria specializzata, ma in JGalileoCRM tale libreria è sostituita da \emph{Liferay}.\\ %TODO occhio che java.net è chiusa
+Java un tempo disponeva di una libreria proprietaria specializzata nella parte server, Java.net, ma essendo stata deprecata in JGalileoCRM tale libreria è sostituita da \emph{Liferay}.\\
 \subsection{Liferay}
 \begin{figure}[h]
 	\centering
@@ -34,9 +34,9 @@ Per enterprise portal si intende un sistema informatico evoluto, in grado di int
 	\item Gestione del \emph{Single Sign On};
 	\item Semplice personalizzazioni ad hoc per ogni cliente;
 	\item Analisi delle pagine, in termini di accessi, click, download molto semplice;
-	\item Integrazione tra funzionalità e dati di diversi sistemi in nuove componenti definite \gls{portlet}. 
+	\item Integrazione tra funzionalità e dati di diversi sistemi in nuove componenti definite \gls{portlet}\glsfirstoccur. 
 \end{itemize}
-Le portlets sono il cuore del sistema di Liferay. Esse infatti permettono di concentrare lo sviluppo solamente sulla gestione della funzionalità principale, lasciando a liferay la gestione degli accessi, dei menù di navigazione e degli altri componenti globali dell'applicazione.\\
+Le \gls{portlet} sono il cuore del sistema di Liferay. Esse infatti permettono di concentrare lo sviluppo solamente sulla gestione della funzionalità principale, lasciando a liferay la gestione degli accessi, dei menù di navigazione e degli altri componenti globali dell'applicazione.\\
 \subsection{GWT}
 \begin{figure}[h]
 	\centering
@@ -44,9 +44,9 @@ Le portlets sono il cuore del sistema di Liferay. Esse infatti permettono di con
 	\caption{Logo di Google Web Toolkit}
 \end{figure} 
 GWT, acronimo di \emph{Google Web Toolkit} è un insieme di tool open source che permette la creazione ed il mantenimento di complesse applicazioni front-end JavaScript scritte in Java.\\
-GWT infatti si occupa di tradurre il codice scritto in Java in codice JavaScript, interpretabile da tutti i moderni browsers Tutto il codice Java può essere compilato ed eseguito grazie ai file Ant inclusi.
-Ant è un progetto open source della Apache foundation, volto ad automatizzare il processo di build. è simile al comando make di Unix, ma scritto in Java. \\ %TODO make come codice
-Il plug-in di Google per Eclipse (IDE in uso presso Sanmarco Informatica) è molto comleto, offrendo la possibilità di creare progetti, farne il debug, il testing, meccanismi di validazione e di controllo della sintassi.\\
+GWT infatti si occupa di tradurre il codice scritto in Java in codice JavaScript, interpretabile da tutti i moderni browsers Tutto il codice Java può essere compilato ed eseguito grazie ai file Ant inclusi.\\
+Ant è un progetto open source della Apache foundation, volto ad automatizzare il processo di build. \'E simile al comando \lstinline[language=C]|make| di Unix, ma scritto in Java. \\ %TODO make come codice
+Il plug-in di Google per Eclipse (IDE in uso presso Sanmarco Informatica) è molto completo, offrendo la possibilità di creare progetti, farne il debug, il testing ed è provvisto anche meccanismi di validazione e di controllo della sintassi.\\
 \subsection{Apache Tomcat}
 \begin{figure}[h]
 	\centering
@@ -54,26 +54,26 @@ Il plug-in di Google per Eclipse (IDE in uso presso Sanmarco Informatica) è mol
 	\caption{Logo di Apache Tomcat}
 \end{figure}
 Apache Tomcat è un web server, cioè un' applicazione web che, in esecuzione su di un server, gestisce le richieste di trasferimento tra le varie pagine web di un client.\\
-In particolare, Tomcat opera utilizzando servlet, cioè oggetti scritti in Java molto usati nella generazione di pagine web dinamiche.
-Queste servlet, in JGalileoCRM non vengono direttamente scritte in Java, ma sono scritte con \emph{JavaServer Pages (JSP)}:\\
-JSP è una tecnologia di programmazione web, scritta in Java, che si basa sull'uso di speciali tag all'interno di una pagina HTML, con cui possono essere chiamate funzioni scritte in linguaggio Java o JavaScript.
-A runtime, le pagine JSP vengono tradotte automaticamente in servlet utilizzabili da Tomcat. \\
-Il vantaggio principale di questa tecnologia rispetto, ad esempio, a \gls{phpg}, consiste nel poter scrivere tutto il codice, frontend e backend in un solo linguaggio di programmazione: Java. \\
-Inoltre permette la creazioni di applicazioni web dinamiche, rispetto all'utilizzo di codice HTML statico.
+In particolare, Tomcat opera utilizzando \gls{servlet}\glsfirstoccur, cioè oggetti scritti in Java molto usati nella generazione di pagine web dinamiche.
+Queste \gls{servlet}, in JGalileoCRM non vengono direttamente scritte in Java, ma sono scritte con \emph{JavaServer Pages (JSP)}:\\
+JSP è una tecnologia di programmazione web, scritta in Java, che si basa sull'uso di speciali tag all'interno di una pagina \gls{html}, con cui possono essere chiamate funzioni scritte in linguaggio Java o JavaScript.
+A runtime, le pagine JSP vengono tradotte automaticamente in \gls{servlet} utilizzabili da Tomcat. \\
+Il vantaggio principale di questa tecnologia rispetto, ad esempio, a \gls{php}\glsfirstoccur, consiste nel poter scrivere tutto il codice, frontend e backend in un solo linguaggio di programmazione: Java. \\
+Inoltre permette la creazioni di applicazioni web dinamiche, rispetto all'utilizzo di codice \gls{html}\glsfirstoccur statico.
 \subsection{Databases}
-Un database, o base di dati, è un insieme di dati omogeneo memorizzato in un elaboratore, che può essere interrogato attraverso uno dei linguaggi di interrogazione esistenti, con lo scopo di ottenere una parte dei dati memorizzati.
+Un database, o base di dati, è un insieme di dati omogeneo memorizzato in un elaboratore, che può essere interrogato attraverso uno dei linguaggi di interrogazione esistenti, con lo scopo di ottenere una parte dei dati memorizzati.\\
 JGalileoCRM utilizza due database differenti per gestire i propri dati:
 \subsubsection{Database SQL}
-Il primo database utilizzato dal software sopracitato è un comune database \gls{sqlg}: esso è un database relazionale, cioè opera creando tabelle che vengono messe in relazione tra loro tramite gli attributi inseriti nellle tabelle stesse.\\
+Il primo database utilizzato dal software sopracitato è un comune database \gls{sqlg}\glsfirstoccur: esso è un database relazionale, cioè opera creando tabelle che vengono messe in relazione tra loro tramite gli attributi inseriti nelle tabelle stesse.\\
 Questo database è utilizzato per la gestione di tutti i dati diversi dai dati personali dei clienti e dei contatti. %TODO spiegare meglio
-\subsubsection{Database AS400}
+\subsubsection{Database AS/400}
 AS/400 (Application System 400)è un è un minicomputer sviluppato a partire dal 1988 dall’IBM per usi prevalentemente aziendali, come supporto del sistema informativo gestionale.\\
-Il punto di forza sta nel database integrato con il sistema operativo, che permette la gestione dei dati attraverso una suite di programmi e librerie altamente specializzati. Attualmente consente di eseguire tutte le operazioni disponibili su di un comune server web, grazie ai continui aggiornamenti che hanno portato, ad esempio, all'installazione di PHP direttamente a livello di sistema operativo.
-Questo database viene usato, in Sanmarco Informatica, per contenere tutti i dati degli utenti, sia interni che esterni, nonchè i dati relativi ai contatti. %TODO meglio, chiedere a luca il tipo di DB
+Il punto di forza sta nel database integrato con il sistema operativo, che permette la gestione dei dati attraverso una suite di programmi e librerie altamente specializzati. Attualmente consente di eseguire tutte le operazioni disponibili su di un comune server web, grazie ai continui aggiornamenti che hanno portato, ad esempio, all'installazione di \gls{php} direttamente a livello di sistema operativo.
+Questo database viene usato, in Sanmarco Informatica, per contenere tutti i dati degli utenti, sia interni che esterni, nonché i dati relativi ai contatti. %TODO meglio, chiedere a luca il tipo di DB
 \subsection{Hibernate}
-Hibernate è una piattaforma \gls{middleware} open-source per gestire la persistenza dei dati in un database.\\
-è largamente utilizzato per la gestione dei dati di applicazioni web scritte in Java, in quanto i dati vengono rappresentati attraverso degli oggetti Java chiamati \emph{entità}.
-Un'entità hibernate si sostituisce logicamente alla tabella reale del database. In questo modo il programmatore può operare sul database come fosse un oggetto Java, semplificando di molto le operazioni di lettura/scrittura e di modifica delle tabelle stesse.
+Hibernate è una piattaforma \gls{middleware}\glsfirstoccur open-source per gestire la persistenza dei dati in un database.\\
+è largamente utilizzato per la gestione dei dati di applicazioni web scritte in Java, in quanto i dati vengono rappresentati attraverso degli oggetti Java chiamati \emph{entità}.\\
+Un'entità hibernate si sostituisce logicamente alla tabella reale del database. In questo modo il programmatore può operare sul database come fosse un oggetto Java, semplificando di molto le operazioni di lettura/scrittura e di modifica delle tabelle stesse.\\
 
 \newpage
 
@@ -86,15 +86,15 @@ Un'entità hibernate si sostituisce logicamente alla tabella reale del database.
 \end{figure}
 DBeaver è un client SQL, con anche la funzione di tool di amministrazione.\\
 La sua applicazione desktop è scritta in Java e si basa sulla piattaforma Eclipse.\\
-Dbeaver consente la visualizzazione grafica delle tabelle del database SQL sopra citato ed inoltre su di esse è possibile eseguire queries scritte in appositi file di script.
+Dbeaver consente la visualizzazione grafica delle tabelle del database SQL sopra citato, ed inoltre su di esse è possibile eseguire queries scritte in appositi file di script.\\
 \subsection{JavaScript}
 JavaScript è un linguaggio di scripting orientato agli oggetti ed agli eventi.\\
-Viene utilizzato principalmente come linguaggio per la \emph{logica di presentazione} di applicazioni web. Ciò consiste nella creazione di \gls{script}, scatenati dall'utente per mezzo di strumenti quali mouse e tastiera, che producono effetti dinamici ed interattivi lato client, cioè nell'interfaccia utente.
+Viene utilizzato principalmente come linguaggio per la \emph{logica di presentazione} di applicazioni web. Ciò consiste nella creazione di \gls{script}\glsfirstoccur, scatenati dall'utente per mezzo di strumenti quali mouse e tastiera, che producono effetti dinamici ed interattivi lato client, cioè nell'interfaccia utente.\\
 Questo linguaggio eredita la sintassi dal sopracitato Java (derivato comunque dal linguaggio C), ma differisce sostanzialmente da esso per alcuni motivi:
 \begin{itemize}
-	\item JavaScript è un linguaggio interpretato: cio significa che non è necessaria la compilazione perchè esso venga eseguito, bensì sarà il browser che, a runtime, interpreta il codice ed esegue i calcoli necessari;
-	\item a differenza di Java, javascript è debolmente tipizzato: ciò significa che una variabile può assumere diversi tipi, a seconda del suo utilizzo;
-	\item Javascript è un linguaggio debolmente orientato all'ereditarietà tra oggetti, altro aspetto dai cui differisce in maniera sostanziale da Java. 
+	\item JavaScript è un linguaggio interpretato: ciò significa che non è necessaria la compilazione perché esso venga eseguito, bensì sarà il browser che, a runtime, interpreta il codice ed esegue i calcoli necessari;\\
+	\item a differenza di Java, JavaScript è debolmente tipizzato: ciò significa che una variabile può assumere diversi tipi, a seconda del suo utilizzo;\\
+	\item JavaScript è un linguaggio debolmente orientato all'ereditarietà tra oggetti, altro aspetto dai cui differisce in maniera sostanziale da Java. \\
 \end{itemize}
 
 \newpage
@@ -107,15 +107,15 @@ Questo linguaggio eredita la sintassi dal sopracitato Java (derivato comunque da
 	\caption{I loghi delle alternative prese in esame}
 \end{figure}
 
-Durante la mia esperienza di stage era richiesto, come illustrerò dettagliatamente nel capitolo successivo, l'analisi e la successiva scelta di librerie JavaScript open-source da impiegare nella reimplementazione della componente form di JGalileo CRM, con campi che fossero creati dinamicamente a partire da file JSON. \\ 
+Durante la mia esperienza di stage era richiesto, come illustrerò dettagliatamente nel capitolo successivo, l'analisi e la successiva scelta di librerie JavaScript \emph{open-source} da impiegare nella reimplementazione della componente form di JGalileo CRM, con campi che fossero creati dinamicamente a partire da file JSON. \\ 
 Ho impiegato circa 40 ore di lavoro per documentarmi sulle varie librerie oggi esistenti, e mi sono focalizzato sulle librerie che seguono:
 \subsubsection{React}
-React è una libreria JavaScript open-source sviluppata da Facebook a partire dal 2013.\\
+React è una libreria JavaScript sviluppata da Facebook a partire dal 2013.\\
 è utilizzata, oltre che per Facebook stesso, per una moltitudine di applicazioni web come WhatsAppWeb, Netflix, Aribnb, BBC,...\\
 Le principali caratteristiche di React sono:
 \begin{itemize}
-	\item \textbf{One way data binding}: Singifica che l'HTML, quindi la pagina visibile all'utente, non è in grado di modificare il componente stesso. L'unico modo per modificare un componente è scatenare un evento che modifichi il componente, che a sua volta renderizzerà la modifica sullo schermo.
-	\item \textbf{VirtualDOM}: React opera su di una rappresentazione del \gls{domg}, ciò vuol dire che il programmatore può sviluppare pensando che ad ogni cambiamento la pagina venga interamente renderizzata nuovamente: in realtà React valuta le differenze tra il DOM reale e quello virtuale, renderizzando in maniera efficiente solamente le parti interessate al cambiamento.
+	\item \textbf{One way data binding}: Singifica che l'\gls{html}, quindi la pagina visibile all'utente, non è in grado di modificare il componente stesso. L'unico modo per farlo è scatenare un evento che modifichi il componente tramite una funzione, che a sua volta renderizzerà la modifica sullo schermo.
+	\item \textbf{VirtualDOM}: React opera su di una rappresentazione del \gls{domg}\glsfirstoccur, ciò vuol dire che il programmatore può sviluppare pensando che ad ogni cambiamento la pagina venga interamente renderizzata nuovamente: in realtà React valuta le differenze tra il \gls{domg} reale e quello virtuale, renderizzando in maniera efficiente solamente le parti interessate al cambiamento.
 \end{itemize}
 Alcuni aspetti negativi comprendono invece:
 \begin{itemize}
@@ -135,25 +135,25 @@ Le principali caratteristiche comprendono:
 	\item \textbf{Two ways data binding}: La pagina HTML modifica direttamente lo stato del componente, che viene realizzato mediante l'uso di controller;
 	\item \textbf{Dependency injection}. %TODO ci sta o meglio togliere e mettere altro?
 \end{itemize}
-Nonostante fosse ormai uno dei framework più adottati a livello mondiale per costruire \gls{spag}, Google ha deciso di rilasciare, nel 2016, una versione (chiamata genericamente Angular oppure Angular 2+) che modifica radicalmente il framework, tanto da non essere compatibile con AngularJS.\\
-Questo cambiamento, dapprima molto criticato dalla comunità di sviluppatori, non ha inficiato sulla popolarità di Angular, che rimane anche nella nuova versione uno dei framework più utilizzati.\\
+Nonostante fosse ormai uno dei \gls{framework} più adottati a livello mondiale per costruire \gls{spa}\glsfirstoccur, Google ha deciso di rilasciare, nel 2016, una versione (chiamata genericamente Angular oppure Angular 2+) che modifica radicalmente il \gls{framework}, tanto da non essere compatibile con AngularJS.\\
+Questo cambiamento, dapprima molto criticato dalla comunità di sviluppatori, non ha inficiato sulla popolarità di Angular, che rimane anche nella nuova versione uno dei \gls{framework} più utilizzati.\\
 \textbf{Angular 2+}: La seconda versione di Angular si differenzia con la precedente per queste caratteristiche:
 \begin{itemize}
 	\item \textbf{typeScript}: Angular2+ è stato scritto in typeScript, una sorta di super-set di JavaScript a cui vengono aggiunti costrutti come classi, interfacce e moduli.
 	\item \textbf{Sparisce il two ways data binding}: Quello che era stato il punto di forza di AngularJS si è rivelato una debolezza in termini di prestazioni e soprattutto di memory leak. Resta comunque attivabile quando necessario.
-	\item \textbf{Componenti}: spariscono l'idea di scope e controllers, tutta la logica di un componente un è racchiusa all'interno di un componente, esportato poi da un modulo. %TODO CAMBIARE ASsolutamente componente-componente
+	\item \textbf{Componenti}: spariscono l'idea di scope e controller (che saranno approfonditi nella sezione \ref{sec:AngularJS}), tutta la logica di una sezione logica un è racchiusa all'interno di un componente, esportato poi da un modulo. %TODO CAMBIARE ASsolutamente componente-componente
 \end{itemize}
 \subsubsection{Vue.js}
 Vue.js è un framework rilasciato nel 2014 da Evan You, ex dipendente Google, con l'intento di prendere solo le parti migliori di AngularJS per creare qualcosa di molto più leggero.\\
 è stato sviluppato soprattutto per la costruzione di interfacce utente, ma comunque è possibile creare intere \gls{spag}.\\
 Vue.js prende spunto sia da AngularJS (two way binding ottimizzato) che da React(VirtualDOM, componenti). \\
-La diffusione relativamente ridotta rende difficoltosa la ricerca della soluzione a problemi che si presenteranno durante lo sviluppo.
+La diffusione relativamente ridotta rende però difficoltosa la ricerca della soluzione a problemi che si presenteranno durante lo sviluppo.
 
 \subsubsection{Scelta finale}
-Nella scelta finale del framework sono stati presi in considerazione i pregi e difetti illustrati sopra, naturalmente riportati all'obiettivo finale dello stage, ma anche i vincoli personali che mi sono imposto ed i vincoli aziendali che mi sono stati imposti.
+Nella scelta finale del framework sono stati presi in considerazione i pregi e difetti illustrati sopra, naturalmente riportati all'obiettivo finale dello stage, ma anche i vincoli personali che mi sono prefissato ed i vincoli aziendali che mi sono stati imposti.
 \begin{itemize}
-	\item \textbf{Angular}: La prima scelta ricadeva su Angular2+, per la grande diffusione e per le API specifiche per le form, ma il vincolo aziendale che mi è stato imposto è stato quello di non appesantire troppo il software, riutilizzando se possibile i framework già presenti.\\
-	Essendo AngularJS già utilizzato in alcune \gls{portlet}, la mia scelta è alla fine ricaduta su quello, anche a causa dell'impossibilità che hanno i due framework a coesistere;
+	\item \textbf{Angular}: La prima scelta ricadeva su Angular2+, per la grande diffusione e per le API specifiche per le form, ma il vincolo aziendale che mi è stato imposto è stato quello di non appesantire troppo il software, riutilizzando se possibile i \gls{framework} già presenti.\\
+	Essendo AngularJS già utilizzato in alcune \gls{portlet}, la mia scelta è alla fine ricaduta su quello, anche a causa dell'impossibilità che hanno i due \gls{framework} a coesistere;
 	\item \textbf{React}: Ho scartato l'utilizzo di questa libreria a causa della già citata mancanza di soluzioni ad-hoc per le form e perché ho già utilizzato questa tecnologia durante lo sviluppo del progetto di ingegneria del software;
 	\item \textbf{Vue}: Ho scartato Vue.js soprattutto a causa del vincolo che mi è stato imposto, consideravo affascinante l'idea di cimentarmi con un linguaggio nuovo e di crescente popolarità.
 \end{itemize}
@@ -164,7 +164,7 @@ Sanmarco informatica utilizza l'IDE Eclipse nella versione 4.4 (Luna), mentre pe
 Come già anticipato, mi sono stati imposti alcuni vincoli da rispettare durante l'esperienza di stage:
 \begin{itemize}
 	\item Tutte le tecnologie eventualmente utilizzate avrebbero necessariamente dovuto essere \emph{open-source};
-	\item Evitare il più possibile di appesantire ultieriormente il software con nuove librerie o framework, ma possibilmente riutilizzare quelli già in uso.
+	\item Evitare il più possibile di appesantire ultieriormente il software con nuove librerie o \gls{framework}, ma, quando possibile, riutilizzare quelli già in uso.
 \end{itemize}
 
 \newpage

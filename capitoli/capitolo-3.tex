@@ -13,19 +13,18 @@
 
 \section{Dominio applicativo}
 \subsection{Tipi di utenti}
-JGalileo CRM è stato pensato per essere utilizzato da svariate tipologie di utenti:
-i casi d'uso seguiranno solamente i due utenti più importanti:
+JGalileo CRM è stato pensato per essere utilizzato da svariate tipologie di utenti, ma a causa della grande varietà di utenti differenti che condividono però gran parte delle funzioni, i casi d'uso seguiranno solamente i due utenti più importanti:
 \begin{itemize}
 	\item \textbf{amministratore}: che ha il potere di creare nuovi utenti e configurare l'interfaccia finale aggiungendo e togliendo \gls{portlet}. Inoltre può accedere al pannello di controllo e monitorare la lista di utenti, modificarne i permessi e visualizzare svariate statistiche di utilizzo del prodotto;
 	\item{utente semplice}, cui è permesso solamente utilizzare il software, senza aggiungere o togliere \gls{portlet} e naturalmente senza avere la possibilità di creare altri utenti.\\
 \end{itemize}
-	Quest'ultima è la tipologia di utenti più comune, infatti la clientela di JGalileo CRM è composta solamente da utenti semplici, mentre solamente i membri del team di sviluppo possiedono i permessi di amministratore.
+	Quest'ultima è la tipologia di utenti più comune, infatti la clientela di JGalileo CRM è composta prettamente da utenti semplici, mentre solamente i membri del team di sviluppo possiedono i permessi di amministratore.
 \subsection{Funzionalità}
 Le funzionalità prese in esame si sviluppano soprattutto sull'interazione tra l'utente semplice e la form la cui creazione era l'obiettivo del mio stage.
 Quindi i casi d'uso riguarderanno principalmente:
 \begin{itemize}
-	\item \textbf{Inserimento di un nuova categoria di clienti};
-	\item \textbf{Inserimento di attività ed opportunità};
+	\item \textbf{inserimento di un nuova categoria di clienti};
+	\item \textbf{inserimento di attività ed opportunità};
 	\item \textbf{visualizzazione dettagliata dei clienti già inseriti};
 	\item \textbf{visualizzazione dettagliata delle attività ed opportunità già inserite};
 	\item \textbf{modifica e salvataggio dei dati};
@@ -34,7 +33,7 @@ Quindi i casi d'uso riguarderanno principalmente:
 In particolare, le categorie di clienti inseribili tramite form sono:
 \begin{itemize}
 	\item \textbf{Leads}: Sono persone ed aziende che possono avere interesse ai prodotti e servizi dell'utente. Anche un primo contatto, come ad esempio un biglietto da visita, è considerato un lead;
-	\item \textbf{Accounts}: Contengono i dati di un'azienda con cui è già presente un qualche tipo di relazione commerciale, anche solo una roposta d'acquisto;
+	\item \textbf{Accounts}: Contengono i dati di un'azienda con cui è già presente un qualche tipo di relazione commerciale, anche solo una risposta d'acquisto;
 	\item \textbf{Contatti}: I contatti consistono in persone fisiche con cui è già presente un qualche tipo di relazione commerciale. Spesso account e contatto sono in relazione tra di loro, ma è anche possibile che un contatto non abbia nessun account associato (ad esempio un privato).
 \end{itemize}
 mentre per attività ed opportunità si intende:
@@ -43,12 +42,12 @@ mentre per attività ed opportunità si intende:
 	Tra le attività si inseriscono fiere, esposizioni, eventi, cene,...;
 	\item \textbf{opportunità}: Le opportunità costituiscono, per il cliente che acquista JGalileo CRM, di tenere traccia delle possibilità di concludere accordi commerciali con i clienti.
 \end{itemize}
-Per quanto riguarda la parte di amministrazione, verrà illustrata solamente la procedura di inserimento di un nuovo utente.
+Per quanto riguarda la parte di amministrazione, verrà illustrata solamente la procedura di inserimento di un nuovo utente, mentre per quanto riguarda la parte dedicata agli utenti semplici, vengono illustrate un ampio spettro di funzionalità.
 
 %**************************************************************
 \section{Casi d'uso}
 I casi d'uso (use case) sono una tecnica dell'ingegneria del software per ottenere un'analisi precisa e senza ambiguità dei requisiti di un sistema, con l'obiettivo di perseguire la creazione di software di qualità.\\
-I casi d'uso sono solitamente rappresentati in forma testuale, attraverso la descrizione dettagliata del caso d'uso stesso in termini di attori coinvolti, pre e post condizioni, e da una rappresentazione grafica, definita Use Case Diagram, con l'ausislio di un altro linguaggio, \gls{umlg}.\\
+I casi d'uso sono solitamente rappresentati in forma testuale, attraverso la descrizione dettagliata del caso d'uso stesso in termini di attori coinvolti, pre e post condizioni, e da una rappresentazione grafica, definita Use Case Diagram, con l'ausislio di un altro linguaggio, \gls{uml}\glsfirstoccur.\\
 Tutti i casi d'uso saranno qui presentati attraverso descrizione testuale, mentre la rappresentazione grafica verrà utilizzata solamente per gli scenari più generali.\\
 I casi d'uso qui riportati non si riferiscono all'intero software a causa della sua grande complessità ed ampiezza d'utilizzo, ma solamente agli scenari principali che, direttamente od indirettamente, sono influenzati dal codice da me scritto durante l'esperienza di stage.\\
 
@@ -62,7 +61,7 @@ Ogni caso d’uso è classificato secondo la seguente convenzione:
 Dove [codice] è un codice numerico che identifica univocamente il caso d’uso.\\
 Esso è sequenziale e gerarchico, dunque se ad esempio il caso d’uso "X" necessita di un ulteriore livello di dettaglio si procede individuando i sotto-casi d’uso "X.Y", dove:\\
 \begin{itemize}
-	\item \textbf{X}: il codice identificativo del caso d'uso padre, solitamente generico e difficilemte descrivibile nel dettaglio; 
+	\item \textbf{X}: il codice identificativo del caso d'uso padre, solitamente generico e difficilmente descrivibile nel dettaglio; 
 	\item \textbf{Y}: codice figlio, identifica un caso d'uso più particolare rispetto al padre (che lo contiene).
 	
 \end{itemize}
@@ -132,7 +131,7 @@ Negli UC 3, 4, 5, 6, 7 non vengono riportati tutti i campi inseribili, in quanto
 		\item \textbf{password}.
 	\end{itemize}
 	\item \textbf{Attore}: Utente non autenticato;
-	\item \textbf{Pre-condizione}: Un utente amministratore deve aver aggiunto l'utente che sta per effettuare l'accesso affinchè l'autenticazione vada a buon fine;
+	\item \textbf{Pre-condizione}: Un utente amministratore deve aver aggiunto l'utente che sta per effettuare l'accesso affinché l'autenticazione vada a buon fine;
 	\item \textbf{Post-condizione}:l'utente viene autenticato e può utilizzarne le funzionalità del prodotto in base ai suoi permessi.
 \end{itemize}
 
@@ -311,14 +310,14 @@ La scelta di riportarle come caso d'uso indipendenti deriva dalla volontà di ev
 \begin{figure}[h]
 	\centering
 	\includegraphics[height = 9 cm]{/usecase/azioni-comuni}
-	\caption{Caso d'uso generale 4 - azioni comuni alle categorie sopradescritte}
+	\caption{Caso d'uso generale 4 - azioni comuni alle categorie sopra descritte}
 \end{figure}
 Per facilitare il riferimento ad un qualsiasi lead, account, contatto, attività ed opportunità precedentemente inserito nel sistema oppure in fase di inserimento verrà utilizzato il termine \textbf{scheda}.
 \subsection{UC 12 - Salva}
 
 \begin{itemize}
 	\item \textbf{Descrizione}: un utente può confermare di voler inserire i dati appena immessi nel sistema o salvare le modifiche fatte ad una scheda. \\
-	 in particolare i dati vengono salvati nel database AS400.
+	 in particolare i dati vengono salvati nel database AS/400.
 	\item \textbf{Attore}: Utente autenticato;
 	\item \textbf{Pre-condizione}: Un utente deve aver eseguito l'accesso, essersi portato ad una pagina di inserimento o di visualizzazione dettaglio ed avere inserito le informazioni obbligatorie oppure modificato almeno un campo rispetto ad una scheda preesistente;
 	\item \textbf{Post-condizione}:viene notificato il corretto inserimento nel sistema oppure le corretta modifica di dati precedentemente inseriti.
@@ -338,7 +337,7 @@ Per facilitare il riferimento ad un qualsiasi lead, account, contatto, attività
 \begin{itemize}
 	\item \textbf{Descrizione}: un utente può annullare le modifiche eventualmente apportate ad una scheda, riportandola allo stato in cui è salvata sul database;
 	\item \textbf{Attore}: Utente autenticato;
-	\item \textbf{Pre-condizione}: Un utente deve aver eseguito l'accesso, avere aperto una specifica scheda di suo interesse ed averne modificato almento un campo;
+	\item \textbf{Pre-condizione}: Un utente deve aver eseguito l'accesso, avere aperto una specifica scheda di suo interesse ed averne modificato almeno un campo;
 	\item \textbf{Post-condizione}:la scheda viene ripulita da tutte le modifiche e ritorna quindi allo stato in cui è stata recuperata dal database.
 \end{itemize}
 
@@ -379,7 +378,7 @@ Ogni requisito identificato è stato classificato come segue:
 	\item \textbf{Importanza:} Specifica il grado di necessità che il requisito possiede, si articola in:
 	\begin{itemize}
 		\item \textbf{O (Obbligatorio)}: Il suo soddisfacimento è essenziale alla buona riuscita del progetto;
-		\item \textbf{D (Desiderabile)}: Il suo soddisfacimento non è necessario ma offre funzionalità tali da renderlo uno dei primi requisiti da soffisfare in sviluppi successivi;
+		\item \textbf{D (Desiderabile)}: Il suo soddisfacimento non è necessario ma offre funzionalità tali da renderlo uno dei primi requisiti da soddisfare in sviluppi successivi;
 		\item \textbf{F (Funzionale)}: Il valore aggiunto dato dal soddisfacimento di questo requisito non è così importante, quindi prima di soddisfare il requisito è consigliata un’analisi di tempi e costi per evitare ritardi nella consegna e/o costi superiori a quelli preventivati.
 	\end{itemize}
 	\item \textbf{Classificazione}: Indica il tipo del requisito, in termini di finalità dello stesso:
@@ -394,7 +393,7 @@ Ogni requisito identificato è stato classificato come segue:
 \newpage
 
 \subsection{Tracciamento dei requisiti}
-Le tabelle \ref{tab:requisiti-funzionali} ,\ref{tab:requisiti-di-qualità} e \ref{tab:requisiti-di-vincolo} illustrano il codice del requistito, una breve descrizione testuale e lo stato di completamento alla fine dell'esperienza di stage. \\
+Le tabelle \ref{tab:requisiti-funzionali} ,\ref{tab:requisiti-di-qualità} e \ref{tab:requisiti-di-vincolo} illustrano il codice del requisito, una breve descrizione testuale e lo stato di completamento alla fine dell'esperienza di stage. \\
 
 \subsection*{Requisiti funzionali}
 \begin{longtable}[h]{|p{2.5cm}|p{8cm}|p{2.5cm}|}
@@ -438,7 +437,7 @@ Le tabelle \ref{tab:requisiti-funzionali} ,\ref{tab:requisiti-di-qualità} e \re
 	ROF11&Un utente può salvare un nuova organizzazione&Completato\\
 	\hline
 	\rule[-3mm]{0mm}{0.8cm}
-	ROF12&Il sistema, in fase di salvataggio, deve validare la nuovoa organizzazione&Completato \\
+	ROF12&Il sistema, in fase di salvataggio, deve validare la nuova organizzazione&Completato \\
 	\hline
 	\rule[-3mm]{0mm}{0.8cm}
 	ROF13&Un utente può compilare la form per l'inserimento di un nuovo concorrente  & Completato\\
@@ -456,7 +455,7 @@ Le tabelle \ref{tab:requisiti-funzionali} ,\ref{tab:requisiti-di-qualità} e \re
 	ROF17&Un utente può salvare un nuova attività&Completato\\
 	\hline
 	\rule[-3mm]{0mm}{0.8cm}
-	ROF18&Il sistema, in fase di salvataggio, deve validare la nuovoa attività&Completato \\
+	ROF18&Il sistema, in fase di salvataggio, deve validare la nuova attività&Completato \\
 	\hline
 	\rule[-3mm]{0mm}{0.8cm}
 	ROF19&Un utente può compilare la form per l'inserimento di un nuovo contatto&Completato\\
@@ -495,10 +494,10 @@ Le tabelle \ref{tab:requisiti-funzionali} ,\ref{tab:requisiti-di-qualità} e \re
 	ROF30&Un utente può annullare le modifiche apportate ad un lead precedentemente inserito&Completato\\
 	\hline
 	\rule[-3mm]{0mm}{0.8cm}
-	ROF31&Un utente può eliminare un lead precedemente inserito&Completato\\
+	ROF31&Un utente può eliminare un lead precedentemente inserito&Completato\\
 	\hline
 	\rule[-3mm]{0mm}{0.8cm}
-	ROF32&Un utente può convertire un lead precedemente inserito&Completato\\
+	ROF32&Un utente può convertire un lead precedentemente inserito&Completato\\
 	\hline
 	\rule[-3mm]{0mm}{0.8cm}
 	ROF33&Un utente può inviare una mail ad un lead precedentemente inserito&Completato \\
@@ -516,7 +515,7 @@ Le tabelle \ref{tab:requisiti-funzionali} ,\ref{tab:requisiti-di-qualità} e \re
 	ROF37&Un utente può annullare le modifiche apportate ad un prospect precedentemente inserito&Completato\\
 	\hline
 	\rule[-3mm]{0mm}{0.8cm}
-	ROF38&Un utente può eliminare un prospect precedemente inserito&Completato\\
+	ROF38&Un utente può eliminare un prospect precedentemente inserito&Completato\\
 	\hline
 	\rule[-3mm]{0mm}{0.8cm}
 	ROF39&Un utente può inviare una mail ad un prospect precedentemente inserito&Completato \\
@@ -534,7 +533,7 @@ Le tabelle \ref{tab:requisiti-funzionali} ,\ref{tab:requisiti-di-qualità} e \re
 	ROF43&Un utente può annullare le modifiche apportate ad un partner precedentemente inserito&Completato\\
 	\hline
 	\rule[-3mm]{0mm}{0.8cm}
-	ROF44&Un utente può eliminare un partner precedemente inserito&Completato\\
+	ROF44&Un utente può eliminare un partner precedentemente inserito&Completato\\
 	\hline
 	\rule[-3mm]{0mm}{0.8cm}
 	ROF45&Un utente può inviare una mail ad un partner precedentemente inserito&Completato \\
@@ -551,7 +550,7 @@ Le tabelle \ref{tab:requisiti-funzionali} ,\ref{tab:requisiti-di-qualità} e \re
 	ROF49&Un utente può annullare le modifiche apportate ad un contatto precedentemente inserito&Completato\\
 	\hline
 	\rule[-3mm]{0mm}{0.8cm}
-	ROF50&Un utente può eliminare un contatto precedemente inserito&Completato\\
+	ROF50&Un utente può eliminare un contatto precedentemente inserito&Completato\\
 	\hline
 	\rule[-3mm]{0mm}{0.8cm}
 	ROF51&Un utente può inviare una mail ad un contatto precedentemente inserito&Completato \\
@@ -568,7 +567,7 @@ Le tabelle \ref{tab:requisiti-funzionali} ,\ref{tab:requisiti-di-qualità} e \re
 	ROF55&Un utente può annullare le modifiche apportate ad un' opportunità precedentemente inserita&Completato\\
 	\hline
 	\rule[-3mm]{0mm}{0.8cm}
-	ROF56&Un utente può eliminare un' opportunità precedemente inserita&Completato\\
+	ROF56&Un utente può eliminare un' opportunità precedentemente inserita&Completato\\
 	\hline
 	\rule[-3mm]{0mm}{0.8cm}
 	ROF57&Un utente può inviare una mail ad un' opportunità precedentemente inserita&Completato \\
@@ -602,7 +601,7 @@ La seguente tabella riporta i requisiti di qualità che il software deve soddisf
 		ROQ01&Il prototipo sviluppato deve avere le stesse funzionalità del precedente&Completato\\
 		\hline
 		\rule[-3mm]{0mm}{0.8cm}
-		RDQ02&Il prototipo deve essere completato utilizzando il design Material&Non completato\\
+		RDQ02&Il prototipo deve essere completo di CSS utilizzando il design Material&Non completato\\
 		\hline	
 	\end{tabular}
 \end{table}
@@ -694,9 +693,9 @@ Ho voluto analizzare una serie di rischi che sarebbero potuti incorrere durante 
 		\hline
 		La scelta di una libreria JavaScript che non soddisfacesse gli scopi dello stage avrebbe significato una grande perdita di tempo e il dover ripartire da capo con lo sviluppo & Analisi approfondita delle alternative disponibili e dialogo con il Tutor aziendale per trovare la soluzione più adeguata & Alto\\
 		\hline
-		La mancanza di documentazione dovuta all'adozione della metosologia agile potrebbe portare ad allungare i tempi di comprensione delle componenti & Collaborazione da parte del tutor e del team di sviluppo nel caso ci siano chiarimenti da fornire & Alto\\
+		La mancanza di documentazione dovuta all'adozione della metodologia agile potrebbe portare ad allungare i tempi di comprensione delle componenti & Collaborazione da parte del tutor e del team di sviluppo nel caso ci siano chiarimenti da fornire & Alto\\
 		\hline
-		Dovendo interagire con un software già funzionante e molto grande, le parti da me sviluppate potrebbero creare conflitti & Evitare di modificare metodi che possano essere utilizzati da alre componenti & Basso\\
+		Dovendo interagire con un software già funzionante e molto grande, le parti da me sviluppate potrebbero creare conflitti & Evitare di modificare metodi che possano essere utilizzati da altre componenti & Basso\\
 		\hline
 		
 	\end{tabular}
