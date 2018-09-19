@@ -33,6 +33,9 @@
 
 \newacronym[description={\glslink{ICT}{Information and Communication Technologies}}]
 {ict}{ICT}{Information and Communication Technologies}
+
+\newacronym[description={\glslink{REST}{REpresentational State Transfert}}]
+{rest}{REST}{REpresentational State Transfert}
 %**************************************************************
 % Glossario
 %**************************************************************
@@ -165,4 +168,18 @@ description={un URL, Uniform Resource Locator, è l'indirizzo univoco in cui si 
 	text=servlet,
 	sort=servlet,
 	description={Una servlet èoggetto scritto in linguaggio Java che operano all'interno di un server web (es. Tomcat, Jetty) oppure un server per applicazioni (es. WildFly, GlassFish), permettendo la creazione di applicazione web.}
+}
+
+\newglossaryentry{restg}
+{name=\glslink{rest}{REST},
+	text=REST,
+	sort=rest,
+	description={REST (REpresentational State Transfert) definisce un insieme di principi architetturali per la progettazione di un sistema. Questi princìpi comprendono:
+	\begin{itemize}
+		\item identificazione delle risorse;\\
+		\item utilizzo esplicito dei metodi HTTP;
+		\item risorse autodescrittive;
+		\item collegamenti tra risorse;
+		\item comunicazione senza stato.
+	\end{itemize}
 }
