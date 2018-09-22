@@ -1,6 +1,7 @@
 % !TEX encoding = UTF-8
 % !TEX TS-program = pdflatex
 % !TEX root = ../tesi.tex
+\null\newpage
 %**************************************************************
 \chapter{Tecnologie e strumenti}
 \label{cap:tecnologie-strumenti}
@@ -18,8 +19,8 @@ Durante la mia esperienza di stage ho potuto prendere contatto con molte tecnolo
 	\caption{Logo di Java}
 \end{figure}
 Java è uno dei linguaggi di programmazione general-purpose più popolari al mondo. \\
-Rilasciato nel 1995, riprende molta della sintassi dal linguaggio C e C++ ma si differenzia da essi soprattutto  nella parte delle responsabilità lasciate ai programmatori, come la gestione della memoria, che in Java è tutta affidata alla \emph{Java Virtual Machine (JVM)}: una macchina virtuale su chi viene eseguito tutto il codice Java.\\
-La presenza di una macchina virtuale crea un livello aggiuntivo tra il sistema operativo e l' \emph{IDE} di sviluppo: Questo permette al linguaggio Java di aderire al principio \emph{Write Once Run Anywhere (WORA)}: Il codice compilato (bytecode) può essere eseguito da qualsisasi computer provvisto di una JVM, senza necessitare di ricompilazioni e perfino adattamenti del codice sorgente in base al sistema operativo presente sul computer.
+Rilasciato nel 1995, riprende molta della sintassi dal linguaggio C e C++ ma si differenzia da essi soprattutto  nella parte delle responsabilità lasciate ai programmatori, come la gestione della memoria, che in Java è tutta affidata alla \emph{Java Virtual Machine (JVM)}: una macchina virtuale su chi viene eseguito tutto il codice Java\hyperlink{07}{[7]}.\\
+La presenza di una macchina virtuale crea un livello aggiuntivo tra il sistema operativo e l' \emph{IDE} di sviluppo: Questo permette al linguaggio Java di aderire al principio \emph{Write Once Run Anywhere (WORA)}: Il codice compilato (bytecode) può essere eseguito da qualsisasi computer provvisto di una JVM, senza necessitare di ricompilazioni e perfino adattamenti del codice sorgente in base al sistema operativo presente sul computer\hyperlink{08}{[8]}.
 Java è inoltre molto utilizzato per eseguire applicazioni client-server, cioè applicazioni (Client) che per ottentere i dati necessari si appoggiano ad un fornitore (Server), che recupera per loro i dati necessari, in maniera del tutto trasparente al client e quindi all'utente.\\
 Java un tempo disponeva di una libreria proprietaria specializzata nella parte server, Java.net, ma essendo stata deprecata in JGalileoCRM tale libreria è sostituita da \emph{Liferay}.\\
 \subsection{Liferay}
@@ -36,7 +37,7 @@ Per enterprise portal si intende un sistema informatico evoluto, in grado di int
 	\item Analisi delle pagine, in termini di accessi, click, download molto semplice;
 	\item Integrazione tra funzionalità e dati di diversi sistemi in nuove componenti definite \gls{portlet}\glsfirstoccur. 
 \end{itemize}
-Le \gls{portlet} sono il cuore del sistema di Liferay. Esse infatti permettono di concentrare lo sviluppo solamente sulla gestione della funzionalità principale, lasciando a liferay la gestione degli accessi, dei menù di navigazione e degli altri componenti globali dell'applicazione.\\
+Le \gls{portlet} sono il cuore del sistema di Liferay. Esse infatti permettono di concentrare lo sviluppo solamente sulla gestione della funzionalità principale, lasciando a liferay la gestione degli accessi, dei menù di navigazione e degli altri componenti globali dell'applicazione\hyperlink{09}{[9]}.\\
 \subsection{GWT}
 \begin{figure}[h]
 	\centering
@@ -53,27 +54,27 @@ Il plug-in di Google per Eclipse (IDE in uso presso Sanmarco Informatica) è mol
 	\includegraphics[height = 4 cm]{apache_tomcat-card}
 	\caption{Logo di Apache Tomcat}
 \end{figure}
-Apache Tomcat è un web server, cioè un' applicazione web che, in esecuzione su di un server, gestisce le richieste di trasferimento tra le varie pagine web di un client.\\
+Apache Tomcat è un web server, cioè un' applicazione web che, in esecuzione su di un server, gestisce le richieste di trasferimento tra le varie pagine web di un client\hyperlink{10}{[10]}.\\
 In particolare, Tomcat opera utilizzando \gls{servlet}\glsfirstoccur, cioè oggetti scritti in Java molto usati nella generazione di pagine web dinamiche.
 Queste \gls{servlet}, in JGalileoCRM non vengono direttamente scritte in Java, ma sono scritte con \emph{JavaServer Pages (JSP)}:\\
 JSP è una tecnologia di programmazione web, scritta in Java, che si basa sull'uso di speciali tag all'interno di una pagina \gls{html}, con cui possono essere chiamate funzioni scritte in linguaggio Java o JavaScript.
-A runtime, le pagine JSP vengono tradotte automaticamente in \gls{servlet} utilizzabili da Tomcat. \\
+A runtime, le pagine JSP vengono tradotte automaticamente in \gls{servlet} utilizzabili da Tomcat. \hyperlink{11}{[11]}\\
 Il vantaggio principale di questa tecnologia rispetto, ad esempio, a \gls{php}\glsfirstoccur, consiste nel poter scrivere tutto il codice, frontend e backend in un solo linguaggio di programmazione: Java. \\
 Inoltre permette la creazioni di applicazioni web dinamiche, rispetto all'utilizzo di codice \gls{html}\glsfirstoccur statico.
 \subsection{Databases}
-Un database, o base di dati, è un insieme di dati omogeneo memorizzato in un elaboratore, che può essere interrogato attraverso uno dei linguaggi di interrogazione esistenti, con lo scopo di ottenere una parte dei dati memorizzati.\\
+Un database, o base di dati, è un insieme di dati omogeneo memorizzato in un elaboratore, che può essere interrogato attraverso uno dei linguaggi di interrogazione esistenti, con lo scopo di ottenere una parte dei dati memorizzati\hyperlink{12}{[12]}.\\
 JGalileoCRM utilizza due database differenti per gestire i propri dati:
 \subsubsection{Database SQL}
-Il primo database utilizzato dal software sopracitato è un comune database \gls{sqlg}\glsfirstoccur: esso è un database relazionale, cioè opera creando tabelle che vengono messe in relazione tra loro tramite gli attributi inseriti nelle tabelle stesse.\\
+Il primo database utilizzato dal software sopracitato è un comune database \gls{sqlg}\glsfirstoccur: esso è un database relazionale, cioè opera creando tabelle che vengono messe in relazione tra loro tramite gli attributi inseriti nelle tabelle stesse\hyperlink{13}{[13]}.\\
 Questo database è utilizzato per la gestione di tutti i dati diversi dai dati personali dei clienti e dei contatti. %TODO spiegare meglio
 \subsubsection{Database AS/400}
 AS/400 (Application System 400)è un è un minicomputer sviluppato a partire dal 1988 dall’IBM per usi prevalentemente aziendali, come supporto del sistema informativo gestionale.\\
-Il punto di forza sta nel database integrato con il sistema operativo, che permette la gestione dei dati attraverso una suite di programmi e librerie altamente specializzati. Attualmente consente di eseguire tutte le operazioni disponibili su di un comune server web, grazie ai continui aggiornamenti che hanno portato, ad esempio, all'installazione di \gls{php} direttamente a livello di sistema operativo.
+Il punto di forza sta nel database integrato con il sistema operativo, che permette la gestione dei dati attraverso una suite di programmi e librerie altamente specializzati. Attualmente consente di eseguire tutte le operazioni disponibili su di un comune server web, grazie ai continui aggiornamenti che hanno portato, ad esempio, all'installazione di \gls{php} direttamente a livello di sistema operativo \hyperlink{14}{[14]}.
 Questo database viene usato, in Sanmarco Informatica, per contenere tutti i dati degli utenti, sia interni che esterni, nonché i dati relativi ai contatti. %TODO meglio, chiedere a luca il tipo di DB
 \subsection{Hibernate}
 Hibernate è una piattaforma \gls{middleware}\glsfirstoccur open-source per gestire la persistenza dei dati in un database.\\
 è largamente utilizzato per la gestione dei dati di applicazioni web scritte in Java, in quanto i dati vengono rappresentati attraverso degli oggetti Java chiamati \emph{entità}.\\
-Un'entità hibernate si sostituisce logicamente alla tabella reale del database. In questo modo il programmatore può operare sul database come fosse un oggetto Java, semplificando di molto le operazioni di lettura/scrittura e di modifica delle tabelle stesse.\\
+Un'entità hibernate si sostituisce logicamente alla tabella reale del database. In questo modo il programmatore può operare sul database come fosse un oggetto Java, semplificando di molto le operazioni di lettura/scrittura e di modifica delle tabelle stesse\hyperlink{15}{[15]}.\\
 
 \newpage
 
@@ -86,10 +87,10 @@ Un'entità hibernate si sostituisce logicamente alla tabella reale del database.
 \end{figure}
 DBeaver è un client SQL, con anche la funzione di tool di amministrazione.\\
 La sua applicazione desktop è scritta in Java e si basa sulla piattaforma Eclipse.\\
-Dbeaver consente la visualizzazione grafica delle tabelle del database SQL sopra citato, ed inoltre su di esse è possibile eseguire queries scritte in appositi file di script.\\
+Dbeaver consente la visualizzazione grafica delle tabelle del database SQL sopra citato, ed inoltre su di esse è possibile eseguire queries scritte in appositi file di script\hyperlink{16}{[16]}.\\
 \subsection{JavaScript}
 JavaScript è un linguaggio di scripting orientato agli oggetti ed agli eventi.\\
-Viene utilizzato principalmente come linguaggio per la \emph{logica di presentazione} di applicazioni web. Ciò consiste nella creazione di \gls{script}\glsfirstoccur, scatenati dall'utente per mezzo di strumenti quali mouse e tastiera, che producono effetti dinamici ed interattivi lato client, cioè nell'interfaccia utente.\\
+Viene utilizzato principalmente come linguaggio per la \emph{logica di presentazione} di applicazioni web. Ciò consiste nella creazione di \gls{script}\glsfirstoccur, scatenati dall'utente per mezzo di strumenti quali mouse e tastiera, che producono effetti dinamici ed interattivi lato client, cioè nell'interfaccia utente\hyperlink{02}{[02]}.\\
 Questo linguaggio eredita la sintassi dal sopracitato Java (derivato comunque dal linguaggio C), ma differisce sostanzialmente da esso per alcuni motivi:
 \begin{itemize}
 	\item JavaScript è un linguaggio interpretato: ciò significa che non è necessaria la compilazione perché esso venga eseguito, bensì sarà il browser che, a runtime, interpreta il codice ed esegue i calcoli necessari;\\
@@ -111,7 +112,7 @@ Durante la mia esperienza di stage era richiesto, come illustrerò dettagliatame
 Ho impiegato circa 40 ore di lavoro per documentarmi sulle varie librerie oggi esistenti, e mi sono focalizzato sulle librerie che seguono:
 \subsubsection{React}
 React è una libreria JavaScript sviluppata da Facebook a partire dal 2013.\\
-è utilizzata, oltre che per Facebook stesso, per una moltitudine di applicazioni web come WhatsAppWeb, Netflix, Aribnb, BBC,...\\
+è utilizzata, oltre che per Facebook stesso, per una moltitudine di applicazioni web come WhatsAppWeb, Netflix, Aribnb, BBC,...\hyperlink{18}{[18]}\\
 Le principali caratteristiche di React sono:
 \begin{itemize}
 	\item \textbf{One way data binding}: Singifica che l'\gls{html}, quindi la pagina visibile all'utente, non è in grado di modificare il componente stesso. L'unico modo per farlo è scatenare un evento che modifichi il componente tramite una funzione, che a sua volta renderizzerà la modifica sullo schermo.
@@ -126,7 +127,7 @@ Alcuni aspetti negativi comprendono invece:
 Angular è un framework, cioè un'infrastruttura per la creazione di applicazioni composta da un'insieme di funzionalità, sviluppato da Google e disponibile in due versioni: AngularJS ed Angular.\\
 \textbf{AngularJS} viene rilasciato nel 2012 e si dichiara, citando la documentazione ufficiale 
 \begin{quote}
-quello che HTML avrebbe dovuto essere se fosse stato progettato per sviluppare applicazioni.
+quello che HTML avrebbe dovuto essere se fosse stato progettato per sviluppare applicazioni\hyperlink{19}{[19]}.
 \end{quote}  %TODO spiegare il concetto dei controller e scope
 AngularJS ha quindi l'obiettivo di esaltare l'aspetto dichiarativo dell'HTML da un lato, e fornire degli strumenti per la creazioni di componenti per la gestione della logica applicativa di un'applicazione.\\
 Le principali caratteristiche comprendono:
@@ -139,18 +140,18 @@ Nonostante fosse ormai uno dei \gls{framework} più adottati a livello mondiale 
 Questo cambiamento, dapprima molto criticato dalla comunità di sviluppatori, non ha inficiato sulla popolarità di Angular, che rimane anche nella nuova versione uno dei \gls{framework} più utilizzati.\\
 \textbf{Angular 2+}: La seconda versione di Angular si differenzia con la precedente per queste caratteristiche:
 \begin{itemize}
-	\item \textbf{typeScript}: Angular2+ è stato scritto in typeScript, una sorta di super-set di JavaScript a cui vengono aggiunti costrutti come classi, interfacce e moduli.
+	\item \textbf{typeScript}: Angular2+ è stato scritto in typeScript, una sorta di super-set di JavaScript a cui vengono aggiunti costrutti come classi, interfacce e moduli\hyperlink{20}{[20]}.
 	\item \textbf{Sparisce il two ways data binding}: Quello che era stato il punto di forza di AngularJS si è rivelato una debolezza in termini di prestazioni e soprattutto di memory leak. Resta comunque attivabile quando necessario.
 	\item \textbf{Componenti}: spariscono l'idea di scope e controller (che saranno approfonditi nella sezione \ref{sec:AngularJS}), tutta la logica di una sezione logica un è racchiusa all'interno di un componente, esportato poi da un modulo. %TODO CAMBIARE ASsolutamente componente-componente
 \end{itemize}
 \subsubsection{Vue.js}
 Vue.js è un framework rilasciato nel 2014 da Evan You, ex dipendente Google, con l'intento di prendere solo le parti migliori di AngularJS per creare qualcosa di molto più leggero.\\
 è stato sviluppato soprattutto per la costruzione di interfacce utente, ma comunque è possibile creare intere \gls{spag}.\\
-Vue.js prende spunto sia da AngularJS (two way binding ottimizzato) che da React(VirtualDOM, componenti). \\
+Vue.js prende spunto sia da AngularJS (two way binding ottimizzato) che da React(VirtualDOM, componenti)\hyperlink{21}{[21]}. \\
 La diffusione relativamente ridotta rende però difficoltosa la ricerca della soluzione a problemi che si presenteranno durante lo sviluppo.
 
 \subsubsection{Scelta finale}
-Nella scelta finale del framework sono stati presi in considerazione i pregi e difetti illustrati sopra, naturalmente riportati all'obiettivo finale dello stage, ma anche i vincoli personali che mi sono prefissato ed i vincoli aziendali che mi sono stati imposti.
+Nella scelta finale del framework sono stati presi in considerazione i pregi e difetti illustrati sopra\hyperlink{22}{[22]}, naturalmente riportati all'obiettivo finale dello stage, ma anche i vincoli personali che mi sono prefissato ed i vincoli aziendali che mi sono stati imposti.
 \begin{itemize}
 	\item \textbf{Angular}: La prima scelta ricadeva su Angular2+, per la grande diffusione e per le API specifiche per le form, ma il vincolo aziendale che mi è stato imposto è stato quello di non appesantire troppo il software, riutilizzando se possibile i \gls{framework} già presenti.\\
 	Essendo AngularJS già utilizzato in alcune \gls{portlet}, la mia scelta è alla fine ricaduta su quello, anche a causa dell'impossibilità che hanno i due \gls{framework} a coesistere;

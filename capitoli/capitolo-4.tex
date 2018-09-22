@@ -1,7 +1,7 @@
 % !TEX encoding = UTF-8
 % !TEX TS-program = pdflatex
 % !TEX root = ../tesi.tex
-
+\null\newpage
 %**************************************************************
 \chapter{Progettazione}
 \label{cap:progettazione}
@@ -32,7 +32,7 @@ L'interazione con le entità di Hibernate avviene per mezzo di Liferay, che si o
 Le azioni dell'utente vengono gestite poi da Liferay, che si occupa anche del routing tra le varie pagine del portale. Nel caso ci fossero dei dati da salvare, come nel caso dell'inserimento di un nuovo lead, vengono lanciati dei servizi \gls{restg}che andranno ad interfacciarsi con le entità gestite da Hibernate, il quale gestisce la persistenza dei dati.\\
 
 \subsection{Portlet life cycle}
-Al fine di capire al meglio come progettare la nuova form, mi sono concentrato sullo studio del ciclo di vita di una \gls{portlet}:\\
+Al fine di capire al meglio come progettare la nuova form, mi sono concentrato sullo studio del ciclo di vita di una \gls{portlet}\hyperlink{24}{[24]}:\\
 L'ambiente in cui una essa viene creata ed utilizzata è denominato \emph{portlet container} che, come suggerisce la parola, è un contenitore che gestisce l'aggregazione tra le \gls{portlet}, mantiene memoria delle preferenze dettate dall'utente su di esse ed inoltre funge da \emph{Controller} tra l'interfaccia utente(\emph{View}) ed i dati (\emph{Model}) nel paradigma di programmazione MVC (Model View Controller), illustrato nella sezione ~\ref{sec:MVC}.\\
 \newpage
 \begin{figure}[h]
