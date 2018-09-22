@@ -1,11 +1,116 @@
 % !TEX encoding = UTF-8
 % !TEX TS-program = pdflatex
 % !TEX root = ../tesi.tex
-
+\null\newpage
 %**************************************************************
 \chapter{Conclusioni}
 \label{cap:conclusioni}
 %**************************************************************
+
+\intro{}
+
+\section{Produttività}
+Nel piano di lavoro concordato con l'azienda all'inizio dell'esperienza sono stati definiti degli obiettivi di tipo formativo e produttivo che avrei dovuto raggiungere, mentre nel corso dello stage sono stati da me definiti i reauisiti che il prodotto avrebbe dovuto soddisfare. La tabella \ref{tab:obiettivi-raggiunti} riassume gli obiettivi formativi e produttivi raggiunti al termine dello stage, mentre la tabella \ref{tab:obiettivi-riepilogo} riassume il numero di requisiti obbligatori, desiderabili ed opzionali che sono stati completati nel corso dello stage:\\
+
+\subsection{Raggiungimento degli obiettivi personali}
+\begin{table}[h]
+	\centering
+	\caption{Obiettivi dello stage}
+	\label{tab:obiettivi-raggiunti}
+	\begin{tabular}{|l|c|p{7cm}|p{4cm}|}
+		\hline
+		\rule[-4mm]{0mm}{1cm}
+		ID & Importanza & Descrizione & Soddisfatto\\
+		\hline
+		\rule[-3mm]{0mm}{0.8cm}
+		F1 & Obbligatorio & Acquisizione delle competenze di base sulla famiglia di software denominata CRM. & Soddisfatto\\
+		\hline
+		\rule[-3mm]{0mm}{0.8cm}
+		F2 & Obbligatorio & Acquisizione delle competenze di base sul software di sviluppo GWT. & Soddisfatto\\
+		\hline
+		\rule[-3mm]{0mm}{0.8cm}
+		F3 & Desiderabile & Acquisizione di competenze avanzate sul linguaggio di programmazione utilizzato per lo sviluppo del prototipo. & Soddisfatto\\
+		\hline
+		\rule[-3mm]{0mm}{0.8cm}
+		P1 & Obbligatorio & Analisi dei requisiti tecnici ed applicativi. & Soddisfatto\\
+		\hline
+		\rule[-3mm]{0mm}{0.8cm}
+		P2 & Obbligatorio & Analisi dell'User Interface. & Soddisfatto\\
+		\hline
+		\rule[-3mm]{0mm}{0.8cm}
+		P3 & Obbligatorio & Analisi degli Use Case. & Soddisfatto\\
+		\hline
+		\rule[-3mm]{0mm}{0.8cm}
+		P4 & Obbligatorio & Sviluppo di un prototipo che implementi le stesse funzionalità del componente esistente. & Soddisfatto\\
+		\hline
+		\rule[-3mm]{0mm}{0.8cm}
+		P5 & Facoltativo & Implementazione di nuove funzionalità di interazione con l'utente sul prototipo sviluppato. & Non soddisfatto\\
+		\hline
+	\end{tabular}
+\end{table}
+Complessivamente, tutti gli obiettivi obbligatori e desiderabili sono stati soddisfatti, mentre il requisito non soddisfatto, riguardante lo sviluppo di nuove funzionalità, non è stato soddisfatto a causa di alcuni problemi che sono emersi durante il corso dello stage, diminuendo il tempo a mia disposizione.\\
+
+\subsection{Soddisfacimento dei requisiti}
+
+La tabella \ref{tab:obiettivi-riepilogo} riporta l'insieme dei requisiti definiti nelle tabelle \ref{tab:requisiti-funzionali}, \ref{tab:requisiti-di-qualità} e \ref{tab:requisiti-di-vincolo}, per avere uno sguardo d'insieme sul numero di requisiti soddisfatti:
+
+\begin{table} %todo
+	\centering
+	\caption{Riepilogo del soffisfacimento rei requisiti}
+	\label{tab:obiettivi-riepilogo}
+	\begin{tabular}{|p{2,5cm}|p{2,5cm}|p{2,5cm}|p{2,5cm}|p{2,5cm}|}
+		\hline
+		\rule[-4mm]{0mm}{1cm}
+		\textbf{Tipo} & \textbf{Obbligatorio} & \textbf{Facoltativo} & \textbf{Desiderabile} & \textbf{Soddisfatti}\\
+		\hline
+		\rule[-3mm]{0mm}{0.8cm}	
+		\textbf{Funzionali} & 59 & 0 & 2 & 60\\
+		\hline
+		\rule[-3mm]{0mm}{0.8cm}	
+		\textbf{Qualità} & 1 & 0 & 1& 1\\
+		\hline
+		\rule[-3mm]{0mm}{0.8cm}	
+		\textbf{Vincolo} & 2& 0 & 0 & 2\\
+		\hline
+		\rule[-3mm]{0mm}{0.8cm}		
+		\textbf{Totale} & \textbf{62} & \textbf{0} & \textbf{3} & \textbf{63}\\
+		\hline	
+	\end{tabular}
+\end{table}
+
+Complessivamente, la quasi totalità dei requisiti è stata soddisfatta. I motivi che hanno portato al mancato soddisfacimento sono da ricercare nella generale mancanza di tempo e nell'impossibilità ad implementare alcuni moduli esterni, come descritto nel paragrafo \ref{cap:diff_sviluppo}.
+
+\section{Consuntivo orario}
+Le ore di lavoro che sono state impiegate per il mio stage, in accordo con il tutor \textbf{Stegano Cogo}, sono state in totale \textbf{320}, ripartite in 8 settimane di lavoro full-time.\\ Le ore utilizzate per ciascune fase sono riportate in tabella \ref{tab:consuntivo-ore}:
+
+\begin{table} %todo
+	\centering
+	\caption{Consuntivo orario finale}
+	\label{tab:consuntivo-ore}
+	\begin{tabular}{|p{9cm}|p{2cm}|p{2cm}|}
+		\hline
+		\rule[-4mm]{0mm}{1cm}
+		\textbf{Attività} & \textbf{Ore preventivate} & \textbf{Ore effettive}\\
+		\hline
+		\rule[-3mm]{0mm}{0.8cm}	
+		Ricerca, studio e documentazione per inquadramento del
+		progetto.
+		Introduzione al concetto di CRM ed al software JGalileo CRM & 40 & 50\\
+		\hline
+		\rule[-3mm]{0mm}{0.8cm}	
+		Analisi dei requisiti applicativi e tecnici & 80 & 70\\
+		\hline
+		\rule[-3mm]{0mm}{0.8cm}	
+		Ricerca degli ambienti di sviluppo open source soddisfacenti i requisiti richiesti e scelta dell’ambiente di sviluppo& 40 & 30\\
+		\hline
+		\rule[-3mm]{0mm}{0.8cm}	
+		Sviluppo del prototipo & 160 & 170\\
+		\hline
+		\rule[-3mm]{0mm}{0.8cm}		
+		\textbf{Totale} & \textbf{320} & \textbf{320}\\
+		\hline	
+	\end{tabular}
+\end{table}
 
 \section {Obiettivi personali}
 Nell'intraprendere il mio percorso di stage, oltre agli obiettivi stabiliti nel Piano di Lavoro, avevo anche degli obiettivi personali da raggiungere, di seguito elencati:
@@ -14,6 +119,13 @@ Nell'intraprendere il mio percorso di stage, oltre agli obiettivi stabiliti nel 
 	\item Conoscere tecnologie nuove e non affrontate durante il percorso di studi;
 	\item Confrontarmi con software di larga scala;
 	\item Confrontarmi con altre persone già inserite nel mondo del lavoro;
-	\item Migliorarmi grazie all'aiuto del tem di lavoro;
+	\item Migliorarmi grazie all'aiuto del team di lavoro;
 	\item Migliorarmi nella gestione di tempi/risorse nel contesto di un lavoro assegnatomi.
 \end{itemize}
+
+\section{Valutazione personale}
+Al termine dello stage, posso sicuramente dire che sia stata un'esperienza estremamente formativa, sia a livello professionale che umano. Mi ha dato modo di interfacciarmi con persone del settore e di introdurmi alle meccaniche aziendali che accompagneranno il mio futuro professionale.\\
+L'esperienza maturata e le tecnologie studiate durante il corso di studi, sono state sufficienti per poter affrontare lo stage con la consapevolezza di avere le competenze di base necessarie a svolgere compiti in autonomia e con un grado di difficoltà elevato.\\
+L'ambiente di lavoro, in Sanmarco Informatica, è piuttosto rilassato e tutti i colleghi con cui mi sono confrontato sono stati chiari e cortesi nell'aiutarmi.\\ L'unica nota negativa risiede nelle tecnologie usate, sicuramente non all'avanguardia in un settore tecnologico in continua evoluzione. Al di la di questo posso comunque confermare la grande utilità e positività dell'esperienza.\\
+
+\newpage

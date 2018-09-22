@@ -13,35 +13,35 @@
 \section{AngularJS}
 \label{sec:AngularJS}
 
-La libreria che ho scelto di utilizzare, AngularJS, nasce nel 2012 nei laboratori di Google.\\
+La libreria che ho scelto di utilizzare, AngularJS, nasce nel 2012 nei laboratori di Google\hyperlink{25}{[25]}.\\
 Esso potenzia l'aspetto dichiarativo del linguaggio \gls{html}, offrendo al contempo tutti gli strumenti necessari alla realizzazione di \gls{spag}. 
 \subsection{Direttive e controller}
-Una delle peculiarità di  AngularJS è che consente di aggiungere al codice HTML nuovi attributi, denominati \textbf{direttive}.\\
+Una delle peculiarità di  AngularJS è che consente di aggiungere al codice \gls{html} nuovi attributi, denominati \textbf{direttive}.\\
 Tali direttive possono essere definite dall'utente, che comunque ha a disposizione anche un buon numero di 
-direttive standard fornite dal \emph{framework}. Queste strutture consentono al compilatore HTML di AngularJS (attivate dal comando \lstinline[language=Java]!$compile()!, di creare un legame tra l'attributo in cui sono inserite ed il codice JavaScript che va ad eseguire il corpo della direttiva, tipicamente una funzione.\\
-La possibilità di definire direttive customizzate estende di molto le funzionalità di base, lasciando alla fantasia del programmatore la creazione di strutture pensate appositamente per l'applicazione in sviluppo, ed consente di utilizzare quasi esclusivamente l'HTML per la creazione delle interfacce grafiche.\\
-L'invocazione delle direttive può avvenire utilizzando il nome della direttiva come tag(\lstinline[language=HTML]!<direttiva></direttiva>!), oppure come attributo ad un tag regolare HTML(\lstinline[language=HTML]!<div direttiva></div>!).\\
+direttive standard fornite dal \emph{framework}. Queste strutture consentono al compilatore \gls{html} di AngularJS (attivate dal comando \lstinline[language=Java]!$compile()!, di creare un legame tra l'attributo in cui sono inserite ed il codice JavaScript che va ad eseguire il corpo della direttiva, tipicamente una funzione.\\
+La possibilità di definire direttive customizzate estende di molto le funzionalità di base, lasciando alla fantasia del programmatore la creazione di strutture pensate appositamente per l'applicazione in sviluppo, ed consente di utilizzare quasi esclusivamente l'\gls{html} per la creazione delle interfacce grafiche.\\
+L'invocazione delle direttive può avvenire utilizzando il nome della direttiva come tag(\lstinline[language=HTML]!<direttiva></direttiva>!), oppure come attributo ad un tag regolare \gls{html}(\lstinline[language=HTML]!<div direttiva></div>!).\\
 Nel mio progetto ho utilizzato esclusivamente direttive standard di AngularJS, che ne ha create di specifiche per la creazione di form.\\
 \\
-L'altro importante componente di AngularJS è il controller. Esso viene invocato tramite la direttiva\lstinline[language=HTML]!ng-controller! ed il suo scope concerne tutto ciò che si trova all'interno dei tag nei quali è definito. Un controller, grazie al concetto di dependency injection, può utilizzare le funzionalità definite in moduli esterni che vengono inseriti come dipendenza all'interno del controller.\\ \'E possibile importare, oltre ad interi metodi, anche singoli oggetti: il più utilizzato è sicuramente l'oggetto di sistema  \lstinline[language=HTML]!$scope!. Quest'ultimo è un semplice oggetto JavaScript, per cui è possibile aggiungervi nuovi attributi e metodi semplicemente digitando \lstinline[language=HTML]!$scope.nuovoattributo = valore;!. Lo scope, assieme alle funzionalità definite nei moduli dichiarati come dipendenza, funge da \emph{model} nel patter MVC descritto in \ref{sec:MVC}.\\
-Gli attributi dello \lstinline[language=HTML]!$scope! definiti in un controller sono condivisi all'interno della view (quindi nel codice HTML) unicamente nell'area in cui è definito il controller. AngularJS implementa infatti il concetto di \textbf{two-ways data binding}: il data binding è il meccanismo di sincronizzazione automatica dei dati tra il modello e la view. La maggior parte dei sistemi di template supporta il data binding in una sola direzione, tipicamente dal modello dei dati verso la view. Questo vuol dire che i dati del modello vengono combinati con il template HTML per generare la view visibile all’utente. Se però il modello viene modificato, le modifiche non si riflettono automaticamente sulla view. Analogamente, se l’utente modifica la view, queste modifiche non vengono automaticamente riportate sul modello dei dati. Per sincronizzare view e modello occorre in genere scrivere del codice che lo faccia.\\
+L'altro importante componente di AngularJS è il controller. Esso viene invocato tramite la direttiva\lstinline[language=HTML]!ng-controller! ed il suo scope concerne tutto ciò che si trova all'interno dei tag nei quali è definito. Un controller, grazie al concetto di dependency injection, può utilizzare le funzionalità definite in moduli esterni che vengono inseriti come dipendenza all'interno di esso.\\ \'E possibile importare, oltre ad interi metodi, anche singoli oggetti: il più utilizzato è sicuramente l'oggetto di sistema  \lstinline[language=HTML]!$scope!. Quest'ultimo è un semplice oggetto JavaScript, per cui è possibile aggiungervi nuovi attributi e metodi semplicemente digitando \lstinline[language=HTML]!$scope.nuovoattributo = valore;!. \\Lo scope, assieme alle funzionalità definite nei moduli dichiarati come dipendenza, funge da \emph{model} nel patter MVC descritto in \ref{sec:MVC}.\\
+Gli attributi dello \lstinline[language=HTML]!$scope! definiti in un controller sono condivisi all'interno della view (quindi nel codice \gls{html}) unicamente nell'area in cui è definito il controller. AngularJS implementa infatti il concetto di \textbf{two-ways data binding}: il data binding è il meccanismo di sincronizzazione automatica dei dati tra il modello e la view. La maggior parte dei sistemi di template supporta il data binding in una sola direzione, tipicamente dal modello dei dati verso la view. Questo vuol dire che i dati del modello vengono combinati con il template \gls{html} per generare la view visibile all’utente. Se però il modello viene modificato, le modifiche non si riflettono automaticamente sulla view. Analogamente, se l’utente modifica la view, queste modifiche non vengono automaticamente riportate sul modello dei dati. Per sincronizzare view e modello occorre in genere scrivere del codice che lo faccia.\\
 Il data binding di AngularJS invece è bidirezionale, cioè ogni modifica al modello dei dati si riflette automaticamente sulla view e ogni modifica alla view viene riportata sul modello dei dati.\\
-Per poter utilizzare un attributo dello \lstinline[language=HTML]!$scope! nella view è sufficiente indicarlo, all'interno di un tag di testo, con la seguente sintassi: \lstinline[language=Java]!{{nuovoattributo}}!. Questa sintassi, equivalente alla direttiva \lstinline[language=Java]!ng-model = nuovoattributo!, attiva il cosiddetto \emph{ciclo di digest}.
+Per poter utilizzare un attributo dello \lstinline[language=HTML]!$scope! nella view è sufficiente indicarlo, all'interno di un tag di testo, con la seguente sintassi: \lstinline[language=Java]!ng-model = nuovoattributo!. Questa sintassi attiva il cosiddetto \emph{ciclo di digest}.
 
-\subsection{Ciclo di digest}%TODO ciclo digest, watch, ng model
-Il ciclo di digest è ciò che permette di avere il two ways data binding. Ogni volta che viene usata la sintassi \lstinline[language=Java]!{{nuovoattributo}}! o la sua equivalente, viene automaticamente creato un \textbf{watch} che ascolta i cambiamenti del valore della variabile a cui è associato, nel nostro caso la variabile "nuovoattributo".\\
+\subsection{Ciclo di digest}
+Il ciclo di digest è ciò che permette di avere il two ways data binding. Ogni volta che viene usata la sintassi \lstinline[language=Java]!ng-model = nuovoattributo!, viene automaticamente creato un \textbf{watch} che ascolta i cambiamenti del valore della variabile a cui è associato, nel nostro caso la variabile \lstinline[language=Java]!nuovoattributo!\hyperlink{26}{[26]}.\\
 Quando viene cambiato il valore di una variabile, il \emph{ciclo di digest} controlla tutti i watch presenti nell'applicazione e, nel caso verifichi il cambiamento di alcune variabili rispetto al ciclo precedente, esegue delle operazioni al fine di aggiornare il DOM nei punti in cui essa è utilizzata.\\
 Nel caso di variabili che vengono modificate all'interno di un watch, ad esempio perchè il valore di una variabile dipende dal valore di un'altra, il ciclo viene ripetuto finchè non si presentano più modifiche.\\
-Questo avviene in maniera del tutto automatica e trasparente sia all'utente che allo sviluppatore, che può però creare dei watch attraverso l'attributo di sistema \lstinline[language=Java]!$watch(attribute, function([data]){})!.\\ Questo nel caso ci siano delle dipendenze da rispettare, ma non ci sia alcun binding con la view. Nel mio progetto, ad esempio, utilizzo questa funzionalità per poter gestire le chiamate asincrone ai servizi REST, sfruttando il cambio di valore della variabile da recuperare.
+Questo avviene in maniera del tutto automatica e trasparente sia all'utente che allo sviluppatore, che può però creare dei watch attraverso l'attributo di sistema \lstinline[language=Java]!$watch(attribute, function([data]){})!.\\ Questo nel caso ci siano delle dipendenze da rispettare, ma non ci sia alcun binding con la view. Nel mio progetto, ad esempio, utilizzo questa funzionalità per poter gestire le chiamate asincrone  ai servizi \gls{rest}, sfruttando il cambio di valore della variabile da recuperare.
 
 
 \subsection{Eventi} 
 Gli attributi assegnati allo \lstinline[language=HTML]!$scope! non sono comunque strettamente ristretti al controller in cui sono definiti: è infatti possibile il passaggio degli attributi tra controller annidati come avviene in un comune contesto di ereditarietà: un controller figlio eredita tutti gli attributi definiti nel controller padre.\\ 
-Nel contesto di una gerarchia di controller è anche possibile sollevare degli eventi sia un controller figlio a quello padre, utilizzando \lstinline[language=HTML]!$emit('event name', [data])!, che dal padre verso i figli, con \lstinline[language=HTML]!$broadcast('event name', [data])!.\\
+Nel contesto di una gerarchia di controller, è anche possibile sollevare degli eventi, sia da un controller figlio a quello padre, utilizzando \lstinline[language=HTML]!$emit('event name', [data])!, che dal padre verso i figli, con \lstinline[language=HTML]!$broadcast('event name', [data])!.\\
 Gli eventi vengono poi raccolti da \lstinline[language=HTML]!$on('event name', function([data]){...})!, che definisce il comportamento da adottare una volta raccolto l'evento.\\
 
 \section{Codifica}
-La creazione della componente form utilizzando angularJS è iniziata cercando di aderire ai principî dell'incapsulamento e di \emph{information hiding} tipici della programmazione ad oggetti.\\ Questi principî, che sanciscono la necessità di nascondere le proprietà intrinseche di un oggetto rispetto alla sua rappresentazione, sono qui utilizzati per separare i compiti tra i diversi elementi della form tramite l'utilizzo di vari controller, ognuno destinato alla gestione di una porzione specifica della form stessa.\\
+La creazione della componente form utilizzando angularJS è iniziata cercando di aderire ai principî dell'incapsulamento e di \emph{information hiding} tipici della programmazione ad oggetti.\\ Questi principî, che sanciscono la necessità di nascondere le proprietà intrinseche di un oggetto rispetto alla sua rappresentazione\hyperlink{04}{[4]}, sono qui utilizzati per separare i compiti tra i diversi elementi della form tramite l'utilizzo di vari controller, ognuno destinato alla gestione di una porzione specifica della form stessa.\\
 Vengono quindi utilizzati dei controller generici, che vengono instanziati una sola volta:
 \begin{itemize}
 	\item \textbf{FormController}: un controller generale, che recupera le informazioni utili alla form nel suo complesso, come record e datasource;
@@ -62,17 +62,59 @@ e specifici in cui, per ogni button del tipo interessato, viene instanziato un n
 	\end{itemize} 
 \end{itemize} 
 
-	\begin{figure}[h]
+\begin{figure}[h]
 	\centering
 	\includegraphics[height=10 cm]{gerarchia-controller}
-	\caption{gerarchia di controller in una form}
+	\caption{Gerarchia di controller in una form}
 	\label{fig:ger-contr}
 \end{figure}
 
-\section{Validazione dei campi inseriti}
+\subsection{Ciclo di creazione}
+\subsubsection{Recupero dei dati}
+La creazione di una form avviene seguendo parzialmente il flusso di creazione utilizzato dalla precedente implementazione e visto nel precedente capitolo, ma ho comunque cercato di utilizzare meno risorse possibili per aumentare la velocità di creazione e migliorare l'esperienza utente. La velocità di creazione è inoltre aumentata dalla scelta di caricare dinamicamente alcune componenti della form, come il contenuto di una tab, solamente se l'utente vi interagisce realmente.\\
+La direttiva \lstinline[language=HTML]!ng-app!, che inizializza l'applicazione AngularJS, può essere utilizzato solamente una volta all'interno di un documento \gls{html}: in JGalileo CRM era già utilizzata per inizializzare un modulo comune, chiamato SMICommonModule, che conteneva anche alcuni servizi \gls{rest} per il reperimento di risorse quali datasource e record. Tali servizi sono stati da me successivemente integrati con nuove funzionalità. \'E stato quindi sufficiente importare il modulo come dipendenza del controller principale della form per poter correttamente inizializzare il tutto.\\
+Al controller principale vengono passati alcuni parametri di configurazione, con cui viene recuperato il datasource corretto tramite un servizio \gls{rest}. \\
+Tramite il meccanismo di \lstinline[language=HTML]!$watch! descritto in precedenza, al ritorno del datasource
+viene chiamato il metodo \lstinline[language=HTML]!setValues()! contenuto in FieldsController, che si occupa di creare degli array contenti le azioni, i tab della form e, per ogni tab, i groupbox che lo conpongono. Successivamente vengono letti tutti i campi dati descritti nel datasource e posti negli array, per facilitarne la rappresentazione.\\ AngularJS mette infatti a disposizione la direttiva \lstinline[language=HTML]!ng-repeat!, che consente di iterare lungo una lista od un array di elementi. \\
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=8 cm]{setFields}
+	\caption{SetFields(), che inserisce i valori negli array}
+	\label{fig:set-fields}
+\end{figure}
+Al termine di queste operazioni, vengono inizializzati nel record i campi contententi i valori di default. Questo record viene poi utilizzato per recuperare dal server il record completo, composto dai campi di default precedentemente settati e da alcuni altri campi che vengono inseriti dal server.\\
+Una volta ottenuto il record completo, i valori che sono stati recuperati vengono visualizzati direttamente nella view grazie al \emph{two ways data binding}.
+
+\subsubsection{Creazione della view}
+Il file che costituisce la view è unico e rispecchia, utilizzando tag innestati, la gerarchia dei controller vista nell'immagine \ref{fig:ger-contr}\\
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=6.5 cm]{view}
+	\caption{Parte della view}
+	\label{fig:view}
+\end{figure}
+
+Vengono creati i buttons per le azioni e dei buttons che poi andranno a costituire i tab di cui è composta la form.\\
+In seguito il file è essenzialmente diviso in due parti: la prima, che tramite l'esecuzione di un ciclo sull'array corretto si occupa della creazione dei campi dati che non appartengono ad alcun groupbox, e la seconda, che utilizzando due cicli gestisce la creazione delle groupbox e dei campi contenuti in ciascuna di esse.
+Nella view sono poi inserite, come attributo di tag, svariate direttive, come il condizionale \lstinline[language=HTML]!ng-if!, \lstinline[language=HTML]!ng-readonly!, \lstinline[language=HTML]!ng-show! che servono alla corretta visualizzazione di un determinato campo dati sulla base delle proprietà descritte per quel campo nel datasource recuperato. \\
+Ogni campo della form utilizza la direttiva \lstinline[language=HTML]!ng-model!, in maniera che venga attivato il ciclo di digest per ogni campo, e che il valore descritto da esso venga automaticamente salvato nel record. \\ La sintassi \lstinline[language=HTML]!{{variable}}! viene invece utilizzata per rappresentare a schermo il valore della variabile \lstinline[language=HTML]!variable!. Nel mio progetto questa direttiva è utilizzata per visualizzare il nome del campo.
+
+\subsection{Validazione dei campi inseriti}
 
 AngularJS mette a disposizione molte funzionalità dedicate alla realizzazione di form.\\
-Una di queste è la validazione della form a livello client. AngularJS, in maniera del tutto autmatica, valuta se i dati inseriti siano del tipo dichiarato per ogni campo e se vengono rispettate le obbligatorietà. Un campo viene dichiarato obbligatorio tramite la direttiva \lstinline[language=HTML]!ng-required! \\
-La validazione dell'intera form è possibile tramite l'oggetto di sistema \lstinline[language=HTML]!$valid!, una variabile booleana che assume il valore \lstinline[language=HTML]!true! solamente nel caso tutti i campi dati rispettino i vincoli descritti sopra.
+Una di queste è la validazione della form a livello client. AngularJS, in maniera del tutto automatica, valuta se i dati inseriti siano del tipo dichiarato per ogni campo e se vengono rispettate le obbligatorietà. Un campo viene dichiarato obbligatorio tramite la direttiva \lstinline[language=HTML]!ng-required! \\
+La validazione dell'intera form è possibile racchiudendo la form stessa in un tag \gls{html} \lstinline[language=HTML]!<form>! ed utilizzando la proprietà \lstinline[language=HTML]!valid()! su di esso. L'interà form sarà valida solo se tutti i campi della form sono validi.	\\
+La validazione viene utilizzata nell'interazione con le azioni per essere sicuri che i campi che andranno inseriti nel sistema rispettino i vincoli dati loro. Altri controlli vengono comunque eseguiti lato server, prima di effettuare l'inserimento dei dati nel database AS/400.
 
+
+\subsection{Difficoltà nello sviluppo}
+\label{cap: diff_sviluppo}
+Lo sviluppo della form oggetto del mio progetto di stage è andata incontro anche ad alcune problematiche che hanno impedito il completo soddisfacimento dei requisiti: in particolare, in due occasioni il tempo impiegato per cercare di superare le problematiche è stato consistente:
+\begin{itemize}
+	\item \textbf{\$http}: questo servizio consente di effettuare chiamate \gls{ajaxg} per il recupero di dati in maniera asincrona dal server.\\
+	Questo servizio ha funzionato egregiamente con i dati recuperati da FormController, come il recupero di record e datasource, ma aveva un comportamento piuttosto altalenante, con la quasi totalità di richieste fallite, nel recupero di dati da controller figli. In particolare, i dati dei campi di tipo picker risultavano praticamente impossibili da recuperare nel momento dell'interazione con l'utente.\\
+	In accordo col tutor, è stato eseguito un refactoring per fare in modo di recuperare tutti i dati nel momento della creazione dell'intera form. Questa soluzione è parsa però da subito estremamente inefficiente, in quanto era necessario caricare tutti i dati di tutti i campi eventualmente inseribili dall'utente, che per alcuni campi superano le migliaia di unità. \\
+	La soluzione è arrivata sostituendo il servizio \lstinline[language=HTML]!$http()! con il più generico \lstinline[language=HTML]!$.ajax()!, dopo svariati giorni di tentativi nell'utilizzo di soluzioni alternative e di test per comprendere la causa del comportamento anomalo del servizio;
+	\item \textbf{vendors}: un vendor, nella struttura di JGalileo CRM, rappresenta un pacchetto esterno installabile ed utilizzabile all'interno di un modulo: in quest'ottica ho cercato di inserire il pacchetto definito \href{https://github.com/angular/material}{angularjs-material} tra i pacchetti utilizzabili nella form. Purtroppo il metodo di installazione classico, descritto anche nell'URL appena riportato, non era utilizzabile in quanto non è stato possibile risalire alla sezione head del documento.\\ Pur provando svariate soluzioni alternative, nessuna di esse ha funzionato e nè il tutor nè il resto del team è stato in grado di aiutarmi nel superamento del problema, che pertanto ad oggi è rimasto insoluto e non mi ha permesso di inserire dello stile nel progetto. La creazione di un foglio di stile da zero sarebbe infatti risultato troppo oneroso in termini di tempo e difficoltoso nella realizzazione, in quanto ogni groupbox contiene un numero di colonne definito nel datasource ed i campi dati sono posizionati in base ad esse.
+\end{itemize}
 \newpage
